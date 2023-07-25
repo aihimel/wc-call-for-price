@@ -1,29 +1,56 @@
 === WC Call For Price ===
-Contributors: aihimel
+Contributors: aihimel, iamasadpolash
 Tags: call for price, woocommerce, plugin, customizable, image upload, admin page, feature rich
 Requires at least: 4.2.2
-Tested up to: 5.2
+Tested up to: 6.2.2
+Requires PHP: 7.2
 Stable tag: trunk
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 This plugin shows "Call For Price" text/HTML or image on empty price fields. It depends on woocommerce.
 
 == Description ==
 
-This is a woocommerce plugin that shows "call for price" on empty price products of woocommerce. It supports simple
-text, html and also images. You call select call for price image from the plugin's internal images or you can
-upload your own image.
+**WC Call for price or WooCommerce Call for Price plugin** is a free WordPress plugin that will let you put **Call For Price** button as selectable/uploadable image or as text instead of price for products. You can also provide custom **HTML** context instead of plain text.
 
+It is tested up to the latest version of **WordPress** and **PHP**.
+
+Join in at [Github](https://github.com/aihimel/wc-call-for-price) Development
 
 == Installation ==
 
-The installation process is very simple.
+Installing WC Call for Price plugin for WooCommerce is just like any other plugin installation.
 
-1. Install and activate Woocommerce.
-1. Install WC Call For Price plugin from wordpress plugin directory or upload the plugin manually to your server at /wp-content/plugins/ directory.
-1. Activate the plugin through 'Plugins' menu in the Wordpress Administrator.
-1. Go to Woocommerce >> Call For Price menu.
+#### Hosting Requirement
+
+Any hosting that supports WordPress installation can be used to install WC Call for Price plugin
+
+* Supports any shared hosting
+* Supports any dedicated hosting
+* Supports VPS(Virtual Private Server) hosting
+* Supports AWS(Amazone Web Services)
+
+#### Hardware Requirement
+No specific hardware requirement
+
+#### Special PHP Packages
+No special PHP Packages are required
+
+#### Installation Process
+* Install WordPress
+* Install and activate WooCommerce
+* Install WC Call For Price
+ * **From WordPress Dashboard**
+ * Go to Plugins > Installed Plugins
+ * Click Add New button besides page title Plugin
+ * Search "WC Call for Price" by Aftabul Islam
+ * Install & Activate
+ * **By Downloading**
+ * Visit [WC Call for Price](https://wordpress.org/plugins/wc-call-for-price/) WordPress.org Plugin Download Page
+ * Download the Plugin
+ * Upload the plugin
+ * Install and Activate
 
 Thats all you need to do.
 
@@ -47,16 +74,19 @@ Yes, I will support the plugin.
 
 == Changelog ==
 
-= 1.0 =
+= 1.2.0 (25 July, 2023)=
+* Tested up-to WordPress 6.2.2
+* Tested up to PHP v7.2
+* Unnecessary asset files removed
+* License Update to GPLv3
 
-* Initial release of the plugin.
+= 1.1.1 =
+* Backend font issue has been fixed
+* Clash with some other plugin has been fixed
 
 = 1.1 =
-
 * Tested for version 4.4.1
 * Screenshots added
 
-= 1.1.1 =
-
-* Backend font issue has been fixed
-* Clash with some other plugin has been fixed
+= 1.0 =
+* Initial release of the plugin.

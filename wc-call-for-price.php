@@ -1,15 +1,15 @@
 <?php
-
 /**
  * Plugin Name: WC Call For Price
  * Plugin URI: http://www.wordpress.org/wc-call-for-price
  * Version: 1.2.0
- * Author Name: Aftabul Islam
+ * Author: Aftabul Islam
+ * Author URI: https://profiles.wordpress.org/aihimel
  * Author Email: toaihimel@gmail.com
- * PHP version: 5.6
+ * PHP version: 7.2
  * Text domain: wc-call-for-price
  * Description: This plugin shows "call for price" text/HTML or image on empty price fields. It depends on woocommerce.
- * License: GPLv2 or later
+ * License: GPLv3 or later
 
 Copyright 2015  Aftabul Islam  (email : toaihimel@gmail.com)
 
@@ -27,23 +27,11 @@ Copyright 2015  Aftabul Islam  (email : toaihimel@gmail.com)
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+// Security Check
+defined('ABSPATH') || die();
 
-// Restricting Direct Access
-defined('ABSPATH') or die("<h1>404</h1> Page not found.");
-
-//~ if(file_exists('../wp-admin/includes/plugin.php')) require_once('../wp-admin/includes/plugin.php');
-
-define('WC_CALL_FOR_PRICE_VERSION', '1.0');
-define('WC_CALL_FOR_PRICE_PATH', plugin_basename(__FILE__));
-
-if(PHP_VERSION_ID < 50200){
-
-	wp_die('<div class=\'error\'><p>'.__('The WC Call For Price plugin requires at least PHP version of 5.2').'</p></div>');
-
-	// Deactivating the plugin
-	if(is_plugin_active(WC_CALL_FOR_PRICE_PATH)) deactivate_plugins(WC_CALL_FOR_PRICE_PATH);
-
-}
+defined( 'WC_CALL_FOR_PRICE_VERSION' ) || define('WC_CALL_FOR_PRICE_VERSION', '1.2.0');
+defined('WC_CALL_FOR_PRICE_PATH') || define('WC_CALL_FOR_PRICE_PATH', plugin_basename(__FILE__));
 
 // Activation and Deactivation Hooks
 register_activation_hook(__FILE__, 'wc_call_for_price__activate');
@@ -55,10 +43,15 @@ add_action('wp_enqueue_scripts', 'wc_call_for_price__frontend_assets');
 add_filter('woocommerce_empty_price_html', 'wc_call_for_price__call_for_price', 11);
 
 // Activating the plugin
-if(!function_exists('wc_call_for_price__activate')){function wc_call_for_price__activate(){
+if( ! function_exists('wc_call_for_price__activate') ) {
+	/**
+	 * Checking if WooCommerce is installed and activated
+	 * @return void
+	 */
+	function wc_call_for_price__activate(){
 
-	// Cheacking if the woocommerce plugin is available
-	if(!class_exists('WooCommerce')){
+	// Checking if the woocommerce plugin is available
+	if( ! class_exists('WooCommerce')){
 
 		deactivate_plugins(WC_CALL_FOR_PRICE_PATH);
 
