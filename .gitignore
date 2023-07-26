@@ -1,3 +1,4 @@
 .idea
 todos.txt
 */**/.DS_Store
+.svn
