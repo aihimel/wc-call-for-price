@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || die();
             <fieldset>
                 <legend>Select Image</legend>
                 <div class="checkbox">
-                    <label for='wc_call_for_price__show_image'><b> <?php esc_html_e( 'Show Image :', 'wc-call-for-price' ); ?> </b></label>
+                    <label for='wc_call_for_price__show_image'><?php esc_html_e( 'Show Image :', 'wc-call-for-price' ); ?></label>
                     <input type="checkbox" <?php if(get_option('wc_call_for_price__show_image') == 'on') echo 'checked'; ?> id='wc_call_for_price__show_image' name='wc_call_for_price__show_image'>
                     <p class="help-block">
                         <?php esc_html_e( 'Check this box if you want to select an image form some specific list of "Call for price" images.', 'wc-call-for-price' ); ?>
@@ -53,7 +53,7 @@ defined( 'ABSPATH' ) || die();
             <fieldset>
                 <legend>Upload Image</legend>
                 <div class="checkbox">
-                    <label for='wc_call_for_price__show_uploaded_image'><b> <?php esc_html_e( 'Show Uploaded Image :', 'wc-call-for-price' ); ?> </b></label>
+                    <label for='wc_call_for_price__show_uploaded_image'><?php esc_html_e( 'Show Uploaded Image :', 'wc-call-for-price' ); ?> </b></label>
                     <input type="checkbox" <?php if(get_option('wc_call_for_price__show_uploaded_image') == 'on') echo 'checked'; ?> id='wc_call_for_price__show_uploaded_image' name='wc_call_for_price__show_uploaded_image'>
                     <p class="help-block"><?php esc_html_e( 'Check this box if you want to show your uploaded image.', 'wc-call-for-price' ); ?></p>
                 </div>
