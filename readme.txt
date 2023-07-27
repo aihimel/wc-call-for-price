@@ -52,7 +52,7 @@ No special PHP Packages are required
  * Upload the plugin
  * Install and Activate
 
-Thats all you need to do.
+That's all you need to do.
 
 
 == Frequently Asked Questions ==

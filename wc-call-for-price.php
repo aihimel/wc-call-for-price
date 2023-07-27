@@ -40,7 +40,7 @@ register_activation_hook(WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE, 'wc_cal
 register_deactivation_hook(WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE, 'wc_call_for_price__deactivate');
 
 /**
- * Loading function assets [css and js]
+ * Loading function assets [scss and js]
  *
  * @since 1.0.0
  *
@@ -132,9 +132,9 @@ add_action('admin_menu', 'wc_call_for_price__menu');
 function wc_call_for_price__menu_options(){
 
 	if( ! current_user_can('manage_options') ) {
-		wp_die(__('You don\'t have permission to access this page', 'wc-call-for-price'));
+		wp_die( __('You don\'t have permission to access this page', 'wc-call-for-price' ) );
 	} else {
-		require_once('wp_call_for_price__manage_options_form.php');
+		require_once( plugin_dir_path( __FILE__ ) . 'templates/admin/layout.php' );
 	}
 
 }

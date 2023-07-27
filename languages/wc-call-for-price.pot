@@ -1,0 +1,92 @@
+# Copyright (C) 2023 Aftabul Islam
+# This file is distributed under the GPLv3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WC Call For Price 1.2.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-call-for-price\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-07-27T06:53:19+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: wc-call-for-price\n"
+
+#. Plugin Name of the plugin
+#: templates/admin/parts/header.php:40
+msgid "WC Call For Price"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "http://www.wordpress.org/wc-call-for-price"
+msgstr ""
+
+#. Description of the plugin
+msgid "This plugin shows \"call for price\" text/HTML or image on empty price fields. It depends on woocommerce."
+msgstr ""
+
+#. Author of the plugin
+msgid "Aftabul Islam"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://profiles.wordpress.org/aihimel"
+msgstr ""
+
+#: templates/admin/layout.php:20
+msgid "Text To Show :"
+msgstr ""
+
+#: templates/admin/layout.php:22
+msgid "Write here what you want to see on front end. Plain text or HTML."
+msgstr ""
+
+#: templates/admin/layout.php:29
+msgid "Show Image :"
+msgstr ""
+
+#: templates/admin/layout.php:32
+msgid "Check this box if you want to select an image form some specific list of \"Call for price\" images."
+msgstr ""
+
+#: templates/admin/layout.php:48
+msgid "Check any one form here."
+msgstr ""
+
+#: templates/admin/layout.php:55
+msgid "Show Uploaded Image :"
+msgstr ""
+
+#: templates/admin/layout.php:57
+msgid "Check this box if you want to show your uploaded image."
+msgstr ""
+
+#: templates/admin/layout.php:70
+msgid "Upload Your Image"
+msgstr ""
+
+#: templates/admin/layout.php:80
+msgid "If you want to upload your custom image, upload here."
+msgstr ""
+
+#: templates/admin/layout.php:87
+msgid "Save Settings"
+msgstr ""
+
+#: templates/admin/parts/footer.php:15
+msgid "Don't forget to leave us a %s review %s. If you find anything difficult, just ask %s here %s"
+msgstr ""
+
+#: wc-call-for-price.php:115
+msgid "WooCommerce Call For Price"
+msgstr ""
+
+#: wc-call-for-price.php:116
+msgid "Call For Price"
+msgstr ""
+
+#: wc-call-for-price.php:135
+msgid "You don't have permission to access this page"
+msgstr ""
