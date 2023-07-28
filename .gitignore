@@ -6,3 +6,5 @@ package-lock.json
 .package.json.swp
 node_modules
 build
+/vendor/
+composer.lock

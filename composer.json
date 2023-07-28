@@ -1,0 +1,15 @@
+{
+    "name": "wcpress/wcp",
+    "autoload": {
+        "psr-4": {
+            "WCPress\\WCP\\": "includes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aftabul Islam",
+            "email": "toaihimel@gmail.com"
+        }
+    ],
+    "require": {}
+}

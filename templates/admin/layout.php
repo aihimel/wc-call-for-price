@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || die();
                 <legend>Text</legend>
                 <div class="form-group">
                 <label for="wc_call_for_price__text"><?php esc_html_e( 'Text To Show :', 'wc-call-for-price' ); ?> </label>
-                <input type="text" class="form-control" id="wc_call_for_price__text" name='wc_call_for_price__text' value='<?php echo get_option('wc_call_for_price__text');?>'>
+                <input type="text" class="form-control" id="wc_call_for_price__text" name='wc_call_for_price__text' value='<?php echo esc_attr( get_option('wc_call_for_price__text') );?>'>
                 <p class="help-block"><?php esc_html_e( 'Write here what you want to see on front end. Plain text or HTML.', 'wc-call-for-price'); ?></p>
             </div>
             </fieldset>
@@ -41,7 +41,7 @@ defined( 'ABSPATH' ) || die();
                     <div class="radio">
                         <label>
                             <input type="radio" name="wc_call_for_price__image" id="wc_call_for_price__image_<?php echo $i; ?>" value="cfp_<?php echo $i; ?>" <?php if('cfp_'.$i == get_option('wc_call_for_price__image')) echo 'checked';?> >
-                                <img src='<?php echo plugins_url('/wc-call-for-price/images/cfp_'.$i.'.png'); ?>' alt=""/>
+                                <img src='<?php echo esc_attr( plugins_url('/wc-call-for-price/assets/images/preset-buttons/cfp_'.$i.'.png') ); ?>' alt=""/>
                         </label>
                     </div>
 
@@ -60,7 +60,7 @@ defined( 'ABSPATH' ) || die();
                 <div  id='wc_call_for_price__upload_image_wrapper'>
                     <?php if( ! empty( $upload_image_url ) ) : ?>
                     <div class="wcp-uploaded-image-preview_wrapper">
-                        <img src="<?php esc_attr_e( $upload_image_url );?>" alt="">
+                        <img src="<?php echo esc_attr( $upload_image_url );?>" alt="">
                     </div>
                     <?php endif; ?>
                     <div class="form-group" >
@@ -68,7 +68,7 @@ defined( 'ABSPATH' ) || die();
                         <input
                             type="text"
                             id="wc_call_for_price__upload_image"
-                            value="<?php esc_attr_e( $upload_image_url );?>"
+                            value="<?php echo esc_attr( $upload_image_url );?>"
                             name='wc_call_for_price__upload_image'
                             placeholder='input image url'
                             readonly
