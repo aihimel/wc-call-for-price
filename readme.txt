@@ -74,6 +74,9 @@ Yes, I will support the plugin.
 
 == Changelog ==
 
+= 1.3.0 (29 July, 2023) =
+
+
 = 1.2.1 (25 July, 2023) =
 * Tested up-to WordPress 6.2.2
 * Tested up to PHP v7.2

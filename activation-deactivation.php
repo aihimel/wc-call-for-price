@@ -17,7 +17,7 @@ use WCPress\WCP\Constants;
 function wc_call_for_price__activate(){
 	// Creating Options
 	$prefix = 'wc_call_for_price__'; // Prefix for every options
-    add_option( Constants::WCP_ACTIVATE, 'off' );
+    add_option( Constants::WCP_ACTIVATE, Constants::OFF );
 	add_option( $prefix.'text', 'Call For Price' );
 	add_option( $prefix.'show_image', 'off' );
 	add_option( $prefix.'image', 'cfp_1' );
