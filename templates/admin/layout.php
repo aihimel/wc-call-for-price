@@ -8,6 +8,8 @@
 // Security Check
 defined( 'ABSPATH' ) || die();
 
+use WCPress\WCP\Constants;
+
 ?>
 
 <div class="wcp-admin-panel-wrapper">
@@ -15,8 +17,24 @@ defined( 'ABSPATH' ) || die();
     <div class="main">
 
         <form class='form-inline' method='POST' action=''>
+
             <fieldset>
-                <legend>Text</legend>
+                <legend><?php esc_html_e( 'Plugin Features', 'wc-call-for-price' ); ?></legend>
+                <label for="activate"><?php esc_html_e( 'Activate', 'wc-call-for-price' ); ?>: </label>
+                <input
+                        type="checkbox"
+                        name="<?php echo esc_attr( Constants::WCP_ACTIVATE ); ?>"
+                        id="activate"
+                        value="<?php echo esc_attr( Constants::ON ); ?>"
+                        <?php checked( get_option( Constants::WCP_ACTIVATE ), Constants::ON, true ) ?>
+                />
+                <p class="help-block">
+                    <?php esc_html_e( 'This checkbox will activate the plugin features. This must be on for the plugin to work.', 'wc-call-for-price' ); ?>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend><?php esc_html_e( 'Text', 'wc-call-for-price' ); ?></legend>
                 <div class="form-group">
                 <label for="wc_call_for_price__text"><?php esc_html_e( 'Text To Show :', 'wc-call-for-price' ); ?> </label>
                 <input type="text" class="form-control" id="wc_call_for_price__text" name='wc_call_for_price__text' value='<?php echo esc_attr( get_option('wc_call_for_price__text') );?>'>
@@ -25,7 +43,7 @@ defined( 'ABSPATH' ) || die();
             </fieldset>
 
             <fieldset>
-                <legend>Select Image</legend>
+                <legend><?php esc_html_e( 'Select Image', 'wc-call-for-price' ); ?></legend>
                 <div class="checkbox">
                     <label for='wc_call_for_price__show_image'><?php esc_html_e( 'Show Image :', 'wc-call-for-price' ); ?></label>
                     <input type="checkbox" <?php if(get_option('wc_call_for_price__show_image') == 'on') echo 'checked'; ?> id='wc_call_for_price__show_image' name='wc_call_for_price__show_image'>
@@ -51,7 +69,7 @@ defined( 'ABSPATH' ) || die();
             </fieldset>
 
             <fieldset>
-                <legend>Upload Image</legend>
+                <legend><?php esc_html_e( 'Upload Image', 'wc-call-for-price' ); ?></legend>
                 <div class="checkbox">
                     <label for='wc_call_for_price__show_uploaded_image'><?php esc_html_e( 'Show Uploaded Image :', 'wc-call-for-price' ); ?> </b></label>
                     <input type="checkbox" <?php if(get_option('wc_call_for_price__show_uploaded_image') == 'on') echo 'checked'; ?> id='wc_call_for_price__show_uploaded_image' name='wc_call_for_price__show_uploaded_image'>
@@ -78,7 +96,7 @@ defined( 'ABSPATH' ) || die();
                     </div>
                 </div>
             </fieldset>
-            <button type="submit" class="save-button"><?php esc_html_e( 'Save Settings', 'wc-call-for-price' ); ?></button>
+            <button type="submit" class="save-button" name='wcp-general-settings' value="wcp-general-settings"><?php esc_html_e( 'Save Settings', 'wc-call-for-price' ); ?></button>
 
         </form>
 

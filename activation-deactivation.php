@@ -5,6 +5,8 @@
  * @since 1.2.1
  */
 
+use WCPress\WCP\Constants;
+
 /**
  * Adding default option value on plugin activate
  *
@@ -15,6 +17,7 @@
 function wc_call_for_price__activate(){
 	// Creating Options
 	$prefix = 'wc_call_for_price__'; // Prefix for every options
+    add_option( Constants::WCP_ACTIVATE, 'off' );
 	add_option( $prefix.'text', 'Call For Price' );
 	add_option( $prefix.'show_image', 'off' );
 	add_option( $prefix.'image', 'cfp_1' );
@@ -32,6 +35,7 @@ function wc_call_for_price__activate(){
 function wc_call_for_price__deactivate(){
 	// Removing Options
 	$prefix = 'wc_call_for_price__';
+    delete_option( Constants::WCP_ACTIVATE );
 	delete_option($prefix.'text');
 	delete_option($prefix.'show_image');
 	delete_option($prefix.'image');

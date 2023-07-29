@@ -5,6 +5,8 @@
  * @since 1.2.0
  */
 
+use WCPress\WCP\Constants;
+
 // Security Check
 defined( 'ABSPATH' ) || die();
 
@@ -15,6 +17,18 @@ wp_enqueue_script( 'wcp-admin-script' );
 
 // Saving Form Data
 $post = $_POST;
+
+if( ! empty( $post['wcp-general-settings'] ) ) {
+    error_log( 'Button Name Activated' );
+    error_log( print_r($post, true) );
+    if( ! empty( $post[ Constants::WCP_ACTIVATE ] ) ) {
+        update_option( Constants::WCP_ACTIVATE, Constants::ON );
+    } else {
+        update_option( Constants::WCP_ACTIVATE, Constants::OFF );
+
+    }
+
+}
 
 if( ! empty( $post['wc_call_for_price__text'] ) ) {
     update_option('wc_call_for_price__text', sanitize_text_field( $post['wc_call_for_price__text'] ) );

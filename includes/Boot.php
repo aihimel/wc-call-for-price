@@ -14,7 +14,9 @@ final class Boot {
     private function __construct() {
         new AdminMenu();
         new Assets();
-        new Render();
+        if ( get_option( Constants::WCP_ACTIVATE ) == Constants::ON ) {
+            new Render();
+        }
     }
     public static function init() {
         if ( ! Boot::$self ) {
