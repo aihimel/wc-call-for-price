@@ -39,10 +39,10 @@ defined( 'ABSPATH' ) || die();
                     <?php for($i = 1; $i <= 15; $i++) {?>
 
                     <div class="radio">
-                        <label>
-                            <input type="radio" name="wc_call_for_price__image" id="wc_call_for_price__image_<?php echo $i; ?>" value="cfp_<?php echo $i; ?>" <?php if('cfp_'.$i == get_option('wc_call_for_price__image')) echo 'checked';?> >
-                                <img src='<?php echo esc_attr( plugins_url('/wc-call-for-price/assets/images/preset-buttons/cfp_'.$i.'.png') ); ?>' alt=""/>
-                        </label>
+
+                        <input type="radio" name="wc_call_for_price__image" id="wc_call_for_price__image_<?php echo $i; ?>" value="cfp_<?php echo $i; ?>" <?php if('cfp_'.$i == get_option('wc_call_for_price__image')) echo 'checked';?> >
+                        <img src='<?php echo esc_attr( plugins_url('/wc-call-for-price/assets/images/preset-buttons/cfp_'.$i.'.png') ); ?>' alt=""/>
+
                     </div>
 
                     <?php } ?>
@@ -78,7 +78,7 @@ defined( 'ABSPATH' ) || die();
                     </div>
                 </div>
             </fieldset>
-            <button type="submit" class="btn btn-primary"><?php esc_html_e( 'Save Settings', 'wc-call-for-price' ); ?></button>
+            <button type="submit" class="save-button"><?php esc_html_e( 'Save Settings', 'wc-call-for-price' ); ?></button>
 
         </form>
 

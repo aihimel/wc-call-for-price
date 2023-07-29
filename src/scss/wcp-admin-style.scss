@@ -1,8 +1,48 @@
 $headerColour: #504242;
+$lightTextColour: #737171;
 $fieldsetBorder: #462b2b3d;
 
-.wcp-admin-panel-wrapper{
+// General Form design
+.wcp-admin-panel-wrapper {
     padding: 16px;
+    form {
+        fieldset {
+            border: 1px solid $fieldsetBorder;
+            padding: 16px;
+            margin: 16px 0;
+            legend {
+                margin: 0 24px;
+                padding: 0 16px;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 600;
+                color: $lightTextColour;
+            }
+        }
+        input[type=text] {
+            border: 0;
+            border-radius: 5px;
+            width: 300px;
+            color: #464242;
+        }
+        button[type=submit] {
+            border: 0;
+            color: white;
+            background-color: #13c413;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        label {
+            font-weight: 700;
+        }
+    }
+}
+
+// Specific Design
+
+.wcp-admin-panel-wrapper {
     .header {
         h3 {
             text-align: center;
@@ -15,32 +55,32 @@ $fieldsetBorder: #462b2b3d;
         margin: 24px 0;
         padding: 24px 0;
         form {
-            fieldset {
-                border: 1px solid $fieldsetBorder;
-                padding: 16px;
-                margin: 16px 0;
-                legend {
-                    margin: 0 24px;
-                    padding: 0 16px;
-                    text-transform: uppercase;
-                    font-size: 12px;
-                    font-weight: 600;
+            #wc_call_for_price__images {
+                display: flex;
+                flex-flow: wrap;
+                .radio {
+                    margin: 8px 16px;
+                    input[type=radio] {
+                        position: relative;
+                        top: -10px;
+                    }
+                    img {
+                        width: 100px;
+                        height: 28px;
+                    }
                 }
+            }
+            .save-button {
+
             }
         }
     }
-}
-.header-blue{
-    color: #2CCBE2;
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-}
+    .footer {
+        text-align: center;
+        color: $lightTextColour;
+    }
 
-footer{
-
-    text-align: center;
-    margin: 5px;
-    padding: 5px;
-
+    .help-block {
+        color: $lightTextColour;
+    }
 }

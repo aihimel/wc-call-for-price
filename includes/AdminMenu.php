@@ -11,6 +11,7 @@ class AdminMenu {
 
     function __construct() {
         add_action( 'admin_menu', [ $this, 'admin_menu' ] );
+        add_filter( 'plugin_action_links_wc-call-for-price/wc-call-for-price.php', [ $this, 'add_plugin_page_extra_links' ] );
     }
 
     function admin_menu() {
@@ -30,6 +31,17 @@ class AdminMenu {
         } else {
             require_once(  WC_CALL_FOR_PRICE_TEMPLATE_PATH . 'templates/admin/layout.php' );
         }
+    }
+
+    function add_plugin_page_extra_links( $links ) {
+        $url = esc_url( add_query_arg(
+            'page',
+            'wc-call-for-price',
+            get_admin_url() . 'admin.php'
+        ) );
+
+        $links[] = "<a href='$url'>" . __( 'Settings', 'wc-call-for-price' ) . '</a>';
+        return $links;
     }
 
 }
