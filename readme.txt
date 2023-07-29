@@ -1,6 +1,6 @@
 === WC Call For Price ===
 Contributors: aihimel, iamasadpolash
-Tags: call for price, woocommerce, translation-ready
+Tags: call for price, woocommerce
 Requires at least: 4.2.2
 Tested up to: 6.2.2
 Requires PHP: 7.2
@@ -75,7 +75,12 @@ Yes, I will support the plugin.
 == Changelog ==
 
 = 1.3.0 (29 July, 2023) =
-
+* Code refactored
+* Plugin made translation ready
+* Admin panel design improved
+* A new settings link added in plugin list page
+* Plugin feature activation/deactivation added
+* Security issue fixes
 
 = 1.2.1 (25 July, 2023) =
 * Tested up-to WordPress 6.2.2
