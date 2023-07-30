@@ -15,6 +15,7 @@ final class Boot {
         new AdminMenu();
         new Assets();
         new Upgrader();
+        new AdminPageValidator();
         if ( get_option( Constants::WCP_ACTIVATE ) == Constants::ON ) {
             new Render();
         }

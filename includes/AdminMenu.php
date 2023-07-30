@@ -29,17 +29,12 @@ class AdminMenu {
         if( ! current_user_can('manage_options') ) {
             wp_die( __('You don\'t have permission to access this page', 'wc-call-for-price' ) );
         } else {
-            require_once(  WC_CALL_FOR_PRICE_TEMPLATE_PATH . 'templates/admin/layout.php' );
+            wcp_get_admin_template( 'layout.php' );
         }
     }
 
     function add_plugin_page_extra_links( $links ) {
-        $url = esc_url( add_query_arg(
-            'page',
-            'wc-call-for-price',
-            get_admin_url() . 'admin.php'
-        ) );
-
+        $url = wcp_slug_to_admin_menu_url();
         $links[] = "<a href='$url'>" . __( 'Settings', 'wc-call-for-price' ) . '</a>';
         return $links;
     }

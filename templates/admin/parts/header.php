@@ -51,8 +51,6 @@ if(isset($post['wc_call_for_price__show_uploaded_image']) && $post['wc_call_for_
 
 	} elseif(isset($post['wc_call_for_price__text'])) update_option('wc_call_for_price__show_uploaded_image', 'off');
 
-$upload_image_url = get_option( 'wc_call_for_price__upload_image', '' );
-
 
 ?>
 
@@ -61,5 +59,5 @@ $upload_image_url = get_option( 'wc_call_for_price__upload_image', '' );
     <h3>
         <?php esc_html_e( 'WC Call For Price', 'wc-call-for-price'); ?>
     </h3>
-
+    <?php wcp_get_admin_template( 'parts/navigation.php' ); ?>
 </div>

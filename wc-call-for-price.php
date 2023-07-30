@@ -31,6 +31,7 @@ Copyright 2015  Aftabul Islam  (email : toaihimel@gmail.com)
 defined('ABSPATH') || die();
 
 require_once( 'vendor/autoload.php' );
+require_once ( 'functions.php' );
 
 // Constants
 defined( 'WC_CALL_FOR_PRICE_VERSION' ) || define('WC_CALL_FOR_PRICE_VERSION', '1.3.0');

@@ -1,0 +1,29 @@
+<?php
+/**
+ * Validates Admin Page
+ *
+ * @since 1.3.1
+ */
+
+namespace WCPress\WCP;
+
+class AdminPageValidator {
+
+    function __construct() {
+        add_filter( 'wcp_is_admin_subpage_valid', [ $this, 'is_admin_page_valid' ] );
+    }
+
+    function is_admin_page_valid( $query_page_string ) {
+        $list_of_admin_pages = [
+            Constants::WCP_SUB_PAGE_GENERAL_SETTINGS
+        ];
+        $list_of_extended_admin_pages = apply_filters( 'wcp_list_of_admin_pages', $list_of_admin_pages );
+
+        if ( in_array( $query_page_string, $list_of_extended_admin_pages ) ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+}
