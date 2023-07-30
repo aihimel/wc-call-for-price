@@ -29,7 +29,7 @@ class AdminMenu {
         if( ! current_user_can('manage_options') ) {
             wp_die( __('You don\'t have permission to access this page', 'wc-call-for-price' ) );
         } else {
-            require_once(  WC_CALL_FOR_PRICE_TEMPLATE_PATH . 'templates/admin/layout.php' );
+            wcp_get_admin_template( 'layout.php' );
         }
     }
 
