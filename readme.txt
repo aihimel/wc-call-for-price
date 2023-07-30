@@ -1,6 +1,6 @@
 === WC Call For Price ===
 Contributors: aihimel, iamasadpolash
-Tags: call for price, woocommerce
+Tags: call for price, request a quote, name your price, price, pricing
 Requires at least: 4.2.2
 Tested up to: 6.2.2
 Requires PHP: 7.2
