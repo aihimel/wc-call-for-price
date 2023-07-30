@@ -34,12 +34,7 @@ class AdminMenu {
     }
 
     function add_plugin_page_extra_links( $links ) {
-        $url = esc_url( add_query_arg(
-            'page',
-            'wc-call-for-price',
-            get_admin_url() . 'admin.php'
-        ) );
-
+        $url = wcp_slug_to_admin_menu_url();
         $links[] = "<a href='$url'>" . __( 'Settings', 'wc-call-for-price' ) . '</a>';
         return $links;
     }
