@@ -15,7 +15,11 @@ class AdminPageValidator {
 
     function is_admin_page_valid( $query_page_string ) {
         $list_of_admin_pages = [
-            Constants::WCP_SUB_PAGE_GENERAL_SETTINGS
+            Constants::WCP_SUB_PAGE_GENERAL_SETTINGS,
+            Constants::WCP_SUB_PAGE_BUTTON_SETTINGS,
+            Constants::WCP_SUB_PAGE_RULES_SETTINGS,
+            Constants::WCP_SUB_PAGE_ACTIONS_SETTINGS,
+
         ];
         $list_of_extended_admin_pages = apply_filters( 'wcp_list_of_admin_pages', $list_of_admin_pages );
 

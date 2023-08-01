@@ -14,6 +14,8 @@ $upload_image_url = get_option( Constants::UPLOADED_IMAGE_URL, '' );
 
 ?>
 
+<h4><?php _e( 'General Settings', 'wc-call-for-price' ); ?></h4>
+
 <form class='form-inline' method='POST' action=''>
 
     <fieldset>

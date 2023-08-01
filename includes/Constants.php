@@ -22,5 +22,8 @@ class Constants {
 
     // Admin Sub Pages
     const WCP_SUB_PAGE_QUERY_STRING = 'wcp_sub_page';
-    const WCP_SUB_PAGE_GENERAL_SETTINGS = 'general_settings';
+    const WCP_SUB_PAGE_GENERAL_SETTINGS = 'general_settings'; // General
+    const WCP_SUB_PAGE_BUTTON_SETTINGS = 'button_settings'; // General
+    const WCP_SUB_PAGE_RULES_SETTINGS = 'rules_settings'; // General
+    const WCP_SUB_PAGE_ACTIONS_SETTINGS = 'action_settings'; // General
 }

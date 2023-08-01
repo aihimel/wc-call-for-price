@@ -76,6 +76,11 @@ $lightBorder: #beb8b8;
     .main {
         margin: 24px 0;
         padding: 24px 0;
+        h4 {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+        }
         form {
             #wc_call_for_price__images {
                 display: flex;
