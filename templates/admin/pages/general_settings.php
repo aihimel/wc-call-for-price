@@ -96,6 +96,13 @@ $upload_image_url = get_option( Constants::UPLOADED_IMAGE_URL, '' );
             </div>
         </div>
     </fieldset>
-    <button type="submit" class="save-button" name='wcp-general-settings' value="wcp-general-settings"><?php esc_html_e( 'Save Settings', 'wc-call-for-price' ); ?></button>
+    <button
+            type="submit"
+            class="save-button"
+            name="<?php echo esc_attr( wcp_get_admin_sub_page_slug() ); ?>"
+            value="<?php echo esc_attr( Constants::WCP_SUB_PAGE_GENERAL_SETTINGS ); ?>"
+    >
+        <?php esc_html_e( 'Save Settings', 'wc-call-for-price' ); ?>
+    </button>
 
 </form>
