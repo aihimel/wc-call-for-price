@@ -11,7 +11,6 @@ class Constants {
 
     // Options
     const WCP_RECENTLY_UPDATED = 'wcp_recently_updated';
-    const WCP_ACTIVATE = 'wcp_activate';
     const SHOW_UPLOADED_IMAGE = 'wc_call_for_price__show_uploaded_image';
     const UPLOADED_IMAGE_URL = 'wc_call_for_price__upload_image';
     const SHOW_PRESET_IMAGE = 'wc_call_for_price__show_image';
@@ -19,6 +18,16 @@ class Constants {
     const TEXT = 'wc_call_for_price__text';
     const OFF = 'off';
     const ON = 'on';
+
+    // General Settings
+    const WCP_ACTIVATE = 'wcp_activate';
+    const ONLY_EMPTY_PRICE = 'wcp_only_empty_price';
+    const SHOW_ON_ALL_PRODUCTS = 'wcp_show_on_all_products';
+
+    // Button Settings
+    const BUTTON_HEIGHT = 'wcp_button_height';
+    const BUTTON_WIDTH = 'wcp_button_width';
+    const BUTTON_ALT_TEXT = 'wcp_button_alt_text';
 
     // Admin Sub Pages
     const WCP_SUB_PAGE_QUERY_STRING = 'wcp_sub_page';

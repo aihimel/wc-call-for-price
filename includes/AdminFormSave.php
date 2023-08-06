@@ -7,6 +7,8 @@
 
 namespace WCPress\WCP;
 
+use Automattic\WooCommerce\Internal\DependencyManagement\ContainerException;
+
 class AdminFormSave {
 
     function __construct() {
@@ -15,6 +17,7 @@ class AdminFormSave {
 
         // Form Processing
         add_action( "wcp_process_admin_form_" . Constants::WCP_SUB_PAGE_GENERAL_SETTINGS, [ $this, 'save_general_settings' ] );
+        add_action( "wcp_process_admin_form_" . Constants::WCP_SUB_PAGE_BUTTON_SETTINGS, [ $this, 'save_button_settings' ] );
 
     }
 
@@ -29,17 +32,49 @@ class AdminFormSave {
     }
 
     function save_general_settings( $form_slug ) {
-
         $this->update_checkbox( Constants::WCP_ACTIVATE );
+        $this->update_checkbox( Constants::ONLY_EMPTY_PRICE );
+        $this->update_checkbox( Constants::SHOW_ON_ALL_PRODUCTS );
 
+        $this->update_text( Constants::TEXT );
+    }
+
+    function save_button_settings( $form_slug ) {
         $this->update_checkbox( Constants::SHOW_PRESET_IMAGE );
-
         $this->update_checkbox( Constants::SHOW_UPLOADED_IMAGE );
 
+        $this->update_filename( Constants::PRESET_IMAGE_NAME );
+        $this->update_url( Constants::UPLOADED_IMAGE_URL );
+
+        $this->update_number( Constants::BUTTON_HEIGHT );
+        $this->update_number( Constants::BUTTON_WIDTH );
+
+        $this->update_text( Constants::BUTTON_ALT_TEXT );
     }
 
     protected function update_checkbox( $input_name ) {
         $value = ! empty( $_POST[ $input_name ] ) ? Constants::ON: Constants::OFF;
+        update_option( $input_name, $value );
+    }
+
+    protected function update_text( $input_name ) {
+        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): '';
+        update_option( $input_name, $value );
+    }
+
+    protected function update_filename( $input_name ) {
+        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_file_name( $_POST[ $input_name ] ): '';
+        update_option( $input_name, $value );
+    }
+
+    protected function update_url( $input_name ) {
+        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_url( $_POST[ $input_name ] ): '';
+        update_option( $input_name, $value );
+    }
+
+    protected function update_number( $input_name ) {
+        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): '';
+        $value = absint( $value );
         update_option( $input_name, $value );
     }
 
