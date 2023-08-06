@@ -88,7 +88,7 @@ $button_alt_text = get_option( Constants::BUTTON_ALT_TEXT );
                 value="<?php echo esc_attr( $button_height ); ?>"
                 name="<?php echo esc_attr( Constants::BUTTON_HEIGHT ); ?>"
             />
-            <p class="help-block">Button height in pixel</p>
+            <p class="help-block"><?php esc_html_e( 'Button height in pixel', 'wc-call-for-price' ); ?></p>
         </div>
         <div>
             <label for="wcp-button-width">
@@ -100,7 +100,9 @@ $button_alt_text = get_option( Constants::BUTTON_ALT_TEXT );
                 value="<?php echo esc_attr( $button_width ); ?>"
                 name="<?php echo esc_attr( Constants::BUTTON_WIDTH ); ?>"
             />
-            <p class="help-block">Button width in pixel</p>
+            <p class="help-block">
+                <?php esc_html_e( 'Button width in pixel', 'wc-call-for-price' ); ?>
+            </p>
         </div>
         <div>
             <label for="wcp-button-alt-text">
@@ -112,7 +114,7 @@ $button_alt_text = get_option( Constants::BUTTON_ALT_TEXT );
                 value="<?php echo esc_attr( $button_alt_text ); ?>"
                 name="<?php echo esc_attr( Constants::BUTTON_ALT_TEXT ); ?>"
             />
-            <p class="help-block">Button alt attribute text</p>
+            <p class="help-block"><?php esc_html_e('Button alt attribute text', 'wc-call-for-price'); ?></p>
         </div>
     </fieldset>
 

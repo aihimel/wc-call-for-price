@@ -18,7 +18,7 @@ class AdminFormSave {
         // Form Processing
         add_action( "wcp_process_admin_form_" . Constants::WCP_SUB_PAGE_GENERAL_SETTINGS, [ $this, 'save_general_settings' ] );
         add_action( "wcp_process_admin_form_" . Constants::WCP_SUB_PAGE_BUTTON_SETTINGS, [ $this, 'save_button_settings' ] );
-
+        add_action( "wcp_process_admin_form_" . Constants::WCP_SUB_PAGE_RULES_SETTINGS, [ $this, 'save_rule_settings' ] );
     }
 
     function process_post_request( $admin_sub_page_slug ) {
@@ -50,6 +50,16 @@ class AdminFormSave {
         $this->update_number( Constants::BUTTON_WIDTH );
 
         $this->update_text( Constants::BUTTON_ALT_TEXT );
+    }
+
+    function save_rule_settings( $form_slug ) {
+
+        error_log(__FUNCTION__);
+        error_log(print_r($_POST, true));
+        $this->update_checkbox( Constants::OUT_OF_STOCK );
+        $this->update_checkbox( Constants::MINIMUM_STOCK_THRESHOLD );
+
+        $this->update_number( Constants::BELOW_STOCK_AMOUNT );
     }
 
     protected function update_checkbox( $input_name ) {

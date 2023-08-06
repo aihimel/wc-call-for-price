@@ -29,6 +29,11 @@ class Constants {
     const BUTTON_WIDTH = 'wcp_button_width';
     const BUTTON_ALT_TEXT = 'wcp_button_alt_text';
 
+    // Rules Settings
+    const OUT_OF_STOCK = 'wcp_out_of_stock';
+    const MINIMUM_STOCK_THRESHOLD = 'wcp_minimum_stock_threshold';
+    const BELOW_STOCK_AMOUNT = 'wcp_below_stock_amount';
+
     // Admin Sub Pages
     const WCP_SUB_PAGE_QUERY_STRING = 'wcp_sub_page';
     const WCP_SUB_PAGE_GENERAL_SETTINGS = 'general_settings'; // General
