@@ -106,7 +106,7 @@ $button_alt_text = get_option( Constants::BUTTON_ALT_TEXT );
         </div>
         <div>
             <label for="wcp-button-alt-text">
-                <?php esc_html_e( 'Button Alt Text' ); ?>:
+                <?php esc_html_e( 'Button Title Text' ); ?>:
             </label>
             <input
                 type="text"

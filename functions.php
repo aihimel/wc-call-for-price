@@ -66,3 +66,26 @@ function wcp_get_admin_sub_page_slug() {
     ? sanitize_text_field( $_GET[ Constants::WCP_SUB_PAGE_QUERY_STRING ] )
     : Constants::WCP_SUB_PAGE_GENERAL_SETTINGS;
 }
+
+/**
+ * Return if a checkbox is on
+ * @since 1.3.1
+ *
+ * @param $option_name
+ *
+ * @return bool
+ */
+function wcp_is_on( $option_name ) {
+    return get_option( $option_name, Constants::OFF ) == Constants::ON;
+}
+
+/**
+ * Checks if the option is not empty
+ *
+ * @since 1.3.1
+ * @param $option_name
+ * @return bool
+ */
+function wcp_not_empty( $option_name ) {
+    return ! empty( get_option( $option_name ) );
+}

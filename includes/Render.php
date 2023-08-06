@@ -17,9 +17,10 @@ class Render {
 
     protected function hooks() {
         if( get_option( Constants::ONLY_EMPTY_PRICE, Constants::OFF ) == Constants::ON ) {
-            add_filter( 'woocommerce_empty_price_html', [ $this, 'empty_price_replacement' ] );
+            add_filter( 'woocommerce_empty_price_html', [ $this, 'button_html' ] );
         } elseif ( get_option( Constants::SHOW_ON_ALL_PRODUCTS, Constants::OFF ) == Constants::ON ) {
-            add_filter( 'woocommerce_get_price_html', [ $this, 'show_on_all_products' ] );
+            add_filter( 'woocommerce_is_purchasable', '__return_false' );
+            add_filter( 'woocommerce_get_price_html', [ $this, 'button_html' ], 11 );
         }
     }
 
@@ -40,27 +41,29 @@ class Render {
      * @return string
      */
     public function empty_price_replacement ( $price ) {
-        $show_uploaded_image = get_option( Constants::SHOW_UPLOADED_IMAGE , Constants::OFF);
-        $upload_image_url = get_option( Constants::UPLOADED_IMAGE_URL, '' );
-        $show_preset_image = get_option( Constants::SHOW_PRESET_IMAGE, '' );
-        $preset_image_name = get_option( Constants::PRESET_IMAGE_NAME, '' );
-        $text = get_option( Constants::TEXT );
+        return $this->button_html();
+    }
 
-        if( $show_uploaded_image == Constants::ON ) {
-            return '<img src="' . esc_attr( $upload_image_url ) . '" />';
-        } else if( $show_preset_image == Constants::ON ) {
-            return '<img src="' . esc_attr( plugins_url('/wc-call-for-price/assets/images/preset-buttons/' . $preset_image_name ) ) . '.png" />';
-        } else {
-            if( ! empty( $text ) ) {
-                return esc_attr( $text );
-            }
+    /**
+     * @return string
+     */
+    public function button_html() {
+        $height = get_option( Constants::BUTTON_HEIGHT );
+        $width = get_option( Constants::BUTTON_WIDTH );
+        $title = get_option( Constants::BUTTON_ALT_TEXT );
+
+        if( wcp_is_on( Constants::SHOW_UPLOADED_IMAGE ) ) {
+            $uploaded_image_url = esc_attr( get_option( Constants::UPLOADED_IMAGE_URL ) );
+            return "<button class='wcp-call-for-price-button' title='{$title}' style='width:{$width}px;height:{$height}px;cursor:pointer;background-image:url({$uploaded_image_url});background-repeat:no-repeat;background-size:contain;background-color:transparent;'></button>";
+        } elseif( wcp_is_on( Constants::SHOW_PRESET_IMAGE ) ) {
+            $preset_image_url = esc_attr( plugins_url( '/wc-call-for-price/assets/images/preset-buttons/'. get_option( Constants::PRESET_IMAGE_NAME ) . '.png' ) );
+            return "<button class='wcp-call-for-price-button' title='{$title}' style='width:{$width}px;height:{$height}px;cursor:pointer;background-image:url({$preset_image_url});background-repeat:no-repeat;background-size:contain;background-color:transparent;'></button>";
+        } elseif( wcp_not_empty( Constants::TEXT ) ) {
+            $text = get_option( Constants::TEXT );
+            return "<button class='wcp-call-for-price-button'>{$text}</button>";
         }
 
-        return __('Call For Price', 'wc-call-for-price' );
+        $text = __( 'Call For Price', 'wc-call-for-price' );
+        return "<button class='wcp-call-for-price-button' style='background-color:transparent'>{$text}</button>";
     }
-
-    public function button_html() {
-        // Button rules
-    }
-
 }
