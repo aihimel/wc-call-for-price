@@ -12,7 +12,27 @@ use const Grpc\CALL_ERROR_NOT_ON_SERVER;
 class Render {
 
     function __construct() {
-        add_filter( 'woocommerce_empty_price_html', [ $this, 'empty_price_replacement' ] );
+        $this->hooks();
+    }
+
+    protected function hooks() {
+        if( get_option( Constants::ONLY_EMPTY_PRICE, Constants::OFF ) == Constants::ON ) {
+            add_filter( 'woocommerce_empty_price_html', [ $this, 'empty_price_replacement' ] );
+        } elseif ( get_option( Constants::SHOW_ON_ALL_PRODUCTS, Constants::OFF ) == Constants::ON ) {
+            add_filter( 'woocommerce_get_price_html', [ $this, 'show_on_all_products' ] );
+        }
+    }
+
+    /**
+     * Show call for price on all product
+     *
+     * @since 1.3.1
+     *
+     * @param $price
+     * @return string
+     */
+    public function show_on_all_products( $price ) {
+        return $this->empty_price_replacement( $price );
     }
 
     /**
@@ -37,6 +57,10 @@ class Render {
         }
 
         return __('Call For Price', 'wc-call-for-price' );
+    }
+
+    public function button_html() {
+        // Button rules
     }
 
 }
