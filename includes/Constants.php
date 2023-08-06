@@ -34,6 +34,11 @@ class Constants {
     const MINIMUM_STOCK_THRESHOLD = 'wcp_minimum_stock_threshold';
     const BELOW_STOCK_AMOUNT = 'wcp_below_stock_amount';
 
+    // Action Settings
+    const REDIRECT_TO = 'wcp_redirect_to';
+    const REDIRECT_LINK = 'wcp_redirect_link';
+    const OPEN_NEW_PAGE = 'wcp_open_new_page';
+
     // Admin Sub Pages
     const WCP_SUB_PAGE_QUERY_STRING = 'wcp_sub_page';
     const WCP_SUB_PAGE_GENERAL_SETTINGS = 'general_settings'; // General
