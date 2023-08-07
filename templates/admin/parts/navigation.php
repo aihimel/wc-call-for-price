@@ -12,13 +12,21 @@ defined( 'ABSPATH' ) || die();
 
 $admin_main_nav = apply_filters( 'wcp_admin_main_nav', [
     [
-        'title' => __( 'General Settings', 'wc-call-for-price' ),
-        'slug' => 'general_settings'
+        'title' => __( 'General', 'wc-call-for-price' ),
+        'slug' => Constants::WCP_SUB_PAGE_GENERAL_SETTINGS
     ],
     [
-        'title' => __('Stock Settings', 'wc-call-for-price' ),
-        'slug' => 'stock-settings'
-    ]
+        'title' => __('Button', 'wc-call-for-price' ),
+        'slug' => Constants::WCP_SUB_PAGE_BUTTON_SETTINGS
+    ],
+    [
+        'title' => __('Rules', 'wc-call-for-price' ),
+        'slug' => Constants::WCP_SUB_PAGE_RULES_SETTINGS
+    ],
+    [
+        'title' => __('Actions', 'wc-call-for-price' ),
+        'slug' => Constants::WCP_SUB_PAGE_ACTIONS_SETTINGS
+    ],
 ] );
 
 ?>
@@ -28,7 +36,7 @@ $admin_main_nav = apply_filters( 'wcp_admin_main_nav', [
         <?php foreach( $admin_main_nav as $single_nav ): ?>
         <li>
             <a
-                class="<?php echo checked($_GET[ Constants::WCP_SUB_PAGE_QUERY_STRING ], $single_nav['slug'], false) ? 'active' : ''?>"
+                class="<?php echo checked( wcp_get_admin_sub_page_slug(), $single_nav['slug'], false) ? 'active' : ''?>"
                 href="<?php echo wcp_slug_to_admin_menu_url( $single_nav['slug'] ); ?>"
             >
                 <?php echo esc_html( $single_nav['title'] ); ?>

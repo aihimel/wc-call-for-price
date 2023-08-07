@@ -62,6 +62,35 @@ $(document).ready(() => {
         });
     });
 
+    // General Settings
+    let only_on_empty_price = $('#wcp-only-empty-price');
+    let show_on_all_products = $('#wcp-show-on-all-products');
+
+    if( only_on_empty_price.is(":checked") ) {
+        show_on_all_products.prop("checked", false)
+    } else if ( show_on_all_products.is(":checked") ) {
+        only_on_empty_price.prop("checked", false);
+    }
+
+    only_on_empty_price.on("change", () => { show_on_all_products.prop( "checked", false ) })
+
+
+    $('.wcp-rquery').rQuery({})
 });
 
+
+    /**
+     * A New jQuery Plugin to accommodate UI effects
+     * @param options
+     */
+    $.fn.rQuery = function( options = {} ) {
+    this.each(function(){
+        $(this).on('change', function() {
+            if($(this).is(':checked')) {
+                let should_uncheck = $(this).data('uncheck');
+                $(should_uncheck).prop('checked', false);
+            }
+        })
+    });
+}
 })(jQuery)

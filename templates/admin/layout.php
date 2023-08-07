@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || die();
 
 use WCPress\WCP\Constants;
 
-$wcp_sub_page = sanitize_text_field( $_GET[ Constants::WCP_SUB_PAGE_QUERY_STRING ] );
+$wcp_sub_page = wcp_get_admin_sub_page_slug();
 
 $wcp_is_page_valid = apply_filters( 'wcp_is_admin_subpage_valid', $wcp_sub_page );
 

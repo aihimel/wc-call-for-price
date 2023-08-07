@@ -16,6 +16,7 @@ final class Boot {
         new Assets();
         new Upgrader();
         new AdminPageValidator();
+        new AdminFormSave();
         if ( get_option( Constants::WCP_ACTIVATE ) == Constants::ON ) {
             new Render();
         }
