@@ -6,8 +6,7 @@
  */
 
 namespace WCPress\WCP;
-
-use const Grpc\CALL_ERROR_NOT_ON_SERVER;
+use WC_Product;
 
 class Render {
 
@@ -21,24 +20,49 @@ class Render {
         } elseif ( wcp_is_on( Constants::SHOW_ON_ALL_PRODUCTS ) ) {
             add_filter( 'woocommerce_is_purchasable', '__return_false' );
             add_filter( 'woocommerce_get_price_html', [ $this, 'button_html' ], 11, 2 );
-        } elseif ( wcp_is_on( Constants::OUT_OF_STOCK ) ) {
-            add_filter( 'woocommerce_get_price_html', [ $this, 'button_html' ], 11, 2 );
+        }
+
+        if ( wcp_is_on( Constants::OUT_OF_STOCK ) ) {
+            add_filter( 'woocommerce_get_price_html', [ $this, 'out_of_stock' ], 10, 2 );
+        }
+
+        if ( wcp_is_on( Constants::MINIMUM_STOCK_THRESHOLD ) ) {
+            add_filter( 'woocommerce_get_price_html', [ $this, 'woocommerce_low_on_stock' ], 10, 2 );
         }
     }
 
+    /**
+     * Handles
+     * @param int|string $price
+     * @param WC_Product $product
+     * @return string
+     */
+    public function out_of_stock( $price, $product ) {
+        if ( ! ( $product->get_stock_status() == Constants::OUT0FSTOCK ) ) {
+            return $price;
+        } else {
+            return $this->button_html($price, $product);
+        }
+    }
+
+    public function woocommerce_low_on_stock( $price, $product ) {
+        $low_stock_amount = get_option( 'woocommerce_notify_low_stock_amount' );
+        $custom_low_stock_amount = get_option( Constants::BELOW_STOCK_AMOUNT, 0 );
+        $stock_limit = ! empty( $custom_low_stock_amount ) ? $custom_low_stock_amount : $low_stock_amount;
+        if ( $product->managing_stock() && $stock_limit >= $product->get_stock_quantity() ) {
+            return$this->button_html($price, $product);
+        }
+        return $price;
+    }
 
     /**
+     * @param string|int $price
+     * @param WC_Product $product
      * @return string
      */
     public function button_html( $price, $product ) {
 
         if ( is_admin() ) {
-            return $price;
-        }
-
-        // Checking product stock status
-        if ( ! ( $product->get_stock_status() == Constants::OUT0FSTOCK ) ) {
-            error_log( 'Does not match outofstock' );
             return $price;
         }
 
