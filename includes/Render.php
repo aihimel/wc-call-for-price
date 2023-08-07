@@ -24,30 +24,16 @@ class Render {
         }
     }
 
-    /**
-     * Show call for price on all product
-     *
-     * @since 1.3.1
-     *
-     * @param $price
-     * @return string
-     */
-    public function show_on_all_products( $price ) {
-        return $this->empty_price_replacement( $price );
-    }
-
-    /**
-     * @param $price
-     * @return string
-     */
-    public function empty_price_replacement ( $price ) {
-        return $this->button_html();
-    }
 
     /**
      * @return string
      */
-    public function button_html() {
+    public function button_html( $price ) {
+
+        if ( is_admin() ) {
+            return $price;
+        }
+
         $height = get_option( Constants::BUTTON_HEIGHT );
         $width = get_option( Constants::BUTTON_WIDTH );
         $title = get_option( Constants::BUTTON_ALT_TEXT );
