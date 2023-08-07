@@ -10,10 +10,22 @@ use WC_Product;
 
 class Render {
 
+    /**
+     * Initilizes the object
+     *
+     * @since 1.3.1
+     */
     function __construct() {
         $this->hooks();
     }
 
+    /**
+     * Declares all the hooks
+     *
+     * @since 1.3.1
+     *
+     * @return void
+     */
     protected function hooks() {
         if( get_option( Constants::ONLY_EMPTY_PRICE, Constants::OFF ) == Constants::ON ) {
             add_filter( 'woocommerce_empty_price_html', [ $this, 'button_html' ], 10, 2 );
@@ -32,9 +44,13 @@ class Render {
     }
 
     /**
-     * Handles
+     * Handles out of stock product
+     *
+     * @since 1.3.1
+     *
      * @param int|string $price
      * @param WC_Product $product
+     *
      * @return string
      */
     public function out_of_stock( $price, $product ) {
@@ -45,6 +61,16 @@ class Render {
         }
     }
 
+    /**
+     * Handles low on stock product
+     *
+     * @since 1.3.1
+     *
+     * @param int|string $price
+     * @param WC_Product $product
+     *
+     * @return string
+     */
     public function woocommerce_low_on_stock( $price, $product ) {
         $low_stock_amount = get_option( 'woocommerce_notify_low_stock_amount' );
         $custom_low_stock_amount = get_option( Constants::BELOW_STOCK_AMOUNT, 0 );
@@ -56,8 +82,13 @@ class Render {
     }
 
     /**
+     * Renders button html on button settings configuration
+     *
+     * @since 1.3.1
+     *
      * @param string|int $price
      * @param WC_Product $product
+     *
      * @return string
      */
     public function button_html( $price, $product ) {

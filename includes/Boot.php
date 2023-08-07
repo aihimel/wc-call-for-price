@@ -9,8 +9,13 @@ namespace WCPress\WCP;
 
 final class Boot {
 
-    static $self = false;
+    static $self;
 
+    /**
+     * Initializes the plugin
+     *
+     * @since 1.3.1
+     */
     private function __construct() {
         new AdminMenu();
         new Assets();
@@ -21,6 +26,14 @@ final class Boot {
             new Render();
         }
     }
+
+    /**
+     * Returns only the single instance of the main plugin class
+     *
+     * @since 1.3.1
+     *
+     * @return Boot
+     */
     public static function init() {
         if ( ! Boot::$self ) {
             Boot::$self = new Boot();

@@ -12,7 +12,7 @@ use WCPress\WCP\Constants;
  *
  * @since 1.3.1
  *
- * @param $relative_path
+ * @param string $relative_path
  *
  * @return void
  */
@@ -32,9 +32,9 @@ function wcp_get_admin_template( $relative_path ) {
  *
  * @since 1.3.1
  *
- * @param $slug
+ * @param string $slug
  *
- * @return mixed|null
+ * @return string
  */
 function wcp_slug_to_admin_menu_url( $slug = Constants::WCP_SUB_PAGE_GENERAL_SETTINGS ) {
     $admin_main_url = add_query_arg(
@@ -69,6 +69,7 @@ function wcp_get_admin_sub_page_slug() {
 
 /**
  * Return if a checkbox is on
+ *
  * @since 1.3.1
  *
  * @param $option_name
