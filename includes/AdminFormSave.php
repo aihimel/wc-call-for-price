@@ -34,9 +34,16 @@ class AdminFormSave {
     function process_post_request( $admin_sub_page_slug ) {
 
         if ( ! empty( $_POST[ $admin_sub_page_slug ] ) ) {
-            // Check nonce
-            // Call variable actions
-            do_action( "wcp_process_admin_form_{$admin_sub_page_slug}", $admin_sub_page_slug );
+            if(
+                isset( $_POST[ Constants::NONCE_FIELD_NAME ] )
+                && wp_verify_nonce( $_POST[ Constants::NONCE_FIELD_NAME ], Constants::ADMIN_FORM_NONCE_ACTION )
+                && current_user_can( 'manage_options' )
+        ) {
+                do_action( "wcp_process_admin_form_{$admin_sub_page_slug}", $admin_sub_page_slug );
+                // @TODO Post a success message that the data is saved properly
+            } else {
+                // @TODO Post an unsuccessful message
+            }
 
         }
     }
