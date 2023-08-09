@@ -2,7 +2,7 @@
 /**
  * Saves admin form
  *
- * @since 1.3.1
+ * @since 1.4.0
  */
 
 namespace WCPress\WCP;
@@ -25,7 +25,7 @@ class AdminFormSave {
     /**
      * Process admin settings post request
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $admin_sub_page_slug
      *
@@ -51,7 +51,7 @@ class AdminFormSave {
     /**
      * Saves General Settings page's form
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $form_slug
      *
@@ -69,7 +69,7 @@ class AdminFormSave {
     /**
      * Saves Button Settings from admin dashboard
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $form_slug
      *
@@ -91,7 +91,7 @@ class AdminFormSave {
     /**
      * Saves Rule Settings admin dashboard settings
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $form_slug
      *
@@ -107,7 +107,7 @@ class AdminFormSave {
     /**
      * Saves Action Settings Admin Dashboard form
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $form_slug
      *
@@ -123,7 +123,7 @@ class AdminFormSave {
     /**
      * Updates checkbox options using default on/off
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $input_name
      *
@@ -137,7 +137,7 @@ class AdminFormSave {
     /**
      * Updated text from with sanitization
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $input_name
      *
@@ -151,7 +151,7 @@ class AdminFormSave {
     /**
      * Updates filename options
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $input_name
      *
@@ -165,7 +165,7 @@ class AdminFormSave {
     /**
      * Update URL options
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $input_name
      *
@@ -179,7 +179,7 @@ class AdminFormSave {
     /**
      * Updates number options
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $input_name
      *

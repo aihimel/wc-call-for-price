@@ -2,7 +2,7 @@
 /**
  * Manages activities after upgrade
  *
- * @since WCP_SINCE
+ * @since 1.4.0
  */
 
 namespace WCPress\WCP;

@@ -10,9 +10,9 @@ namespace WCPress\WCP;
 class AdminMenu {
 
     /**
-     * Initializes the boject
+     * Initializes the object
      *
-     * @since 1.3.1
+     * @since 1.4.0
      */
     function __construct() {
         add_action( 'admin_menu', [ $this, 'admin_menu' ] );
@@ -22,7 +22,7 @@ class AdminMenu {
     /**
      * Hooks admin menu
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class AdminMenu {
     /**
      * Renders admin menu
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class AdminMenu {
     /**
      * Adds extra settings link on plugin link page
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $links
      * @return string

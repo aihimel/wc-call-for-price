@@ -2,7 +2,7 @@
 /**
  * Loading Admin assets and frontend assets
  *
- * @since @1.2.1
+ * @since 1.2.1
  */
 
 namespace WCPress\WCP;
@@ -12,7 +12,7 @@ class Assets {
     /**
      * Initializes the object
      *
-     * @since 1.3.1
+     * @since 1.4.0
      */
     function __construct() {
 
@@ -24,7 +24,7 @@ class Assets {
     /**
      * Hooks admin assets
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @return void
      */

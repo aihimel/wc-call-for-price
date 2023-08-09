@@ -2,7 +2,7 @@
 /**
  * Useful functions to use throughout the plugin
  *
- * @since 1.3.1
+ * @since 1.4.0
  */
 
 use WCPress\WCP\Constants;
@@ -10,7 +10,7 @@ use WCPress\WCP\Constants;
 /**
  * Gets admin template from plugins templates directory
  *
- * @since 1.3.1
+ * @since 1.4.0
  *
  * @param string $relative_path
  *
@@ -30,7 +30,7 @@ function wcp_get_admin_template( $relative_path ) {
 /**
  * Generates admin submenu pages url
  *
- * @since 1.3.1
+ * @since 1.4.0
  *
  * @param string $slug
  *
@@ -57,7 +57,7 @@ function wcp_slug_to_admin_menu_url( $slug = Constants::WCP_SUB_PAGE_GENERAL_SET
 /**
  * Return admin menu sub page slug
  *
- * @since 1.3.1
+ * @since 1.4.0
  *
  * @return string
  */
@@ -70,7 +70,7 @@ function wcp_get_admin_sub_page_slug() {
 /**
  * Return if a checkbox is on
  *
- * @since 1.3.1
+ * @since 1.4.0
  *
  * @param $option_name
  *
@@ -83,7 +83,7 @@ function wcp_is_on( $option_name ) {
 /**
  * Checks if the option is not empty
  *
- * @since 1.3.1
+ * @since 1.4.0
  * @param $option_name
  * @return bool
  */

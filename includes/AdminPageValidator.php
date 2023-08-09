@@ -2,7 +2,7 @@
 /**
  * Validates Admin Page
  *
- * @since 1.3.1
+ * @since 1.4.0
  */
 
 namespace WCPress\WCP;
@@ -12,7 +12,7 @@ class AdminPageValidator {
     /**
      * Initializes the object
      *
-     * @since 1.3.1
+     * @since 1.4.0
      */
     function __construct() {
         add_filter( 'wcp_is_admin_subpage_valid', [ $this, 'is_admin_page_valid' ] );
@@ -21,7 +21,7 @@ class AdminPageValidator {
     /**
      * Check validity for admin page
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string $query_page_string
      *

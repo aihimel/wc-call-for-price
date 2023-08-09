@@ -2,7 +2,7 @@
 /**
  * Admin menu navigation
  *
- * @since 1.3.1
+ * @since 1.4.0
  */
 
 use WCPress\WCP\Constants;

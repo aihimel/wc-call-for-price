@@ -2,20 +2,20 @@
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WC Call For Price 1.2.1\n"
+"Project-Id-Version: WC Call For Price 1.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-call-for-price\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-07-27T06:53:19+00:00\n"
+"POT-Creation-Date: 2023-08-09T16:13:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: wc-call-for-price\n"
 
 #. Plugin Name of the plugin
-#: templates/admin/parts/header.php:40
+#: templates/admin/parts/header.php:25
 msgid "WC Call For Price"
 msgstr ""
 
@@ -35,58 +35,213 @@ msgstr ""
 msgid "https://profiles.wordpress.org/aihimel"
 msgstr ""
 
-#: templates/admin/layout.php:20
-msgid "Text To Show :"
-msgstr ""
-
-#: templates/admin/layout.php:22
-msgid "Write here what you want to see on front end. Plain text or HTML."
-msgstr ""
-
-#: templates/admin/layout.php:29
-msgid "Show Image :"
-msgstr ""
-
-#: templates/admin/layout.php:32
-msgid "Check this box if you want to select an image form some specific list of \"Call for price\" images."
-msgstr ""
-
-#: templates/admin/layout.php:48
-msgid "Check any one form here."
-msgstr ""
-
-#: templates/admin/layout.php:55
-msgid "Show Uploaded Image :"
-msgstr ""
-
-#: templates/admin/layout.php:57
-msgid "Check this box if you want to show your uploaded image."
-msgstr ""
-
-#: templates/admin/layout.php:70
-msgid "Upload Your Image"
-msgstr ""
-
-#: templates/admin/layout.php:80
-msgid "If you want to upload your custom image, upload here."
-msgstr ""
-
-#: templates/admin/layout.php:87
-msgid "Save Settings"
-msgstr ""
-
-#: templates/admin/parts/footer.php:15
-msgid "Don't forget to leave us a %s review %s. If you find anything difficult, just ask %s here %s"
-msgstr ""
-
-#: wc-call-for-price.php:115
+#: includes/AdminMenu.php:32
 msgid "WooCommerce Call For Price"
 msgstr ""
 
-#: wc-call-for-price.php:116
+#: includes/AdminMenu.php:33
+#: includes/Render.php:104
+#: includes/Render.php:118
 msgid "Call For Price"
 msgstr ""
 
-#: wc-call-for-price.php:135
+#: includes/AdminMenu.php:49
 msgid "You don't have permission to access this page"
+msgstr ""
+
+#: includes/AdminMenu.php:65
+msgid "Settings"
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:16
+msgid "Actions Settings"
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:21
+msgid "Redirect "
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:24
+msgid "Redirect To"
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:38
+msgid "Redirect to a new page."
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:43
+msgid "Open in a new page"
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:54
+msgid "Opens a new tab."
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:60
+msgid "Link"
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:69
+msgid "Redirect to the above link"
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:81
+#: templates/admin/pages/button_settings.php:127
+#: templates/admin/pages/general_settings.php:79
+#: templates/admin/pages/rules_settings.php:75
+msgid "Save Settings"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:20
+msgid "Button Settings"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:25
+msgid "Select Image"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:27
+msgid "Show Image :"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:30
+msgid "Check this box if you want to select an image form some specific list of \"Call for price\" images."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:46
+msgid "Check any one form here."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:51
+msgid "Upload Image"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:53
+msgid "Show Uploaded Image :"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:55
+msgid "Check this box if you want to show your uploaded image."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:64
+msgid "Upload Your Image"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:74
+msgid "If you want to upload your custom image, upload here."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:80
+msgid "Button Attributes"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:91
+msgid "Button height in pixel"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:104
+msgid "Button width in pixel"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:117
+msgid "Button alt attribute text"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:15
+msgid "General Settings"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:20
+msgid "Plugin Features"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:21
+msgid "Activate"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:30
+msgid "This checkbox will activate the plugin features. This must be on for the plugin to work."
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:35
+msgid "Display Settings"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:36
+msgid "Only Empty Price"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:47
+msgid "If checked, this will show call for price only on empty price products."
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:49
+msgid "Show On All Products"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:60
+msgid "If checked, this will show call for price on all products."
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:65
+msgid "Text"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:67
+msgid "Text To Show :"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:69
+msgid "Write here what you want to see on front end. Plain text or HTML."
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:16
+msgid "Rules Settings"
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:21
+msgid "Stock "
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:24
+msgid "Out of stocks"
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:34
+msgid "If checked, all the out of products will show call for price."
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:39
+#: templates/admin/pages/rules_settings.php:55
+msgid "Minimum Threshold"
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:49
+msgid "If checked, all the products with minimum threshold will show."
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:64
+msgid "Minimum stock quantity to show call for price."
+msgstr ""
+
+#. translators 1: It is start of a href tag, no need to translate 2. End of href tag, no need to translate 3. It is start of a href tag, no need to translate 4. End of href tag, no need to translate
+#: templates/admin/parts/footer.php:16
+msgid "Don't forget to leave us a %1$s review %2$s. If you find anything difficult, just ask %3$s here %4$s"
+msgstr ""
+
+#: templates/admin/parts/navigation.php:15
+msgid "General"
+msgstr ""
+
+#: templates/admin/parts/navigation.php:19
+msgid "Button"
+msgstr ""
+
+#: templates/admin/parts/navigation.php:23
+msgid "Rules"
+msgstr ""
+
+#: templates/admin/parts/navigation.php:27
+msgid "Actions"
 msgstr ""

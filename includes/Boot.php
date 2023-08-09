@@ -14,7 +14,7 @@ final class Boot {
     /**
      * Initializes the plugin
      *
-     * @since 1.3.1
+     * @since 1.4.0
      */
     private function __construct() {
         new AdminMenu();
@@ -30,7 +30,7 @@ final class Boot {
     /**
      * Returns only the single instance of the main plugin class
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @return Boot
      */

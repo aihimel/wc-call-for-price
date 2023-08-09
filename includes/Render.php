@@ -11,9 +11,9 @@ use WC_Product;
 class Render {
 
     /**
-     * Initilizes the object
+     * Initializes the object
      *
-     * @since 1.3.1
+     * @since 1.4.0
      */
     function __construct() {
         $this->hooks();
@@ -22,7 +22,7 @@ class Render {
     /**
      * Declares all the hooks
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @return void
      */
@@ -46,7 +46,7 @@ class Render {
     /**
      * Handles out of stock product
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param int|string $price
      * @param WC_Product $product
@@ -64,7 +64,7 @@ class Render {
     /**
      * Handles low on stock product
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param int|string $price
      * @param WC_Product $product
@@ -84,7 +84,7 @@ class Render {
     /**
      * Renders button html on button settings configuration
      *
-     * @since 1.3.1
+     * @since 1.4.0
      *
      * @param string|int $price
      * @param WC_Product $product
