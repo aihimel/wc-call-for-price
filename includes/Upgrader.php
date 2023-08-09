@@ -15,7 +15,7 @@ class Upgrader {
      * @since 1.3.0
      */
     function __construct() {
-        add_action( 'upgrader_process_complete', [ $this, 'is_plugin_upgraded' ] );
+        add_action( 'upgrader_process_complete', [ $this, 'is_plugin_upgraded' ], 10, 2 );
         add_action( 'admin_init', [ $this, 'run_upgrade' ] );
     }
 
