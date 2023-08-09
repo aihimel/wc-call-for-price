@@ -97,22 +97,45 @@ class Render {
             return $price;
         }
 
-        $height = get_option( Constants::BUTTON_HEIGHT );
-        $width = get_option( Constants::BUTTON_WIDTH );
-        $title = get_option( Constants::BUTTON_ALT_TEXT );
+        // Features
+        $show_uploaded_image = wcp_is_on( Constants::SHOW_UPLOADED_IMAGE );
+        $show_preset_image = wcp_is_on( Constants::SHOW_PRESET_IMAGE );
+        $do_redirect = wcp_is_on( Constants::REDIRECT_TO );
+        $text = get_option( Constants::TEXT, __( 'Call For Price', 'wc-call-for-price' ) );
 
-        if( wcp_is_on( Constants::SHOW_UPLOADED_IMAGE ) ) {
-            $uploaded_image_url = esc_attr( get_option( Constants::UPLOADED_IMAGE_URL ) );
-            return "<button class='wcp-call-for-price-button' title='{$title}' style='width:{$width}px;height:{$height}px;cursor:pointer;background-image:url({$uploaded_image_url});background-repeat:no-repeat;background-size:contain;background-color:transparent;'></button>";
-        } elseif( wcp_is_on( Constants::SHOW_PRESET_IMAGE ) ) {
-            $preset_image_url = esc_attr( plugins_url( '/wc-call-for-price/assets/images/preset-buttons/'. get_option( Constants::PRESET_IMAGE_NAME ) . '.png' ) );
-            return "<button class='wcp-call-for-price-button' title='{$title}' style='width:{$width}px;height:{$height}px;cursor:pointer;background-image:url({$preset_image_url});background-repeat:no-repeat;background-size:contain;background-color:transparent;'></button>";
-        } elseif( wcp_not_empty( Constants::TEXT ) ) {
-            $text = get_option( Constants::TEXT );
-            return "<button class='wcp-call-for-price-button'>{$text}</button>";
+        $height = get_option( Constants::BUTTON_HEIGHT, 40 );
+        $width = get_option( Constants::BUTTON_WIDTH, 140 );
+        $uploaded_image_url = $show_uploaded_image ? get_option( Constants::UPLOADED_IMAGE_URL, '' ): '';
+        $preset_image_url = $show_preset_image ? plugins_url( '/wc-call-for-price/assets/images/preset-buttons/'. get_option( Constants::PRESET_IMAGE_NAME ) . '.png' ): '';
+        $background_image_url = '';
+        if( ( $show_preset_image || $show_uploaded_image ) ) {
+            if ( $show_uploaded_image ) {
+               $background_image_url = $uploaded_image_url;
+            } elseif( $show_preset_image ) {
+                $background_image_url = $preset_image_url;
+            }
         }
+        $title = get_option( Constants::BUTTON_ALT_TEXT, __( 'Call For Price', 'wc-call-for-price' ) );
+        $target = get_option( Constants::OPEN_NEW_PAGE ) == Constants::ON ? '_blank': '_self' ;
+        $link = $do_redirect ? get_option( Constants::REDIRECT_LINK, '#' ): '#';
 
-        $text = __( 'Call For Price', 'wc-call-for-price' );
-        return "<button class='wcp-call-for-price-button' style='background-color:transparent'>{$text}</button>";
+        $style = "cursor: pointer; height: {$height}px; width: {$width}px; background-color: transparent; background-repeat: no-repeat; background-size: contain;";
+        $style .= ! empty( $background_image_url ) ? 'background-image:url(' . $background_image_url . ')' : '';
+
+        $click_event = ! $do_redirect ? "return false": '';
+
+        ob_start();
+        ?>
+        <a
+            style="<?php echo esc_attr( $style );?>"
+            target="<?php echo esc_attr( $target ); ?>"
+            href="<?php echo esc_attr( $link ); ?>"
+            title="<?php echo esc_attr( $title ); ?>"
+            onclick="<?php echo esc_js( $click_event ); ?>"
+        >
+            <?php echo esc_html( ! $show_preset_image && ! $show_uploaded_image ? $text : '' ) ?>
+        </a>
+        <?php
+        return apply_filters( 'wcp_button_html', ob_get_clean() );
     }
 }

@@ -24,6 +24,10 @@ use WCPress\WCP\Constants;
                 <?php esc_html_e( 'Redirect To', 'wc-call-for-price' ); ?>:
             </label>
             <input
+                class="wcp-rquery"
+                data-uncheck-on-uncheck="#wcp-open-in-a-new-page"
+                data-disable-on-uncheck="#wcp-redirect-link"
+                data-enable-on-check="#wcp-redirect-link"
                 id="wcp-redirect-on-click"
                 type="checkbox"
                 name='<?php echo esc_attr( Constants::REDIRECT_TO ); ?>'
@@ -39,6 +43,7 @@ use WCPress\WCP\Constants;
                 <?php esc_html_e( 'Open in a new page', 'wc-call-for-price' ); ?>:
             </label>
             <input
+                class="wcp-rquery"
                 id="wcp-open-in-a-new-page"
                 type="checkbox"
                 name='<?php echo esc_attr( Constants::OPEN_NEW_PAGE ); ?>'

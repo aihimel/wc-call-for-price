@@ -1,8 +1,10 @@
 === WC Call For Price ===
-Contributors: aihimel, iamasadpolash
+Contributors: wcpress, aihimel, iamasadpolash
 Tags: call for price, request a quote, name your price, price, pricing
 Requires at least: 4.2.2
-Tested up to: 6.2.2
+Tested up to: 6.3
+WC requires at least: 5.0.0
+WC tested up to: 8.0.0
 Requires PHP: 7.2
 Stable tag: trunk
 License: GPLv3 or later
