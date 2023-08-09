@@ -9,6 +9,11 @@ namespace WCPress\WCP;
 
 class Assets {
 
+    /**
+     * Initializes the object
+     *
+     * @since 1.3.1
+     */
     function __construct() {
 
         // Admin Assets
@@ -16,6 +21,13 @@ class Assets {
 
     }
 
+    /**
+     * Hooks admin assets
+     *
+     * @since 1.3.1
+     *
+     * @return void
+     */
     function admin_asset() {
         wp_register_style(
             'wcp-admin-style',

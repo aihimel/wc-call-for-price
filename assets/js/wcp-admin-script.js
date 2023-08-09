@@ -81,16 +81,82 @@ $(document).ready(() => {
 
     /**
      * A New jQuery Plugin to accommodate UI effects
+     *
+     * `data-` fields status by name
+     * ** First one is the other's status and the last one is current elements status
+     *
+     * check-on-check
+     * check-on-uncheck
+     * uncheck-on-uncheck
+     * hide-on-check
+     * hide-on-uncheck
+     * show-on-check
+     * show-on-uncheck
+     * disable-on-check
+     * disable-on-uncheck
+     * enable-on-check
+     * enable-on-uncheck
+     * required-on-check
+     * required-on-uncheck
+     * optional-on-check
+     * optional-on-uncheck
+     * empty-on-check
+     * empty-on-uncheck
+     *
+     * check-on-keyup
+     * uncheck-on-keyup
+     * disable-on-keyup
+     * empty-on-keyup
+     *
      * @param options
+     *
      */
     $.fn.rQuery = function( options = {} ) {
     this.each(function(){
-        $(this).on('change', function() {
-            if($(this).is(':checked')) {
-                let should_uncheck = $(this).data('uncheck');
-                $(should_uncheck).prop('checked', false);
+
+        let update_data = function() {
+            if($(this).is(':checked')) { // element is checked
+                // Check
+                $( $(this).data('check-on-check') ).prop( 'checked', true );
+                // Uncheck
+                $( $(this).data('uncheck-on-check') ).prop( 'checked', false );
+                // Hide
+                $( $(this).data('hide-on-check') ).hide();
+                // Show
+                $( $(this).data('show-on-check') ).show();
+                // Disable
+                $( $(this).data('disable-on-check') ).prop( 'disabled', true );
+                // Enable
+                $( $(this).data('enable-on-check') ).prop( 'disabled', false );
+                // Required
+                $( $(this).data('required-on-check') ).prop( 'required', true );
+                // Optional
+                $( $(this).data('optional-on-check') ).prop( 'required', false );
+                // Empty
+                $( $(this).data('empty-on-check') ).val('');
+            } else { // element is unchecked
+                // Check
+                $( $(this).data('check-on-uncheck') ).prop( 'checked', true );
+                // Uncheck
+                $( $(this).data('uncheck-on-uncheck') ).prop( 'checked', false );
+                // Hide
+                $( $(this).data('hide-on-uncheck') ).hide();
+                // Show
+                $( $(this).data('show-on-uncheck') ).show();
+                // Disable
+                $( $(this).data('disable-on-uncheck') ).prop( 'disabled', true );
+                // Enable
+                $( $(this).data('enable-on-uncheck') ).prop( 'disabled', false );
+                // Required
+                $( $(this).data('required-on-uncheck') ).prop( 'required', true );
+                // Optional
+                $( $(this).data('optional-on-uncheck') ).prop( 'required', false );
+                // Empty
+                $( $(this).data('empty-on-uncheck') ).val('');
             }
-        })
+        }
+        update_data();
+        $(this).on('change', update_data)
     });
 }
 })(jQuery)

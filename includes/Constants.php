@@ -45,4 +45,13 @@ class Constants {
     const WCP_SUB_PAGE_BUTTON_SETTINGS = 'button_settings'; // General
     const WCP_SUB_PAGE_RULES_SETTINGS = 'rules_settings'; // General
     const WCP_SUB_PAGE_ACTIONS_SETTINGS = 'action_settings'; // General
+
+    // Stock Status
+    const INSTOCK = 'instock';
+    const OUT0FSTOCK = 'outofstock';
+
+    // Security
+    const NONCE_FIELD_NAME = 'wcp_nonce_field';
+    const ADMIN_FORM_NONCE_ACTION = 'wcp_admin_field_nonce_action';
+
 }
