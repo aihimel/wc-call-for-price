@@ -9,16 +9,31 @@ namespace WCPress\WCP;
 
 final class Boot {
 
-    static $self = false;
+    static $self;
 
+    /**
+     * Initializes the plugin
+     *
+     * @since 1.4.0
+     */
     private function __construct() {
         new AdminMenu();
         new Assets();
         new Upgrader();
+        new AdminPageValidator();
+        new AdminFormSave();
         if ( get_option( Constants::WCP_ACTIVATE ) == Constants::ON ) {
             new Render();
         }
     }
+
+    /**
+     * Returns only the single instance of the main plugin class
+     *
+     * @since 1.4.0
+     *
+     * @return Boot
+     */
     public static function init() {
         if ( ! Boot::$self ) {
             Boot::$self = new Boot();

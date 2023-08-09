@@ -9,11 +9,23 @@ namespace WCPress\WCP;
 
 class AdminMenu {
 
+    /**
+     * Initializes the object
+     *
+     * @since 1.4.0
+     */
     function __construct() {
         add_action( 'admin_menu', [ $this, 'admin_menu' ] );
         add_filter( 'plugin_action_links_wc-call-for-price/wc-call-for-price.php', [ $this, 'add_plugin_page_extra_links' ] );
     }
 
+    /**
+     * Hooks admin menu
+     *
+     * @since 1.4.0
+     *
+     * @return void
+     */
     function admin_menu() {
         add_submenu_page(
             'woocommerce',
@@ -25,21 +37,31 @@ class AdminMenu {
         );
     }
 
+    /**
+     * Renders admin menu
+     *
+     * @since 1.4.0
+     *
+     * @return void
+     */
     function render_admin_menu() {
         if( ! current_user_can('manage_options') ) {
             wp_die( __('You don\'t have permission to access this page', 'wc-call-for-price' ) );
         } else {
-            require_once(  WC_CALL_FOR_PRICE_TEMPLATE_PATH . 'templates/admin/layout.php' );
+            wcp_get_admin_template( 'layout.php' );
         }
     }
 
+    /**
+     * Adds extra settings link on plugin link page
+     *
+     * @since 1.4.0
+     *
+     * @param string $links
+     * @return string
+     */
     function add_plugin_page_extra_links( $links ) {
-        $url = esc_url( add_query_arg(
-            'page',
-            'wc-call-for-price',
-            get_admin_url() . 'admin.php'
-        ) );
-
+        $url = wcp_slug_to_admin_menu_url();
         $links[] = "<a href='$url'>" . __( 'Settings', 'wc-call-for-price' ) . '</a>';
         return $links;
     }

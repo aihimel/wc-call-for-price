@@ -1,13 +1,14 @@
 $headerColour: #504242;
 $lightTextColour: #737171;
 $fieldsetBorder: #462b2b3d;
+$lightBorder: #beb8b8;
 
 // General Form Design
 .wcp-admin-panel-wrapper {
     padding: 16px;
     form {
         fieldset {
-            border: 1px solid $fieldsetBorder;
+            border: 1px solid $lightBorder;
             padding: 16px;
             margin: 16px 0;
             legend {
@@ -44,6 +45,27 @@ $fieldsetBorder: #462b2b3d;
 
 .wcp-admin-panel-wrapper {
     .header {
+        .wcp-admin-main-menu-wrapper {
+            border-bottom: 1px solid #000;
+            ul {
+                text-decoration: none;
+                li {
+                    display: inline-block;
+                    margin: 0;
+                    padding: 0;
+                    a {
+                        text-decoration: none;
+                        padding: 8px;
+                        margin: 0;
+                        font-weight: 800;
+                        &:hover, &.active {
+                            background-color: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+
         h3 {
             text-align: center;
             font-weight: 700;
@@ -54,6 +76,11 @@ $fieldsetBorder: #462b2b3d;
     .main {
         margin: 24px 0;
         padding: 24px 0;
+        h4 {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+        }
         form {
             #wc_call_for_price__images {
                 display: flex;

@@ -2,18 +2,33 @@
 /**
  * Manages activities after upgrade
  *
- * @since WCP_SINCE
+ * @since 1.4.0
  */
 
 namespace WCPress\WCP;
 
 class Upgrader {
 
+    /**
+     * Initializes the object
+     *
+     * @since 1.3.0
+     */
     function __construct() {
-        add_action( 'upgrader_process_complete', [ $this, 'is_plugin_upgraded' ] );
+        add_action( 'upgrader_process_complete', [ $this, 'is_plugin_upgraded' ], 10, 2 );
         add_action( 'admin_init', [ $this, 'run_upgrade' ] );
     }
 
+    /**
+     * Decides it the plugin has been updated
+     *
+     * @since 1.3.0
+     *
+     * @param $upgrader_object
+     * @param $options
+     *
+     * @return void
+     */
     function is_plugin_upgraded( $upgrader_object, $options ) {
         if(
             $options['action'] == 'update'
@@ -31,7 +46,7 @@ class Upgrader {
     /**
      * Runs the upgrader when the plugin is upgraded
      *
-     * @since WCP_SINCE
+     * @since 1.3.0
      *
      * @return void
      */
@@ -42,6 +57,13 @@ class Upgrader {
         }
     }
 
+    /**
+     * Update Options after plugin update
+     *
+     * @since 1.3.0
+     *
+     * @return void
+     */
     function updated_options() {
 
         // For existing users WCP_ACTIVATE should be activated
