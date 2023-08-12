@@ -10,7 +10,7 @@ Stable tag: 1.4.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-This plugin shows "Call For Price" text/HTML or image on empty price fields. It depends on WooCommerce.
+A Feature-Rich Plugin (aka Extension) for Dynamic Control to Show/Hide Price or “Call For Price/Quote For Price” Button
 
 == Description ==
 
@@ -103,11 +103,17 @@ We will be glad to know missing features from our customer from time to time. Yo
 
 1. Simple Text Display
 
-2. Image Display
+2. Show a Preset Button
 
-3. Options Management Page
+3. Upload Your Own Button Image
 
-4. Upload Your Own Image
+4. General Settings
+
+5. Button Settings
+
+6. Rules Settings
+
+7. Action Settings
 
 == Upgrade Notice ==
 
