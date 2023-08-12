@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WC Call For Price
  * Plugin URI: http://www.wordpress.org/wc-call-for-price
- * Version: 1.3.0
+ * Version: 1.4.0
  * Author: Aftabul Islam
  * Author URI: https://profiles.wordpress.org/aihimel
  * Author Email: toaihimel@gmail.com
