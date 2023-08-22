@@ -90,3 +90,14 @@ function wcp_is_on( $option_name ) {
 function wcp_not_empty( $option_name ) {
     return ! empty( get_option( $option_name ) );
 }
+
+/**
+ * To check if pro plugin is installed and activated
+ *
+ * @since WCP_SINCE
+ *
+ * @return bool
+ */
+function wcp_is_pro_active() {
+    return apply_filters( 'wcp_is_pro_active', false );
+}

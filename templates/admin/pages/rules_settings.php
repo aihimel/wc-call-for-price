@@ -66,6 +66,8 @@ use WCPress\WCP\Constants;
         </div>
     </fieldset>
 
+    <?php do_action( "wcp_after_admin_form_fields", wcp_get_admin_sub_page_slug() ); ?>
+
     <button
             type="submit"
             class="save-button"

@@ -3,7 +3,8 @@
     "autoload": {
         "psr-4": {
             "WCPress\\WCP\\": "includes/"
-        }
+        },
+        "files": [ "functions.php" ]
     },
     "authors": [
         {
