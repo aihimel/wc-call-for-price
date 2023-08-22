@@ -11,6 +11,8 @@ use Automattic\WooCommerce\Internal\DependencyManagement\ContainerException;
 
 class AdminFormSave {
 
+    use SaveSettingsTrait;
+
     function __construct() {
 
         add_action( 'wcp_admin_form_header', [ $this, 'process_post_request' ] );
@@ -120,19 +122,7 @@ class AdminFormSave {
         $this->update_url( Constants::REDIRECT_LINK );
     }
 
-    /**
-     * Updates checkbox options using default on/off
-     *
-     * @since 1.4.0
-     *
-     * @param string $input_name
-     *
-     * @return void
-     */
-    protected function update_checkbox( $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? Constants::ON: Constants::OFF;
-        update_option( $input_name, $value );
-    }
+
 
     /**
      * Updated text from with sanitization
