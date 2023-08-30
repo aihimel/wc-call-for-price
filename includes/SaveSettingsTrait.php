@@ -18,4 +18,18 @@ trait SaveSettingsTrait {
         update_option( $input_name, $value );
     }
 
+    /**
+     * Updated text from with sanitization
+     *
+     * @since 1.4.0
+     *
+     * @param string $input_name
+     *
+     * @return void
+     */
+    protected function update_text( $input_name ) {
+        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): '';
+        update_option( $input_name, $value );
+    }
+
 }
