@@ -2,9 +2,9 @@
 Contributors: wcpress, aihimel, iamasadpolash
 Tags: call for price, request a quote, name your price, price, pricing
 Requires at least: 4.2.2
-Tested up to: 6.3
+Tested up to: 6.4
 WC requires at least: 5.0.0
-WC tested up to: 8.0.0
+WC tested up to: 8.3
 Requires PHP: 7.2
 Stable tag: 1.4.0
 License: GPLv3 or later
