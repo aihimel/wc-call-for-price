@@ -125,7 +125,7 @@ We will be glad to know missing features from our customer from time to time. Yo
 
 == Changelog ==
 
-= 1.4.1 (6 February 2023)
+= 1.4.1 (6 February 2023) =
 * 🪛 **Tweak:** Button css theme conflict issue fixed
 
 = 1.4.0 (9 August 2023) =
