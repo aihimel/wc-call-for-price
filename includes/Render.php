@@ -120,7 +120,8 @@ class Render {
         $link = $do_redirect ? get_option( Constants::REDIRECT_LINK, '#' ): '#';
 
         $style = "cursor: pointer; height: {$height}px; width: {$width}px; background-color: transparent; background-repeat: no-repeat; background-size: contain;";
-        $style .= ! empty( $background_image_url ) ? 'background-image:url(' . $background_image_url . ')' : '';
+        $style .= ! empty( $background_image_url ) ? 'background-image:url(' . $background_image_url . ');' : '';
+        $style .= 'display:inline-block;';
 
         $click_event = ! $do_redirect ? "return false": '';
 
