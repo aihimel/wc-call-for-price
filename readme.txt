@@ -117,15 +117,18 @@ We will be glad to know missing features from our customer from time to time. Yo
 
 == Upgrade Notice ==
 
-= 1.3.0 to 1.4.0 =
+= 1.4.0 to 1.4.1 =
 * Visit `WC Call for Price` plugin settings page. A lot of new settings are introduced
 * Check for the plugin is activated after updated.
-* Also check if the button design is good for your, a new button attributes section added under `Button` tab.
+* Some theme css conflict issue has been resolved
 
 
 == Changelog ==
 
-= 1.4.0 (9 August, 2023) =
+= 1.4.1 (6 February 2023)
+* 🪛 **Tweak:** Button css theme conflict issue fixed
+
+= 1.4.0 (9 August 2023) =
 * ✅ **Feature:** Admin settings area updated. Added 4 sections [General, Button, Rules, Actions]
 * ✅ **Feature:** Display settings added. Now you can show `Call For Price` on empty price product or on all of your products
 * ✅ **Feature:** Button Attributes like height, width, title text added. So you can tweak the button design yourselves.
@@ -135,7 +138,7 @@ We will be glad to know missing features from our customer from time to time. Yo
 * 🧩 **Compatibility:** Tested up to WordPress 6.3
 * 🧩 **Compatibility:** Tested up to WooCommerce 8.0.0
 
-= 1.3.0 (29 July, 2023) =
+= 1.3.0 (29 July 2023) =
 * Code refactored
 * ✅ **Feature:** Plugin made translation ready
 * ✅ **Feature:** A new settings link added in plugin list page
@@ -143,7 +146,7 @@ We will be glad to know missing features from our customer from time to time. Yo
 * 🪛 **Tweak:** Admin panel design improved
 * 🪛 **Tweak:** Security issue fixes
 
-= 1.2.1 (25 July, 2023) =
+= 1.2.1 (25 July 2023) =
 * 🧩 **Compatibility:** Tested up-to WordPress 6.2.2
 * 🧩 **Compatibility:** Tested up to PHP v7.2
 * 🪛 **Tweak:** Unnecessary asset files removed
