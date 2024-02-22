@@ -59,8 +59,6 @@ class AdminFormSave {
         $this->update_checkbox( Constants::WCP_ACTIVATE );
         $this->update_checkbox( Constants::ONLY_EMPTY_PRICE );
         $this->update_checkbox( Constants::SHOW_ON_ALL_PRODUCTS );
-
-        $this->update_text( Constants::TEXT );
     }
 
 
@@ -74,6 +72,9 @@ class AdminFormSave {
      * @return void
      */
     function save_button_settings( $form_slug ) {
+		$this->update_checkbox( Constants::SHOW_TEXT );
+	    $this->update_text( Constants::TEXT );
+
         $this->update_checkbox( Constants::SHOW_PRESET_IMAGE );
         $this->update_checkbox( Constants::SHOW_UPLOADED_IMAGE );
 

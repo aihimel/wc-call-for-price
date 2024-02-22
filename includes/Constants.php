@@ -15,6 +15,7 @@ class Constants {
     const UPLOADED_IMAGE_URL = 'wc_call_for_price__upload_image';
     const SHOW_PRESET_IMAGE = 'wc_call_for_price__show_image';
     const PRESET_IMAGE_NAME = 'wc_call_for_price__image';
+	const SHOW_TEXT = 'wc_call_for_price__show_text';
     const TEXT = 'wc_call_for_price__text';
     const OFF = 'off';
     const ON = 'on';

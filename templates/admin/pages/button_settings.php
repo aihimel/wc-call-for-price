@@ -21,11 +21,37 @@ $button_alt_text = get_option( Constants::BUTTON_ALT_TEXT );
 
 <form class="" method="POST" action="">
     <?php wp_nonce_field( Constants::ADMIN_FORM_NONCE_ACTION, Constants::NONCE_FIELD_NAME ); ?>
+
+    <fieldset>
+      <legend><?php esc_html_e( 'Text', 'wc-call-for-price' ); ?></legend>
+      <div class="checkbox">
+          <label
+            for="<?php echo esc_attr( Constants::SHOW_TEXT ); ?>"
+          >
+              <?php esc_html_e( 'Show Text', 'wc-call-for-price' ); ?>
+          </label>
+          <input
+              type="checkbox"
+              <?php if(get_option(Constants::SHOW_TEXT, Constants::OFF) == Constants::ON) echo 'checked'; ?>
+              id="<?php echo esc_attr( Constants::SHOW_TEXT ); ?>"
+              name="<?php echo esc_attr( Constants::SHOW_TEXT ); ?>"
+              class="wcp-rquery"
+              data-uncheck="#wc_call_for_price__show_image"
+          >
+          <p class="help-block"><?php esc_html_e( 'Check to show only text on a simple html button.', 'wc-call-for-price'); ?></p>
+      </div>
+      <div class="form-group">
+        <label for="wc_call_for_price__text"><?php esc_html_e( 'Text To Show :', 'wc-call-for-price' ); ?> </label>
+        <input type="text" class="form-control" id="wc_call_for_price__text" name='wc_call_for_price__text' value='<?php echo esc_attr( get_option('wc_call_for_price__text') );?>'>
+        <p class="help-block"><?php esc_html_e( 'Write here what you want to see on front end. Plain text or HTML.', 'wc-call-for-price'); ?></p>
+      </div>
+    </fieldset>
+
     <fieldset>
         <legend><?php esc_html_e( 'Select Image', 'wc-call-for-price' ); ?></legend>
         <div class="checkbox">
             <label for='wc_call_for_price__show_image'><?php esc_html_e( 'Show Image :', 'wc-call-for-price' ); ?></label>
-            <input type="checkbox" <?php if(get_option('wc_call_for_price__show_image') == 'on') echo 'checked'; ?> id='wc_call_for_price__show_image' name='wc_call_for_price__show_image'>
+            <input class="wcp-rquery" type="checkbox" <?php if(get_option('wc_call_for_price__show_image') == 'on') echo 'checked'; ?> id='wc_call_for_price__show_image' name='wc_call_for_price__show_image'>
             <p class="help-block">
                 <?php esc_html_e( 'Check this box if you want to select an image form some specific list of "Call for price" images.', 'wc-call-for-price' ); ?>
             </p>

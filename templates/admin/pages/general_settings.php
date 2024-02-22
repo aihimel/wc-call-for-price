@@ -20,11 +20,11 @@ use WCPress\WCP\Constants;
         <legend><?php esc_html_e( 'Plugin Features', 'wc-call-for-price' ); ?></legend>
         <label for="activate"><?php esc_html_e( 'Activate', 'wc-call-for-price' ); ?>: </label>
         <input
-                type="checkbox"
-                name="<?php echo esc_attr( Constants::WCP_ACTIVATE ); ?>"
-                id="activate"
-                value="<?php echo esc_attr( Constants::ON ); ?>"
-                <?php checked( get_option( Constants::WCP_ACTIVATE ), Constants::ON, true ) ?>
+            type="checkbox"
+            name="<?php echo esc_attr( Constants::WCP_ACTIVATE ); ?>"
+            id="activate"
+            value="<?php echo esc_attr( Constants::ON ); ?>"
+            <?php checked( get_option( Constants::WCP_ACTIVATE ), Constants::ON, true ) ?>
         />
         <p class="help-block">
             <?php esc_html_e( 'This checkbox will activate the plugin features. This must be on for the plugin to work.', 'wc-call-for-price' ); ?>
@@ -59,15 +59,6 @@ use WCPress\WCP\Constants;
         <p class="help-block">
             <?php esc_html_e( 'If checked, this will show call for price on all products.', 'wc-call-for-price' ); ?>
         </p>
-    </fieldset>
-
-    <fieldset>
-        <legend><?php esc_html_e( 'Text', 'wc-call-for-price' ); ?></legend>
-        <div class="form-group">
-            <label for="wc_call_for_price__text"><?php esc_html_e( 'Text To Show :', 'wc-call-for-price' ); ?> </label>
-            <input type="text" class="form-control" id="wc_call_for_price__text" name='wc_call_for_price__text' value='<?php echo esc_attr( get_option('wc_call_for_price__text') );?>'>
-            <p class="help-block"><?php esc_html_e( 'Write here what you want to see on front end. Plain text or HTML.', 'wc-call-for-price'); ?></p>
-        </div>
     </fieldset>
 
     <button
