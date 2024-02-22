@@ -125,7 +125,7 @@ We will be glad to know missing features from our customer from time to time. Yo
 
 == Changelog ==
 
-- 1.4.2 (22 February 2023) =
+= 1.4.2 (22 February 2023) =
 * ✅ **Feature:** Now you will be able to show `text only` with links.
 * 🪛 **Tweak:** Text to show is reorganized with button tab
 
