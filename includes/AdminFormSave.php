@@ -7,8 +7,6 @@
 
 namespace WCPress\WCP;
 
-use Automattic\WooCommerce\Internal\DependencyManagement\ContainerException;
-
 class AdminFormSave {
 
     function __construct() {
@@ -190,5 +188,4 @@ class AdminFormSave {
         $value = absint( $value );
         update_option( $input_name, $value );
     }
-
 }

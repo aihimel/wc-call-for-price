@@ -54,4 +54,7 @@ class Constants {
     const NONCE_FIELD_NAME = 'wcp_nonce_field';
     const ADMIN_FORM_NONCE_ACTION = 'wcp_admin_field_nonce_action';
 
+    // Default string
+    const DEFAULT_BUTTON_TEXT = 'Call For Price';
+
 }
