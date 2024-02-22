@@ -26,7 +26,6 @@ function wcp_get_admin_template( $relative_path ) {
     }
 }
 
-
 /**
  * Generates admin submenu pages url
  *
@@ -89,4 +88,23 @@ function wcp_is_on( $option_name ) {
  */
 function wcp_not_empty( $option_name ) {
     return ! empty( get_option( $option_name ) );
+}
+
+/**
+ * @param $option_name
+ * @param $compare_to
+ * @param $echo
+ *
+ * @return void
+ */
+function wcp_is_checked( $option_name, $compare_to = Constants::ON, $echo = true ) {
+	$value = get_option( $option_name, Constants::OFF );
+	$result = $value === $compare_to;
+	if ( $result ) {
+		if ( $echo ) {
+			echo 'checked';
+		}
+		return true;
+	}
+	return false;
 }
