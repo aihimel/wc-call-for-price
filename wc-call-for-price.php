@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WC Call For Price
  * Plugin URI: http://www.wordpress.org/wc-call-for-price
- * Version: 1.4.1
+ * Version: 1.4.2
  * Author: WCPress
  * Author URI: https://wcpress.net/wc-call-for-price-woocommerce-plugin
  * Author Email: toaihimel@gmail.com

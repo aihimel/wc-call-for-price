@@ -4,9 +4,9 @@ Tags: call for price, request a quote, name your price, price, pricing
 Requires at least: 4.2.2
 Tested up to: 6.4
 WC requires at least: 5.0.0
-WC tested up to: 8.3
+WC tested up to: 8.6
 Requires PHP: 7.2
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -124,6 +124,10 @@ We will be glad to know missing features from our customer from time to time. Yo
 
 
 == Changelog ==
+
+- 1.4.2 (22 February 2023) =
+* ✅ **Feature:** Now you will be able to show `text only` with links.
+* 🪛 **Tweak:** Text to show is reorganized with button tab
 
 = 1.4.1 (6 February 2023) =
 * 🪛 **Tweak:** Button css theme conflict issue fixed
