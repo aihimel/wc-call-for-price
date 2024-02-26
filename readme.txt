@@ -73,30 +73,30 @@ That's all you need to do.
 
 == Frequently Asked Questions ==
 
-= Can I show the “Call For Price/Quote For Price” button on out of stock products? =
+= **Can I show the “Call For Price/Quote For Price” button on out of stock products?** =
 
 Yes you can definitely show the “Call For Price/Quote For Price” button on your out of stock products. We have specific settings to show “Call For Price/Quote For Price” on out of stock products. You can find it under the Rules tab. Additionally you can also set the settings for WooCommerce minimum inventor/stock threshold products or set a custom inventory minimum threshold.
 It will only work when you manage stock for that product. If you do not manage the product for that specific product, then WC Call for Price for WooCommerce will ignore that product.
 
-= Can I customize the “Call For Price/Quote For Price” frontend interface? =
+= **Can I customize the “Call For Price/Quote For Price” frontend interface?** =
 Yes, you can customize the frontend view of the “Call For Price/Quote For Price” button interface. You can upload your own image, select from a preloaded image or simply put text in the textbox.
 
-= Can I redirect the user to a different page when they click the button? =
+= **Can I redirect the user to a different page when they click the button?** =
 Yes you can redirect your users to a different page. We have a specific settings page for that. You will find that inside the Action tab. You can also set other parameters also, like should the new page open in the current tab, or should your user open a new tab and load the redirect link to that page.
 
-= What kind of product type does the plugin support? =
+= **What kind of product type does the plugin support?** =
 WC Call for Price for WooCommerce supports all kinds of product types. More specifically it supports simple products, variable products, grouped products, external products and any new custom product types.
 
-= Can I show “Call For Price/Quote For Price” for price on all products? =
+= **Can I show “Call For Price/Quote For Price” for price on all products?** =
 Yes, you can show “Call For Price/Quote For Price” on all of your products. You will have to activate the feature. You can find it under the General tab.
 
-= Can I deactivate the plugin temporarily? =
+= **Can I deactivate the plugin temporarily?** =
 Yes, you can deactivate the plugin temporarily from your General settings tab. The plugin will stay installed and activated but all the features will halt from working as long as you deactivate the plugin from the plugin’s settings.
 
-= How do I get support? =
+= **How do I get support?** =
 It is very easy to get support, you just open a support ticket [here](https://wordpress.org/support/plugin/wc-call-for-price/#new-topic-0). We will most likely reply within the next 24 hours.
 
-= How to Request a New Feature? =
+= **How to Request a New Feature?** =
 We will be glad to know missing features from our customer from time to time. You could open a support ticket [here](https://wordpress.org/support/plugin/wc-call-for-price/#new-topic-0), with details of your new feature request.
 
 == Screenshots ==
