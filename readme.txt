@@ -117,10 +117,8 @@ We will be glad to know missing features from our customer from time to time. Yo
 
 == Upgrade Notice ==
 
-= 1.4.1 to 1.4.2 =
-* Visit `WC Call for Price` plugin settings page. A lot of new settings are introduced
-* Check for the plugin is activated after updated.
-* Some theme css conflict issue has been resolved
+= 1.4.2 =
+This is a minor release. Some features have been unlocked in this version with some minor tweaking.
 
 
 == Changelog ==
