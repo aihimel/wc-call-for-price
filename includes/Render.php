@@ -41,6 +41,8 @@ class Render {
         if ( wcp_is_on( Constants::MINIMUM_STOCK_THRESHOLD ) ) {
             add_filter( 'woocommerce_get_price_html', [ $this, 'woocommerce_low_on_stock' ], 10, 2 );
         }
+
+        add_action( 'woocommerce_single_variation', [ $this, 'hide_single_variation_add_to_cart' ] );
     }
 
     /**
@@ -59,6 +61,21 @@ class Render {
         } else {
             return $this->button_html($price, $product);
         }
+    }
+
+	 /**
+    * Hide WooCommerce variable product single variation add to cart button
+    *
+    * @since 1.4.4
+    *
+	  * @return void
+	  */
+    public function hide_single_variation_add_to_cart() {
+	    remove_action(
+        'woocommerce_single_variation',
+        'woocommerce_single_variation_add_to_cart_button',
+        20
+      );
     }
 
     /**
