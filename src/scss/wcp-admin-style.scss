@@ -109,5 +109,10 @@ $lightBorder: #beb8b8;
 
     .help-block {
         color: $lightTextColour;
+        &::before{
+            content: "\f14c"; /** dashicons-info-outline **/
+            font-family: 'dashicons';
+            color: #9494e3;
+        }
     }
 }

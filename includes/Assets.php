@@ -31,7 +31,8 @@ class Assets {
     function admin_asset() {
         wp_register_style(
             'wcp-admin-style',
-            plugin_dir_url( WC_CALL_FOR_PRICE_PATH ) . 'assets/css/wcp-admin-style.css'
+            plugin_dir_url( WC_CALL_FOR_PRICE_PATH ) . 'assets/css/wcp-admin-style.css',
+	        [ 'dashicons' ]
         );
         wp_register_script(
             'wcp-admin-script',
