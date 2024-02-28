@@ -39,6 +39,8 @@ defined('WC_CALL_FOR_PRICE_PATH') || define('WC_CALL_FOR_PRICE_PATH', plugin_bas
 defined( 'WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE' ) || define( 'WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE', __DIR__ . '/activation-deactivation.php' );
 defined('WC_CALL_FOR_PRICE_TEMPLATE_PATH') || define('WC_CALL_FOR_PRICE_TEMPLATE_PATH', plugin_dir_path( __FILE__ ) );
 
+defined( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH' ) || define( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH', dirname( __FILE__ ) );
+
 // Activation Deactivation
 register_activation_hook(WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE, 'wc_call_for_price__activate');
 register_deactivation_hook(WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE, 'wc_call_for_price__deactivate');

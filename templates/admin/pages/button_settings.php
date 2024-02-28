@@ -64,12 +64,12 @@ $button_alt_text = get_option( Constants::BUTTON_ALT_TEXT );
             <div class="radio">
                 <?php
                   $image_title = '';
-                  $image_path = ABSPATH . plugin_dir_path( WC_CALL_FOR_PRICE_PATH ) . 'assets/images/preset-buttons/cfp_'.$i.'.png';
+                  $image_path = WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH . '/assets/images/preset-buttons/cfp_'.$i.'.png';
                   $image_url = plugins_url('/wc-call-for-price/assets/images/preset-buttons/cfp_'.$i.'.png');
                   if ( function_exists( 'getimagesize') ) {
                     $sizes = getimagesize( $image_path );
                     if ( ! empty( $sizes ) ) {
-	                    $image_title = $sizes[0] . 'px x ' . $sizes[1] . 'px';
+	                    $image_title = $sizes[0] . 'px * ' . $sizes[1] . 'px';
                     }
                   }
                 ?>
