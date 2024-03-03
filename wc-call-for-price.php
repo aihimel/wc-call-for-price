@@ -36,14 +36,13 @@ require_once ( 'functions.php' );
 // Constants
 defined( 'WC_CALL_FOR_PRICE_VERSION' ) || define('WC_CALL_FOR_PRICE_VERSION', '1.4.2');
 defined('WC_CALL_FOR_PRICE_PATH') || define('WC_CALL_FOR_PRICE_PATH', plugin_basename(__FILE__));
-defined( 'WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE' ) || define( 'WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE', __DIR__ . '/activation-deactivation.php' );
 defined('WC_CALL_FOR_PRICE_TEMPLATE_PATH') || define('WC_CALL_FOR_PRICE_TEMPLATE_PATH', plugin_dir_path( __FILE__ ) );
 
 defined( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH' ) || define( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH', dirname( __FILE__ ) );
 
 // Activation Deactivation
-register_activation_hook(WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE, 'wc_call_for_price__activate');
-register_deactivation_hook(WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE, 'wc_call_for_price__deactivate');
+register_activation_hook(__FILE__, 'wc_call_for_price__activate');
+register_deactivation_hook(__FILE__, 'wc_call_for_price__deactivate');
 
 // Booting the plugin
-\WCPress\WCP\Boot::init();
+\WCPress\WCP\WCCallForPrice::init();
