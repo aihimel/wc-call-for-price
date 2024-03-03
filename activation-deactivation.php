@@ -25,6 +25,12 @@ function wc_call_for_price__activate(){
 	add_option( $prefix.'upload_image' );
     add_option( Constants::ONLY_EMPTY_PRICE, Constants::OFF);
     add_option( Constants::SHOW_ON_ALL_PRODUCTS, Constants::OFF);
+
+	// Activation Deactivation Time
+	if ( ! get_option( Constants::FIRST_ACTIVATED_AT ) ) {
+		add_option( Constants::FIRST_ACTIVATED_AT, wcp_current_time() );
+	}
+	update_option( Constants::MOST_RECENT_ACTIVATED_AT, wcp_current_time() );
 }
 
 /**

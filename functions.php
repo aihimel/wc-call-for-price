@@ -108,3 +108,14 @@ function wcp_is_checked( $option_name, $compare_to = Constants::ON, $echo = true
 	}
 	return false;
 }
+
+/**
+ * Returns a unified time type across the plugin
+ *
+ * @since 1.4.3
+ *
+ * @return int
+ */
+function wcp_current_time() {
+	return current_time();
+}
