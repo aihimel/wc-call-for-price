@@ -1,13 +1,12 @@
 <?php
+namespace WCPress\WCP;
 /**
  * Main Plugin class to load all the hooks and initialization
  *
  * @since 1.2.1
  */
 
-namespace WCPress\WCP;
-
-final class Boot {
+final class WCCallForPrice {
 
     static $self;
 
@@ -32,13 +31,13 @@ final class Boot {
      *
      * @since 1.4.0
      *
-     * @return Boot
+     * @return WCCallForPrice
      */
     public static function init() {
-        if ( ! Boot::$self ) {
-            Boot::$self = new Boot();
+        if ( ! WCCallForPrice::$self ) {
+            WCCallForPrice::$self = new WCCallForPrice();
         }
-        return Boot::$self;
+        return WCCallForPrice::$self;
     }
 
 }

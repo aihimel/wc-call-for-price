@@ -3,7 +3,10 @@
     "autoload": {
         "psr-4": {
             "WCPress\\WCP\\": "includes/"
-        }
+        },
+        "files": [
+            "activation-deactivation.php"
+        ]
     },
     "authors": [
         {
