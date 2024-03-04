@@ -141,7 +141,7 @@ This is a minor release. Some features have been unlocked in this version with s
 * 🧩 **Compatibility:** Tested up to WooCommerce 8.0.0
 
 = 1.3.0 (29 July 2023) =
-* Code refactored
+* 🪛 **Tweak:** Code refactored
 * ✅ **Feature:** Plugin made translation ready
 * ✅ **Feature:** A new settings link added in plugin list page
 * ✅ **Feature:** Plugin feature activation/deactivation added
