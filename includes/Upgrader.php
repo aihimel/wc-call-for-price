@@ -7,6 +7,8 @@
 
 namespace WCPress\WCP;
 
+use WCPress\WCP\Models\ActivationDeactivation;
+
 class Upgrader {
 
     /**
@@ -54,6 +56,7 @@ class Upgrader {
         if( get_transient ( Constants::WCP_RECENTLY_UPDATED ) ) {
             delete_transient( Constants::WCP_RECENTLY_UPDATED );
             $this->updated_options();
+			$this->add_activation_time();
         }
     }
 
@@ -65,11 +68,22 @@ class Upgrader {
      * @return void
      */
     function updated_options() {
-
         // For existing users WCP_ACTIVATE should be activated
-        if ( get_option( Constants::WCP_ACTIVATE, false ) ) {
+        if ( ! get_option( Constants::WCP_ACTIVATE ) ) {
             update_option( Constants::WCP_ACTIVATE, Constants::ON );
         }
     }
+
+	/**
+	 * Adds plugin activation time if not active
+	 *
+	 * @since 1.4.3
+	 *
+	 * @return void
+	 */
+	function add_activation_time() {
+		$activation_deactivation = new ActivationDeactivation();
+		$activation_deactivation->activation();
+	}
 
 }
