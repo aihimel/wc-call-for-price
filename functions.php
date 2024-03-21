@@ -119,3 +119,24 @@ function wcp_is_checked( $option_name, $compare_to = Constants::ON, $echo = true
 function wcp_current_time(): int {
 	return current_time( 'timestamp' );
 }
+
+/**
+ * Checks if in WCP Settings page
+ *
+ * @since WCP_SINCE
+ *
+ * @return bool
+ */
+function wcp_is_settings_page(): bool {
+	$pagename = '';
+
+	if ( is_admin() && isset( $_GET['page'] ) ) {
+		$pagename = sanitize_text_field( $_GET['page'] );
+	}
+
+	if ( 'wc-call-for-price' === $pagename ) {
+		return true;
+	}
+
+	return false;
+}
