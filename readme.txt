@@ -1,7 +1,7 @@
 === WC Call For Price ===
 Contributors: wcpress
 Tags: call for price, request a quote, name your price, price, pricing
-Requires at least: 4.2.2
+Requires at least: 4.9
 Tested up to: 6.4
 WC requires at least: 5.0.0
 WC tested up to: 8.6
