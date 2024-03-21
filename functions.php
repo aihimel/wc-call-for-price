@@ -35,7 +35,7 @@ function wcp_get_admin_template( $relative_path ) {
  *
  * @return string
  */
-function wcp_slug_to_admin_menu_url( $slug = Constants::WCP_SUB_PAGE_GENERAL_SETTINGS ) {
+function wcp_slug_to_admin_menu_url( $slug = Constants::WCP_SUB_PAGE_GENERAL_SETTINGS ): string {
     $admin_main_url = add_query_arg(
         'page',
         'wc-call-for-price',
@@ -60,7 +60,7 @@ function wcp_slug_to_admin_menu_url( $slug = Constants::WCP_SUB_PAGE_GENERAL_SET
  *
  * @return string
  */
-function wcp_get_admin_sub_page_slug() {
+function wcp_get_admin_sub_page_slug(): string {
     return isset( $_GET[ Constants::WCP_SUB_PAGE_QUERY_STRING ] )
     ? sanitize_text_field( $_GET[ Constants::WCP_SUB_PAGE_QUERY_STRING ] )
     : Constants::WCP_SUB_PAGE_GENERAL_SETTINGS;
@@ -75,7 +75,7 @@ function wcp_get_admin_sub_page_slug() {
  *
  * @return bool
  */
-function wcp_is_on( $option_name ) {
+function wcp_is_on( $option_name ): bool {
     return get_option( $option_name, Constants::OFF ) == Constants::ON;
 }
 
@@ -86,7 +86,7 @@ function wcp_is_on( $option_name ) {
  * @param $option_name
  * @return bool
  */
-function wcp_not_empty( $option_name ) {
+function wcp_not_empty( $option_name ): bool {
     return ! empty( get_option( $option_name ) );
 }
 
@@ -95,9 +95,9 @@ function wcp_not_empty( $option_name ) {
  * @param $compare_to
  * @param $echo
  *
- * @return void
+ * @return bool
  */
-function wcp_is_checked( $option_name, $compare_to = Constants::ON, $echo = true ) {
+function wcp_is_checked( $option_name, $compare_to = Constants::ON, $echo = true ): bool {
 	$value = get_option( $option_name, Constants::OFF );
 	$result = $value === $compare_to;
 	if ( $result ) {
@@ -116,6 +116,6 @@ function wcp_is_checked( $option_name, $compare_to = Constants::ON, $echo = true
  *
  * @return int
  */
-function wcp_current_time() {
+function wcp_current_time(): int {
 	return current_time( 'timestamp' );
 }
