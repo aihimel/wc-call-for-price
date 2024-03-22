@@ -117,7 +117,7 @@ function wcp_is_checked( $option_name, $compare_to = Constants::ON, $echo = true
  * @return int
  */
 function wcp_current_time(): int {
-	return current_time( 'timestamp' );
+	return (new \DateTime())->getTimestamp();
 }
 
 /**
