@@ -4,9 +4,9 @@ Tags: call for price, request a quote, name your price, price, pricing
 Requires at least: 4.9
 Tested up to: 6.5
 WC requires at least: 5.0.0
-WC tested up to: 8.6
+WC tested up to: 8.7
 Requires PHP: 7.2
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -117,14 +117,23 @@ We will be glad to know missing features from our customer from time to time. Yo
 
 == Upgrade Notice ==
 
-= 1.4.2 =
+= 1.4.3 =
 This is a minor release. Some features have been unlocked in this version with some minor tweaking.
 
 
 == Changelog ==
 
+= 1.4.3 (23 March 2023) =
+* ✅ **Feature:** Preloaded image will now show size on hover. As defining button size could be a must to fit into the sites design
+* ✅ **Feature:** Icon added on help texts for a better user experience
+* 🪛 **Tweak:** Button not showing on variation product and grouped product issue fixed
+* 🪛 **Tweak:** Activation and deactivation not firing properly issue fixed
+* 🧩 **Compatibility:** Requires Plugins header added and WooCommerce plugin made required
+* 🧩 **Compatibility:** Tested for WordPress 6.5
+* 🧩 **Compatibility:** Tested for WooCommerce 8.7
+
 = 1.4.2 (22 February 2023) =
-* ✅ **Feature:** Now you will be able to show `text only` with links.
+* ✅ **Feature:** Now you will be able to show `text only` with links
 * 🪛 **Tweak:** Text to show is reorganized with button tab
 
 = 1.4.1 (6 February 2023) =
@@ -133,9 +142,9 @@ This is a minor release. Some features have been unlocked in this version with s
 = 1.4.0 (9 August 2023) =
 * ✅ **Feature:** Admin settings area updated. Added 4 sections [General, Button, Rules, Actions]
 * ✅ **Feature:** Display settings added. Now you can show `Call For Price` on empty price product or on all of your products
-* ✅ **Feature:** Button Attributes like height, width, title text added. So you can tweak the button design yourselves.
+* ✅ **Feature:** Button Attributes like height, width, title text added. So you can tweak the button design yourselves
 * ✅ **Feature:** You can now show `Call For Price` on out-of-stock products, minimum threshold products or a custom number of availability
-* ✅ **Feature:** Button action added. Now you will be able to redirect the user to a different page when anybody clicks on `Call For Price`. Also a settings added to open a new page or open in the current page.
+* ✅ **Feature:** Button action added. Now you will be able to redirect the user to a different page when anybody clicks on `Call For Price`. Also, a settings added to open a new page or open in the current page
 * 🪛 **Tweak:** Security updated
 * 🧩 **Compatibility:** Tested up to WordPress 6.3
 * 🧩 **Compatibility:** Tested up to WooCommerce 8.0.0
@@ -163,4 +172,4 @@ This is a minor release. Some features have been unlocked in this version with s
 * 🪛 **Tweak:** Screenshots added
 
 = 1.0 =
-* ✅ **Feature:** Initial release of the plugin.
+* ✅ **Feature:** Initial release of the plugin
