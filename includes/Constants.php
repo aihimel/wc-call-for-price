@@ -19,6 +19,8 @@ class Constants {
     const TEXT = 'wc_call_for_price__text';
     const OFF = 'off';
     const ON = 'on';
+	const YES = 'yes';
+	const NO = 'no';
 
     // General Settings
     const WCP_ACTIVATE = 'wcp_activate';
