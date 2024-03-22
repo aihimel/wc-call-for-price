@@ -7,6 +7,7 @@
  * Author URI: https://wcpress.net/wc-call-for-price-woocommerce-plugin
  * Author Email: toaihimel@gmail.com
  * PHP version: 7.2
+ * Requires Plugins: woocommerce
  * Text domain: wc-call-for-price
  * Description: This plugin shows "call for price" text/HTML or image on empty price fields. It depends on woocommerce.
  * License: GPLv3 or later
