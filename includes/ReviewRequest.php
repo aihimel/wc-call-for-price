@@ -1,36 +1,92 @@
 <?php
-/**
- * Requests for review to the user.
- *
- * @since 1.4.3
- */
 namespace WCPress\WCP;
 
+use DateTime;
+
+use WCPress\WCP\Models\ReviewModel;
+
+/**
+ * Requests for review to the user
+ *
+ * @since WCP_SINCE
+ */
 class ReviewRequest {
 
+	/**
+	 * Initializes hooks
+	 *
+	 * @since WCP_SINCE
+	 *
+	 * @return void
+	 */
 	public function __construct() {
-
+		add_action( 'admin_notices', [ $this, 'renderNotice' ] );
+		add_action( 'admin_init', [ $this, 'action' ] );
 	}
 
 	/**
-	 * Determines if this is the correct time to show review notice
+	 * Renders notice on the WC Call For Price settings panel
 	 *
-	 * @since 1.4.3
+	 * @since WCP_SINCE
 	 *
 	 * @return void
 	 */
-	public function time_to_show_review_notice() {
+	public function renderNotice() {
+		if ( wcp_is_settings_page() ) {
+			$review = new ReviewModel();
+			$last_prompted_timestamp = $review->getLastPromptedAt();
+			$current_time = new DateTime();
+			$last_prompted_time = (new DateTime())->setTimestamp( $last_prompted_timestamp );
+			$interval_days = ( $current_time->diff( $last_prompted_time ) )->days;
+			$current_status = $review->getCurrentStatus();
+			$show_review = false;
+			if ( // Initial Status or Remind Me Later
+				$interval_days >= 7
+				&& ReviewModel::USER_STATUS__REMIND_ME_LATER === $current_status
+			) {
+				$show_review = true;
+			} elseif( // Notice Removed or Dismissed
+				$interval_days >= 14
+				&& ReviewModel::USER_STATUS__NOTICE_REMOVED === $current_status
+			) {
+				$show_review = true;
+			} elseif( // Already Clicked review once
+				$interval_days >= 30
+				&& ReviewModel::USER_STATUS__REVIEW_NOW === $current_status
+			) {
+				$show_review = true;
+			} elseif( // Given Review already and confirmed that
+				$interval_days >= 60
+				&& ReviewModel::USER_STATUS__ALREADY_GIVEN === $current_status
+			) {
+				$show_review = true;
+			}
 
+			if ( $show_review ) {
+				wcp_get_admin_template( 'review-notice.php' );
+			}
+		}
 	}
 
 	/**
-	 * Render review template
+	 * Processes the action taken by users
 	 *
-	 * @since 1.4.3
+	 * @since WCP_SINCE
 	 *
 	 * @return void
 	 */
-	public function render_review_template() {
-
+	public function action() {
+		if ( is_admin() && isset( $_GET['page'] ) && $_GET['page'] === 'wc-call-for-price' ) {
+			if( isset( $_GET['action'] ) ) {
+				$action = sanitize_text_field( $_GET['action'] );
+				$review = new ReviewModel();
+				$review->setReviewStatus( $action );
+				$review->save();
+				if( $action === ReviewModel::USER_STATUS__REVIEW_NOW ) {
+					wp_redirect( 'https://wordpress.org/support/plugin/wc-call-for-price/reviews/?filter=5#new-post' );
+				}
+			}
+		}
 	}
+
 }
