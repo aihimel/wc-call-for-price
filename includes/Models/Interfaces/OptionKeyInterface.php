@@ -4,7 +4,7 @@ namespace WCPress\WCP\Models\Interfaces;
 /**
  * Option key interface to get option key
  *
- * @since WCP_SINCE
+ * @since 1.4.3
  */
 interface OptionKeyInterface {
 	public function getOptionKey(): string;

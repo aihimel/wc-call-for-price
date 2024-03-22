@@ -8,14 +8,14 @@ use WCPress\WCP\Models\ReviewModel;
 /**
  * Requests for review to the user
  *
- * @since WCP_SINCE
+ * @since 1.4.3
  */
 class ReviewRequest {
 
 	/**
 	 * Initializes hooks
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return void
 	 */
@@ -27,7 +27,7 @@ class ReviewRequest {
 	/**
 	 * Renders notice on the WC Call For Price settings panel
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return void
 	 */
@@ -71,7 +71,7 @@ class ReviewRequest {
 	/**
 	 * Processes the action taken by users
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return void
 	 */

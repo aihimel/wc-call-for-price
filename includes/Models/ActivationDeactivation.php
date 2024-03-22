@@ -13,38 +13,38 @@ class ActivationDeactivation extends Model implements DefaultDataInterface {
 	/**
 	 * Option key name
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 */
 	const KEY = 'wcp_activation_deactivation_data';
 	/**
 	 * First time activation data
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 */
 	const FIRST_ACTIVATED_AT = 'first_activated_at';
 	/**
 	 * Multiple time activation deactivation list key
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 */
 	const ACTIVATION_DEACTIVATION_LIST = 'activation_deactivation_list';
 	/**
 	 * Activation time key
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 */
 	const ACTIVATED_AT = 'activated_at';
 	/**
 	 * Deactivation time key
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 */
 	const DEACTIVATED_AT = 'deactivated_at';
 
 	/**
 	 * Returns the default activation deactivation data
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return array
 	 */
@@ -63,7 +63,7 @@ class ActivationDeactivation extends Model implements DefaultDataInterface {
 	/**
 	 * Runs when plugin is activated first time
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return void
 	 */
@@ -81,7 +81,7 @@ class ActivationDeactivation extends Model implements DefaultDataInterface {
 	/**
 	 * Runs when plugin is deactivated
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return void
 	 */

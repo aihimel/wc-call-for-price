@@ -2,7 +2,7 @@
 /**
  * Review Notice template
  *
- * @since WCP_SINCE
+ * @since 1.4.3
  */
 use \WCPress\WCP\Models\ReviewModel;
 ?>

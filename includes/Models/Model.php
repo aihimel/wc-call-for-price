@@ -13,7 +13,7 @@ abstract class Model implements OptionKeyInterface, DefaultDataInterface {
 	/**
 	 * Option data
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @var array
 	 */
@@ -22,7 +22,7 @@ abstract class Model implements OptionKeyInterface, DefaultDataInterface {
 	/**
 	 * Fetches the option on object creation
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return void
 	 */
@@ -35,7 +35,7 @@ abstract class Model implements OptionKeyInterface, DefaultDataInterface {
 	/**
 	 * Return the name of the option key
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return string
 	 */
@@ -46,7 +46,7 @@ abstract class Model implements OptionKeyInterface, DefaultDataInterface {
 	/**
 	 * Save option to DB
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return void
 	 */
@@ -57,7 +57,7 @@ abstract class Model implements OptionKeyInterface, DefaultDataInterface {
 	/**
 	 * Returns default data for the options
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return array
 	 */

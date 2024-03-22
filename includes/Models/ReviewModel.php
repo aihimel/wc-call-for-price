@@ -14,38 +14,38 @@ class ReviewModel extends Model {
 	/**
 	 * Key to save the options
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 */
 	const OPTION_KEY = 'wcp_plugin_review_request';
 	/**
 	 * Is review requested at least once
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 */
 	const REVIEW_REQUESTED = 'review_requested';
 	/**
 	 * Last review request shown
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 */
 	const LAST_PROMPTED_AT = 'last_prompted_at';
 	/**
 	 * Total number of shown requests
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 */
 	const TOTAL_SHOWN = 'total_shown';
 	/**
 	 * Response of the user
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 */
 	const USER_RESPONSE = 'user_response';
 
 	/**
 	 * List of statuses
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 */
 	const USER_STATUS__REVIEW_NOW = 'review_now'; // User inputs that review is already given
 	const USER_STATUS__ALREADY_GIVEN = 'already_given'; // User inputs that review is already given
@@ -61,7 +61,7 @@ class ReviewModel extends Model {
 	/**
 	 * Return option key
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return string
 	 */
@@ -72,7 +72,7 @@ class ReviewModel extends Model {
 	/**
 	 * Returns default data
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return array
 	 */
@@ -88,7 +88,7 @@ class ReviewModel extends Model {
 	/**
 	 * Checks if review has been requested
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return bool
 	 */
@@ -99,7 +99,7 @@ class ReviewModel extends Model {
 	/**
 	 * Sets the user status
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @param string $status
 	 *
@@ -118,7 +118,7 @@ class ReviewModel extends Model {
 	/**
 	 * Return last prompted time
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return int
 	 */

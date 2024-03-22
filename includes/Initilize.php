@@ -49,7 +49,7 @@ final class Initilize {
 	/**
 	 * Sets default values if not available
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return void
 	 */
@@ -65,7 +65,7 @@ final class Initilize {
 	/**
 	 * Adds plugin activation time
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.4.3
 	 *
 	 * @return void
 	 */

@@ -123,7 +123,7 @@ function wcp_current_time(): int {
 /**
  * Checks if in WCP Settings page
  *
- * @since WCP_SINCE
+ * @since 1.4.3
  *
  * @return bool
  */
