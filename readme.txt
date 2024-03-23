@@ -14,7 +14,21 @@ A Feature-Rich Plugin (aka Extension) for Dynamic Control to Show/Hide Price or 
 
 == Description ==
 
-> **WC Call for Price for WooCommerce: A Feature-Rich Plugin (aka Extension) for Dynamic Control to Show/Hide Price or “Call For Price/Quote For Price” Button**
+> **Hide your product price with a message or button. Redirect your customers to another page to get the know the price. With WC Call for Price for WooCommerce, get more engagement from your customers**
+
+=== Features At a Glance===
+**📣 Hide Price:** Hide your product price with a message like `Call for Price` or `Contact for Price`.
+**📣 Show Button Instead of Text:** You can show any image instead of text if you want. You have to upload the image and select to show your custom image.
+**📣 Show Predefined Button:** There is a list of button that you can show your customers instead of text.
+**📣 Activate/Deactivate**: You can activate or deactivate the plugins feature form settings dashboard.
+**📣 Show on All Products:** You can force call for price to show on all products.
+**📣 Only Empty Price:** You can choose to show call for button text or button image on only empty prices.
+**📣 Button Settings:** If you choose to show button then you can choose button settings like width, height and alt text.
+**📣 Custom Rules:** If you have not chosen to show `call for price` on all product then you can imply `call for price` based on rules like `out of stock` `minimum threshold` or a `custom minimum threshold` input by you.
+**📣 Out of Stock:** Show `call for price` or any text or image for out of stock products.
+**📣 Minimum Threshold:** You can imply `call for price` on minimum threshold products. Your a product of specific quantity left on stock.
+**📣 Button Redirect:** You will be able to set a link with other settings. Which will be used to redirect users when the click `call for price` button.
+
 
 Experience enhanced pricing control and customer engagement with **WC Call for Price for WooCommerce**, an advanced plugin designed to seamlessly integrate with your WooCommerce store. This powerful extension empowers you to effortlessly manage your product pricing strategy by **revealing or concealing prices based on a variety of flexible criteria**.
 
@@ -98,6 +112,9 @@ It is very easy to get support, you just open a support ticket [here](https://wo
 
 = How to Request a New Feature? =
 We will be glad to know missing features from our customer from time to time. You could open a support ticket [here](https://wordpress.org/support/plugin/wc-call-for-price/#new-topic-0), with details of your new feature request.
+
+= How to fix button design miss alignment? =
+Adjusting width and height of the button will ensure that the alignment is correct.
 
 == Screenshots ==
 
