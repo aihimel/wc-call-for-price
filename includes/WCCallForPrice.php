@@ -1,15 +1,23 @@
 <?php
+namespace WCPress\WCP;
 /**
  * Main Plugin class to load all the hooks and initialization
+ *
+ * @package wcpress\wcp
  *
  * @since 1.2.1
  */
 
-namespace WCPress\WCP;
+final class WCCallForPrice {
 
-final class Boot {
-
-    static $self;
+	/**
+	 * Holds shelf class object
+	 *
+	 * @since 1.4.0
+	 *
+	 * @var \WCPress\WCP\WCCallForPrice
+	 */
+    private static $self;
 
     /**
      * Initializes the plugin
@@ -17,11 +25,14 @@ final class Boot {
      * @since 1.4.0
      */
     private function __construct() {
-        new AdminMenu();
+		// @TODO Keep records of the initialized object
+        Initilize::init();
+	    new AdminMenu();
         new Assets();
         new Upgrader();
         new AdminPageValidator();
         new AdminFormSave();
+		new ReviewRequest();
         if ( get_option( Constants::WCP_ACTIVATE ) == Constants::ON ) {
             new Render();
         }
@@ -32,13 +43,13 @@ final class Boot {
      *
      * @since 1.4.0
      *
-     * @return Boot
+     * @return WCCallForPrice
      */
     public static function init() {
-        if ( ! Boot::$self ) {
-            Boot::$self = new Boot();
+        if ( ! WCCallForPrice::$self ) {
+            WCCallForPrice::$self = new WCCallForPrice();
         }
-        return Boot::$self;
+        return WCCallForPrice::$self;
     }
 
 }

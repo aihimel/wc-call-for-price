@@ -2,11 +2,12 @@
 /**
  * Plugin Name: WC Call For Price
  * Plugin URI: http://www.wordpress.org/wc-call-for-price
- * Version: 1.4.2
+ * Version: 1.4.3
  * Author: WCPress
  * Author URI: https://wcpress.net/wc-call-for-price-woocommerce-plugin
  * Author Email: toaihimel@gmail.com
  * PHP version: 7.2
+ * Requires Plugins: woocommerce
  * Text domain: wc-call-for-price
  * Description: This plugin shows "call for price" text/HTML or image on empty price fields. It depends on woocommerce.
  * License: GPLv3 or later
@@ -34,14 +35,15 @@ require_once( 'vendor/autoload.php' );
 require_once ( 'functions.php' );
 
 // Constants
-defined( 'WC_CALL_FOR_PRICE_VERSION' ) || define('WC_CALL_FOR_PRICE_VERSION', '1.3.0');
+defined( 'WC_CALL_FOR_PRICE_VERSION' ) || define('WC_CALL_FOR_PRICE_VERSION', '1.4.3');
 defined('WC_CALL_FOR_PRICE_PATH') || define('WC_CALL_FOR_PRICE_PATH', plugin_basename(__FILE__));
-defined( 'WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE' ) || define( 'WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE', __DIR__ . '/activation-deactivation.php' );
 defined('WC_CALL_FOR_PRICE_TEMPLATE_PATH') || define('WC_CALL_FOR_PRICE_TEMPLATE_PATH', plugin_dir_path( __FILE__ ) );
 
+defined( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH' ) || define( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH', dirname( __FILE__ ) );
+
 // Activation Deactivation
-register_activation_hook(WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE, 'wc_call_for_price__activate');
-register_deactivation_hook(WC_CALL_FOR_PRICE_ACTIVATION_DEACTIVATION_FILE, 'wc_call_for_price__deactivate');
+register_activation_hook(__FILE__, 'wc_call_for_price__activate');
+register_deactivation_hook(__FILE__, 'wc_call_for_price__deactivate');
 
 // Booting the plugin
-\WCPress\WCP\Boot::init();
+\WCPress\WCP\WCCallForPrice::init();

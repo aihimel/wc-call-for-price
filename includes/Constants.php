@@ -19,6 +19,8 @@ class Constants {
     const TEXT = 'wc_call_for_price__text';
     const OFF = 'off';
     const ON = 'on';
+	const YES = 'yes';
+	const NO = 'no';
 
     // General Settings
     const WCP_ACTIVATE = 'wcp_activate';
@@ -58,4 +60,7 @@ class Constants {
     // Default string
     const DEFAULT_BUTTON_TEXT = 'Call For Price';
 
+	// Activation Deactivation Time
+	const FIRST_ACTIVATED_AT = 'wcp_first_plugin_activation_time';
+	const MOST_RECENT_ACTIVATED_AT = 'wcp_most_recent_plugin_activation_time';
 }

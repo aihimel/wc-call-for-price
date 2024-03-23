@@ -62,9 +62,22 @@ $button_alt_text = get_option( Constants::BUTTON_ALT_TEXT );
             <?php for($i = 1; $i <= 15; $i++) {?>
 
             <div class="radio">
-
+                <?php
+                  $image_title = '';
+                  $image_path = WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH . '/assets/images/preset-buttons/cfp_'.$i.'.png';
+                  $image_url = plugins_url('/wc-call-for-price/assets/images/preset-buttons/cfp_'.$i.'.png');
+                  if ( function_exists( 'getimagesize') ) {
+                    $sizes = getimagesize( $image_path );
+                    if ( ! empty( $sizes ) ) {
+	                    $image_title = $sizes[0] . 'px * ' . $sizes[1] . 'px';
+                    }
+                  }
+                ?>
                 <input type="radio" name="wc_call_for_price__image" id="wc_call_for_price__image_<?php echo $i; ?>" value="cfp_<?php echo $i; ?>" <?php if('cfp_'.$i == get_option('wc_call_for_price__image')) echo 'checked';?> >
-                <img src='<?php echo esc_attr( plugins_url('/wc-call-for-price/assets/images/preset-buttons/cfp_'.$i.'.png') ); ?>' alt=""/>
+                <img
+                  src='<?php echo esc_attr( $image_url ); ?>'
+                  title="<? echo esc_attr( $image_title ); ?>"
+                />
 
             </div>
 

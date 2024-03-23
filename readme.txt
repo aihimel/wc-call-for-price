@@ -1,12 +1,12 @@
 === WC Call For Price ===
-Contributors: wcpress, aihimel, iamasadpolash
+Contributors: wcpress
 Tags: call for price, request a quote, name your price, price, pricing
-Requires at least: 4.2.2
-Tested up to: 6.4
+Requires at least: 4.9
+Tested up to: 6.5
 WC requires at least: 5.0.0
-WC tested up to: 8.6
+WC tested up to: 8.7
 Requires PHP: 7.2
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,7 +14,21 @@ A Feature-Rich Plugin (aka Extension) for Dynamic Control to Show/Hide Price or 
 
 == Description ==
 
-> **WC Call for Price for WooCommerce: A Feature-Rich Plugin (aka Extension) for Dynamic Control to Show/Hide Price or “Call For Price/Quote For Price” Button**
+> **Hide your product price with a message or button. Redirect your customers to another page to get the know the price. With WC Call for Price for WooCommerce, get more engagement from your customers**
+
+=== Features At a Glance===
+**📣 Hide Price:** Hide your product price with a message like `Call for Price` or `Contact for Price`.
+**📣 Show Button Instead of Text:** You can show any image instead of text if you want. You have to upload the image and select to show your custom image.
+**📣 Show Predefined Button:** There is a list of button that you can show your customers instead of text.
+**📣 Activate/Deactivate**: You can activate or deactivate the plugins feature form settings dashboard.
+**📣 Show on All Products:** You can force call for price to show on all products.
+**📣 Only Empty Price:** You can choose to show call for button text or button image on only empty prices.
+**📣 Button Settings:** If you choose to show button then you can choose button settings like width, height and alt text.
+**📣 Custom Rules:** If you have not chosen to show `call for price` on all product then you can imply `call for price` based on rules like `out of stock` `minimum threshold` or a `custom minimum threshold` input by you.
+**📣 Out of Stock:** Show `call for price` or any text or image for out of stock products.
+**📣 Minimum Threshold:** You can imply `call for price` on minimum threshold products. Your a product of specific quantity left on stock.
+**📣 Button Redirect:** You will be able to set a link with other settings. Which will be used to redirect users when the click `call for price` button.
+
 
 Experience enhanced pricing control and customer engagement with **WC Call for Price for WooCommerce**, an advanced plugin designed to seamlessly integrate with your WooCommerce store. This powerful extension empowers you to effortlessly manage your product pricing strategy by **revealing or concealing prices based on a variety of flexible criteria**.
 
@@ -99,6 +113,9 @@ It is very easy to get support, you just open a support ticket [here](https://wo
 = How to Request a New Feature? =
 We will be glad to know missing features from our customer from time to time. You could open a support ticket [here](https://wordpress.org/support/plugin/wc-call-for-price/#new-topic-0), with details of your new feature request.
 
+= How to fix button design miss alignment? =
+Adjusting width and height of the button will ensure that the alignment is correct.
+
 == Screenshots ==
 
 1. Simple Text Display
@@ -117,14 +134,23 @@ We will be glad to know missing features from our customer from time to time. Yo
 
 == Upgrade Notice ==
 
-= 1.4.2 =
+= 1.4.3 =
 This is a minor release. Some features have been unlocked in this version with some minor tweaking.
 
 
 == Changelog ==
 
+= 1.4.3 (23 March 2023) =
+* ✅ **Feature:** Preloaded image will now show size on hover. As defining button size could be a must to fit into the sites design
+* ✅ **Feature:** Icon added on help texts for a better user experience
+* 🪛 **Tweak:** Button not showing on variation product and grouped product issue fixed
+* 🪛 **Tweak:** Activation and deactivation not firing properly issue fixed
+* 🧩 **Compatibility:** Requires Plugins header added and WooCommerce plugin made required
+* 🧩 **Compatibility:** Tested for WordPress 6.5
+* 🧩 **Compatibility:** Tested for WooCommerce 8.7
+
 = 1.4.2 (22 February 2023) =
-* ✅ **Feature:** Now you will be able to show `text only` with links.
+* ✅ **Feature:** Now you will be able to show `text only` with links
 * 🪛 **Tweak:** Text to show is reorganized with button tab
 
 = 1.4.1 (6 February 2023) =
@@ -133,15 +159,15 @@ This is a minor release. Some features have been unlocked in this version with s
 = 1.4.0 (9 August 2023) =
 * ✅ **Feature:** Admin settings area updated. Added 4 sections [General, Button, Rules, Actions]
 * ✅ **Feature:** Display settings added. Now you can show `Call For Price` on empty price product or on all of your products
-* ✅ **Feature:** Button Attributes like height, width, title text added. So you can tweak the button design yourselves.
+* ✅ **Feature:** Button Attributes like height, width, title text added. So you can tweak the button design yourselves
 * ✅ **Feature:** You can now show `Call For Price` on out-of-stock products, minimum threshold products or a custom number of availability
-* ✅ **Feature:** Button action added. Now you will be able to redirect the user to a different page when anybody clicks on `Call For Price`. Also a settings added to open a new page or open in the current page.
+* ✅ **Feature:** Button action added. Now you will be able to redirect the user to a different page when anybody clicks on `Call For Price`. Also, a settings added to open a new page or open in the current page
 * 🪛 **Tweak:** Security updated
 * 🧩 **Compatibility:** Tested up to WordPress 6.3
 * 🧩 **Compatibility:** Tested up to WooCommerce 8.0.0
 
 = 1.3.0 (29 July 2023) =
-* Code refactored
+* 🪛 **Tweak:** Code refactored
 * ✅ **Feature:** Plugin made translation ready
 * ✅ **Feature:** A new settings link added in plugin list page
 * ✅ **Feature:** Plugin feature activation/deactivation added
@@ -163,4 +189,4 @@ This is a minor release. Some features have been unlocked in this version with s
 * 🪛 **Tweak:** Screenshots added
 
 = 1.0 =
-* ✅ **Feature:** Initial release of the plugin.
+* ✅ **Feature:** Initial release of the plugin
