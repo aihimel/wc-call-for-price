@@ -99,6 +99,9 @@ It is very easy to get support, you just open a support ticket [here](https://wo
 = How to Request a New Feature? =
 We will be glad to know missing features from our customer from time to time. You could open a support ticket [here](https://wordpress.org/support/plugin/wc-call-for-price/#new-topic-0), with details of your new feature request.
 
+= How to fix button design miss alignment? =
+Adjusting width and height of the button will ensure that the alignment is correct.
+
 == Screenshots ==
 
 1. Simple Text Display
