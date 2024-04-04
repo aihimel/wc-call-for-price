@@ -32,6 +32,7 @@ class Render {
         } elseif ( wcp_is_on( Constants::SHOW_ON_ALL_PRODUCTS ) ) {
             add_filter( 'woocommerce_is_purchasable', '__return_false' );
             add_filter( 'woocommerce_get_price_html', [ $this, 'button_html' ], 11, 2 );
+	          add_action( 'woocommerce_single_variation', [ $this, 'hide_single_variation_add_to_cart' ] );
         }
 
         if ( wcp_is_on( Constants::OUT_OF_STOCK ) ) {
@@ -41,8 +42,6 @@ class Render {
         if ( wcp_is_on( Constants::MINIMUM_STOCK_THRESHOLD ) ) {
             add_filter( 'woocommerce_get_price_html', [ $this, 'woocommerce_low_on_stock' ], 10, 2 );
         }
-
-        add_action( 'woocommerce_single_variation', [ $this, 'hide_single_variation_add_to_cart' ] );
     }
 
     /**
