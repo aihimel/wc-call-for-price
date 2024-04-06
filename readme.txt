@@ -1,12 +1,12 @@
 === WC Call For Price ===
 Contributors: wcpress
-Tags: call for price, request a quote, name your price, price, pricing
+Tags: call for price, request a quote, name your price, catalog mode, hide price
 Requires at least: 4.9
 Tested up to: 6.5
 WC requires at least: 5.0.0
 WC tested up to: 8.7
 Requires PHP: 7.2
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -134,13 +134,16 @@ Adjusting width and height of the button will ensure that the alignment is corre
 
 == Upgrade Notice ==
 
-= 1.4.3 =
-This is a minor release. Some features have been unlocked in this version with some minor tweaking.
+= 1.4.4 =
+This is a minor release with tweaking and fixes.
 
 
 == Changelog ==
 
-= 1.4.3 (23 March 2023) =
+= 1.4.4 (5 April 2024) =
+* 🪛 **Tweak:** Variable product add to cart button not showing issue fixed
+
+= 1.4.3 (23 March 2024) =
 * ✅ **Feature:** Preloaded image will now show size on hover. As defining button size could be a must to fit into the sites design
 * ✅ **Feature:** Icon added on help texts for a better user experience
 * 🪛 **Tweak:** Button not showing on variation product and grouped product issue fixed
@@ -149,11 +152,11 @@ This is a minor release. Some features have been unlocked in this version with s
 * 🧩 **Compatibility:** Tested for WordPress 6.5
 * 🧩 **Compatibility:** Tested for WooCommerce 8.7
 
-= 1.4.2 (22 February 2023) =
+= 1.4.2 (22 February 2024) =
 * ✅ **Feature:** Now you will be able to show `text only` with links
 * 🪛 **Tweak:** Text to show is reorganized with button tab
 
-= 1.4.1 (6 February 2023) =
+= 1.4.1 (6 February 2024) =
 * 🪛 **Tweak:** Button css theme conflict issue fixed
 
 = 1.4.0 (9 August 2023) =
