@@ -2,21 +2,19 @@
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WC Call For Price 1.4.3\n"
+"Project-Id-Version: WC Call For Price 1.4.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-call-for-price\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-03-23T07:12:22+00:00\n"
+"POT-Creation-Date: 2024-04-04T19:06:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: wc-call-for-price\n"
 
 #. Plugin Name of the plugin
-#: build/trunk-1.4.1/templates/admin/parts/header.php:25
-#: build/wc-call-for-price/templates/admin/parts/header.php:25
 #: templates/admin/parts/header.php:25
 msgid "WC Call For Price"
 msgstr ""
@@ -37,62 +35,38 @@ msgstr ""
 msgid "https://wcpress.net/wc-call-for-price-woocommerce-plugin"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/action_settings.php:16
-#: build/wc-call-for-price/templates/admin/pages/action_settings.php:16
 #: templates/admin/pages/action_settings.php:16
 msgid "Actions Settings"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/action_settings.php:21
-#: build/wc-call-for-price/templates/admin/pages/action_settings.php:21
 #: templates/admin/pages/action_settings.php:21
 msgid "Redirect "
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/action_settings.php:24
-#: build/wc-call-for-price/templates/admin/pages/action_settings.php:24
 #: templates/admin/pages/action_settings.php:24
 msgid "Redirect To"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/action_settings.php:38
-#: build/wc-call-for-price/templates/admin/pages/action_settings.php:38
 #: templates/admin/pages/action_settings.php:38
 msgid "Redirect to a new page."
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/action_settings.php:43
-#: build/wc-call-for-price/templates/admin/pages/action_settings.php:43
 #: templates/admin/pages/action_settings.php:43
 msgid "Open in a new page"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/action_settings.php:54
-#: build/wc-call-for-price/templates/admin/pages/action_settings.php:54
 #: templates/admin/pages/action_settings.php:54
 msgid "Opens a new tab."
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/action_settings.php:60
-#: build/wc-call-for-price/templates/admin/pages/action_settings.php:60
 #: templates/admin/pages/action_settings.php:60
 msgid "Link"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/action_settings.php:69
-#: build/wc-call-for-price/templates/admin/pages/action_settings.php:69
 #: templates/admin/pages/action_settings.php:69
 msgid "Redirect to the above link"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/action_settings.php:81
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:127
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:79
-#: build/trunk-1.4.1/templates/admin/pages/rules_settings.php:75
-#: build/wc-call-for-price/templates/admin/pages/action_settings.php:81
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:153
-#: build/wc-call-for-price/templates/admin/pages/general_settings.php:70
-#: build/wc-call-for-price/templates/admin/pages/rules_settings.php:75
 #: templates/admin/pages/action_settings.php:81
 #: templates/admin/pages/button_settings.php:166
 #: templates/admin/pages/general_settings.php:70
@@ -100,244 +74,164 @@ msgstr ""
 msgid "Save Settings"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:20
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:20
 #: templates/admin/pages/button_settings.php:20
 msgid "Button Settings"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:25
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:51
-#: templates/admin/pages/button_settings.php:51
-msgid "Select Image"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:27
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:53
-#: templates/admin/pages/button_settings.php:53
-msgid "Show Image :"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:30
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:56
-#: templates/admin/pages/button_settings.php:56
-msgid "Check this box if you want to select an image form some specific list of \"Call for price\" images."
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:46
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:72
-#: templates/admin/pages/button_settings.php:85
-msgid "Check any one form here."
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:51
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:77
-#: templates/admin/pages/button_settings.php:90
-msgid "Upload Image"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:53
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:79
-#: templates/admin/pages/button_settings.php:92
-msgid "Show Uploaded Image :"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:55
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:81
-#: templates/admin/pages/button_settings.php:94
-msgid "Check this box if you want to show your uploaded image."
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:64
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:90
-#: templates/admin/pages/button_settings.php:103
-msgid "Upload Your Image"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:74
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:100
-#: templates/admin/pages/button_settings.php:113
-msgid "If you want to upload your custom image, upload here."
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:80
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:106
-#: templates/admin/pages/button_settings.php:119
-msgid "Button Attributes"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:91
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:117
-#: templates/admin/pages/button_settings.php:130
-msgid "Button height in pixel"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:104
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:130
-#: templates/admin/pages/button_settings.php:143
-msgid "Button width in pixel"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/button_settings.php:117
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:143
-#: templates/admin/pages/button_settings.php:156
-msgid "Button alt attribute text"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:15
-#: build/wc-call-for-price/templates/admin/pages/general_settings.php:15
-#: templates/admin/pages/general_settings.php:15
-msgid "General Settings"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:20
-#: build/wc-call-for-price/templates/admin/pages/general_settings.php:20
-#: templates/admin/pages/general_settings.php:20
-msgid "Plugin Features"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:21
-#: build/wc-call-for-price/templates/admin/pages/general_settings.php:21
-#: templates/admin/pages/general_settings.php:21
-msgid "Activate"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:30
-#: build/wc-call-for-price/templates/admin/pages/general_settings.php:30
-#: templates/admin/pages/general_settings.php:30
-msgid "This checkbox will activate the plugin features. This must be on for the plugin to work."
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:35
-#: build/wc-call-for-price/templates/admin/pages/general_settings.php:35
-#: templates/admin/pages/general_settings.php:35
-msgid "Display Settings"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:36
-#: build/wc-call-for-price/templates/admin/pages/general_settings.php:36
-#: templates/admin/pages/general_settings.php:36
-msgid "Only Empty Price"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:47
-#: build/wc-call-for-price/templates/admin/pages/general_settings.php:47
-#: templates/admin/pages/general_settings.php:47
-msgid "If checked, this will show call for price only on empty price products."
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:49
-#: build/wc-call-for-price/templates/admin/pages/general_settings.php:49
-#: templates/admin/pages/general_settings.php:49
-msgid "Show On All Products"
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:60
-#: build/wc-call-for-price/templates/admin/pages/general_settings.php:60
-#: templates/admin/pages/general_settings.php:60
-msgid "If checked, this will show call for price on all products."
-msgstr ""
-
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:65
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:26
 #: templates/admin/pages/button_settings.php:26
 msgid "Text"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:67
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:44
+#: templates/admin/pages/button_settings.php:31
+msgid "Show Text"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:41
+msgid "Check to show only text on a simple html button."
+msgstr ""
+
 #: templates/admin/pages/button_settings.php:44
 msgid "Text To Show :"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/general_settings.php:69
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:46
 #: templates/admin/pages/button_settings.php:46
 msgid "Write here what you want to see on front end. Plain text or HTML."
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/rules_settings.php:16
-#: build/wc-call-for-price/templates/admin/pages/rules_settings.php:16
+#: templates/admin/pages/button_settings.php:51
+msgid "Select Image"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:53
+msgid "Show Image :"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:56
+msgid "Check this box if you want to select an image form some specific list of \"Call for price\" images."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:85
+msgid "Check any one form here."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:90
+msgid "Upload Image"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:92
+msgid "Show Uploaded Image :"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:94
+msgid "Check this box if you want to show your uploaded image."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:103
+msgid "Upload Your Image"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:113
+msgid "If you want to upload your custom image, upload here."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:119
+msgid "Button Attributes"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:130
+msgid "Button height in pixel"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:143
+msgid "Button width in pixel"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:156
+msgid "Button alt attribute text"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:15
+msgid "General Settings"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:20
+msgid "Plugin Features"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:21
+msgid "Activate"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:30
+msgid "This checkbox will activate the plugin features. This must be on for the plugin to work."
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:35
+msgid "Display Settings"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:36
+msgid "Only Empty Price"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:47
+msgid "If checked, this will show call for price only on empty price products."
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:49
+msgid "Show On All Products"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:60
+msgid "If checked, this will show call for price on all products."
+msgstr ""
+
 #: templates/admin/pages/rules_settings.php:16
 msgid "Rules Settings"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/rules_settings.php:21
-#: build/wc-call-for-price/templates/admin/pages/rules_settings.php:21
 #: templates/admin/pages/rules_settings.php:21
 msgid "Stock "
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/rules_settings.php:24
-#: build/wc-call-for-price/templates/admin/pages/rules_settings.php:24
 #: templates/admin/pages/rules_settings.php:24
 msgid "Out of stocks"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/rules_settings.php:34
-#: build/wc-call-for-price/templates/admin/pages/rules_settings.php:34
 #: templates/admin/pages/rules_settings.php:34
 msgid "If checked, all the out of products will show call for price."
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/rules_settings.php:39
-#: build/trunk-1.4.1/templates/admin/pages/rules_settings.php:55
-#: build/wc-call-for-price/templates/admin/pages/rules_settings.php:39
-#: build/wc-call-for-price/templates/admin/pages/rules_settings.php:55
 #: templates/admin/pages/rules_settings.php:39
 #: templates/admin/pages/rules_settings.php:55
 msgid "Minimum Threshold"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/rules_settings.php:49
-#: build/wc-call-for-price/templates/admin/pages/rules_settings.php:49
 #: templates/admin/pages/rules_settings.php:49
 msgid "If checked, all the products with minimum threshold will show."
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/pages/rules_settings.php:64
-#: build/wc-call-for-price/templates/admin/pages/rules_settings.php:64
 #: templates/admin/pages/rules_settings.php:64
 msgid "Minimum stock quantity to show call for price."
 msgstr ""
 
 #. translators 1: It is start of a href tag, no need to translate 2. End of href tag, no need to translate 3. It is start of a href tag, no need to translate 4. End of href tag, no need to translate
-#: build/trunk-1.4.1/templates/admin/parts/footer.php:16
-#: build/wc-call-for-price/templates/admin/parts/footer.php:16
 #: templates/admin/parts/footer.php:16
 msgid "Don't forget to leave us a %1$s review %2$s. If you find anything difficult, just ask %3$s here %4$s"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/parts/navigation.php:15
-#: build/wc-call-for-price/templates/admin/parts/navigation.php:15
 #: templates/admin/parts/navigation.php:15
 msgid "General"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/parts/navigation.php:19
-#: build/wc-call-for-price/templates/admin/parts/navigation.php:19
 #: templates/admin/parts/navigation.php:19
 msgid "Button"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/parts/navigation.php:23
-#: build/wc-call-for-price/templates/admin/parts/navigation.php:23
 #: templates/admin/parts/navigation.php:23
 msgid "Rules"
 msgstr ""
 
-#: build/trunk-1.4.1/templates/admin/parts/navigation.php:27
-#: build/wc-call-for-price/templates/admin/parts/navigation.php:27
 #: templates/admin/parts/navigation.php:27
 msgid "Actions"
-msgstr ""
-
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:31
-#: templates/admin/pages/button_settings.php:31
-msgid "Show Text"
-msgstr ""
-
-#: build/wc-call-for-price/templates/admin/pages/button_settings.php:41
-#: templates/admin/pages/button_settings.php:41
-msgid "Check to show only text on a simple html button."
 msgstr ""
