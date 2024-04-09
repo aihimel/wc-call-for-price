@@ -1,9 +1,9 @@
 === WC Call For Price ===
 Contributors: wcpress
 Tags: call for price, request a quote, name your price, catalog mode, hide price
-Requires at least: 4.9
+Requires at least: 5.8
 Tested up to: 6.5
-WC requires at least: 5.0.0
+WC requires at least: 6.6
 WC tested up to: 8.7
 Requires PHP: 7.2
 Stable tag: 1.4.4
