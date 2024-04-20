@@ -48,7 +48,12 @@ class AdminMenu {
         if( ! current_user_can('manage_options') ) {
             wp_die( __('You don\'t have permission to access this page', 'wc-call-for-price' ) );
         } else {
-            wcp_get_admin_template( 'layout.php' );
+			$page_value = isset( $_GET['dashboard'] ) ? sanitize_text_field( wp_unslash( $_GET['dashboard'] ) ) : '';
+			if ( 'new-dashboard' === $page_value ) {
+				wcp_get_admin_template( 'dashboard.php' );
+			} else {
+				wcp_get_admin_template( 'layout.php' );
+			}
         }
     }
 

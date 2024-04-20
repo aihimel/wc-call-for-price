@@ -9,6 +9,13 @@ namespace WCPress\WCP;
 
 class Assets {
 
+	/**
+	 * Admin react app script handle
+	 *
+	 * @since WCP_SINCE
+	 */
+	const ADMIN_REACT_APP = 'wcp-admin-react-app-script';
+
     /**
      * Initializes the object
      *
@@ -43,6 +50,11 @@ class Assets {
             plugin_dir_url( WC_CALL_FOR_PRICE_PATH ) . 'assets/js/plugin-list-page-review.js',
             [ 'jquery' ]
         );
+		wp_register_script(
+			Assets::ADMIN_REACT_APP,
+			plugin_dir_url( WC_CALL_FOR_PRICE_PATH ) . 'assets/js/admin-dashboard-app-script.js',
+			[ 'wp-element', 'wp-api-fetch' ]
+		);
     }
 
 	/**
@@ -57,6 +69,12 @@ class Assets {
 		if( 'plugins.php' === $pagenow ) {
 			wp_enqueue_script( 'wcp-plugin-review-script' );
 		}
+
+		// specific plugin page detection
+		if ( wcp_is_settings_page() ) {
+			wp_enqueue_script( Assets::ADMIN_REACT_APP );
+		}
+
 	}
 
 }
