@@ -1,18 +1,46 @@
-import { useState } from 'react';
+import {
+    useState
+} from 'react';
 
-// @TODO test if new node package works
+import {
+    createBrowserRouter,
+    RouterProvider
+} from "react-router-dom";
+
+import WCPNavigation from "./wcp-navigation";
+
+export function Dashboard({}) {
+    const _URL = new URL( window.location );
+    let current_page_slug = _URL.searchParams.get('dashboard-screen') !== "" ? _URL.searchParams.get('dashboard-screen') : "home";
+
+    let content = <></>
+    switch ( current_page_slug ) {
+        case "page_two":
+            content = <>Page Two</>
+            break;
+        case "page_three":
+            content = <>Page Three</>
+        default:
+            content = <>Page One</>
+    }
+    return(
+        <>
+            <WCPNavigation />
+            {content}
+        </>
+    );
+}
+
+const router = createBrowserRouter([
+    {
+        path: '/wp-admin/admin.php',
+        element: <Dashboard />
+    }
+]);
 
 export function App({}) {
-    const [ input_value, set_input_value ] = useState('');
-
-    const handleChange = (e) => {
-        set_input_value(e.target.value);
-    }
-
     return(
-        <div>
-            <input type='text' value={input_value} onChange={handleChange}/><span>{input_value}</span>
-        </div>
+        <RouterProvider router={router} />
     );
-};
+}
 

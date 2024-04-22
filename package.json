@@ -19,5 +19,8 @@
   },
   "overrides": {
     "graceful-fs": "^4.2.11"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.22.3"
   }
 }
