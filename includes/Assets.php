@@ -52,8 +52,8 @@ class Assets {
         );
 		wp_register_script(
 			Assets::ADMIN_REACT_APP,
-			plugin_dir_url( WC_CALL_FOR_PRICE_PATH ) . 'assets/js/admin-dashboard-app-script.js',
-			[ 'wp-element', 'wp-api-fetch', 'wp-component' ]
+			plugin_dir_url( WC_CALL_FOR_PRICE_PATH ) . 'assets/js/admin/admin-dashboard-app-script.js',
+			[ 'wp-element', 'wp-api-fetch' ]
 		);
     }
 
@@ -73,7 +73,7 @@ class Assets {
 		// specific plugin page detection
 		if ( wcp_is_settings_page() ) {
 			wp_enqueue_script( Assets::ADMIN_REACT_APP );
-			$react_asset_files = include WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH . '/assets/js/admin-dashboard-app-script.asset.php';
+			$react_asset_files = include WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH . '/assets/js/admin/admin-dashboard-app-script.asset.php';
 			foreach( $react_asset_files['dependencies'] as $dependency ) {
 				wp_enqueue_script( $dependency );
 			}
