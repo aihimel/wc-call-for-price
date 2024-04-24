@@ -6,4 +6,4 @@
  */
 defined( 'ABSPATH' ) || exit;
 ?>
-<div id="wcp-admin-react-app"></div>
+<div id="wcp-admin-settings-app"></div>
