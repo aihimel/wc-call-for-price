@@ -6,15 +6,67 @@
   box-shadow: 0 1px 1px rgba(0,0,0,.04);
 
   .wcp-dashboard-header {
-    border-bottom: 1px solid black;
+    //border-bottom: 1px solid black;
   }
 
   .wcp-dashboard-content {
-
+    margin: 15px 0;
   }
 
   .wcp-rule-archive-wrapper {
-    border: 1px solid black;
+    transition-duration: 500ms;
     width: 320px;
+    //border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    border-radius: 3px;
+    background: #f7f5f5;
+    padding: 15px;
+    margin: 15px 15px 0 0;
+    &:hover {
+      background-color: #d6d4d4;
+      transition-duration: 500ms;
+    }
+    .wcp-rule-post-header {
+      position: relative;
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+      span.wcp-rule-active {
+        position: absolute;
+        top: -14px;
+        float: left;
+        padding: 4px 8px;
+        left: 274px;
+        background-color: #5f5fed;
+        color: #fff;
+        border-radius: 0 3px 0 0;
+        font-weight: 600;
+        font-size: .8rem;
+      }
+    }
+    .wcp-rule-post-footer {
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+        li {
+          display: inline-block;
+          margin-right: 7.5px;
+          a {
+            padding: 4px 8px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 3px;
+            &.wcp-edit-rule {
+              background-color: #13c413;
+            }
+            &.wcp-delete-rule {
+              background-color: red;
+            }
+          }
+        }
+      }
+    }
   }
 }
