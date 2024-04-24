@@ -86,9 +86,9 @@ class Assets {
 			wp_enqueue_style( Assets::DASHBOARD_STYLE );
 			wp_enqueue_script( Assets::ADMIN_REACT_APP );
 			$react_asset_files = include WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH . '/assets/js/admin/admin-dashboard-app-script.asset.php';
-			foreach( $react_asset_files['dependencies'] as $dependency ) {
-				wp_enqueue_script( $dependency );
-			}
+//			foreach( $react_asset_files['dependencies'] as $dependency ) {
+//				wp_enqueue_script( $dependency );
+//			}
 		}
 
 	}
