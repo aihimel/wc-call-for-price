@@ -14,8 +14,12 @@
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@wordpress/scripts": "^26.9.0",
+    "css-loader": "^7.1.1",
     "gulp": "^3.9.1",
-    "gulp-sass": "^5.1.0"
+    "gulp-sass": "^5.1.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0"
   },
   "overrides": {
     "graceful-fs": "^4.2.11"
