@@ -5,6 +5,7 @@ const defaultConfig = require( '@wordpress/scripts/config/webpack.config.js' );
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 let admin_dashboard_script = {
+    mode: 'development',
     ...defaultConfig,
     ...{
         entry: {
@@ -18,28 +19,28 @@ let admin_dashboard_script = {
 }
 
 let admin_dashboard_style = {
-        entry: './src/scss/admin/admin-dashboard-app-style.scss',
-        output: {
-            path: __dirname + '/assets/css/admin/',
-        },
-        module: {
-            rules: [
-                {
-                    test: /\.scss$/, // Match .scss files
-                    use: [
-                        MiniCssExtractPlugin.loader, // Extract CSS into separate files
-                        'css-loader',                // Translate CSS into CommonJS
-                        'sass-loader',               // Compile Sass to CSS
-                    ],
-                },
-            ],
-        },
-        plugins: [
-            new MiniCssExtractPlugin({
-                filename: 'admin-dashboard-style.css', // Output CSS filename
-            }),
+    mode: 'development',
+    entry: './src/scss/admin/admin-dashboard-app-style.scss',
+    output: {
+        path: __dirname + '/assets/css/admin/',
+    },
+    module: {
+        rules: [
+            {
+                test: /\.scss$/, // Match .scss files
+                use: [
+                    MiniCssExtractPlugin.loader, // Extract CSS into separate files
+                    'css-loader',                // Translate CSS into CommonJS
+                    'sass-loader',               // Compile Sass to CSS
+                ],
+            },
         ],
-
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'admin-dashboard-style.css', // Output CSS filename
+        }),
+    ],
 }
 
 module.exports = [ admin_dashboard_script, admin_dashboard_style ];
