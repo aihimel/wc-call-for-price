@@ -13,18 +13,24 @@ export function SingleRulePanel({}){
 export default function RuleArchive({}){
 
     const { wcpGlobalData, setWcpGlobalData } = useContext( GlobalDataContext );
-    const { navigation, setNavigation } = useContext( WCPNavigationContext )
 
     const handleEdit = ( e ) => {
         e.preventDefault();
-
+        setWcpGlobalData( prevState => ({
+            ...prevState,
+            ...{ navigation:
+                    {
+                        current_page_slug: e.target.getAttribute('data-value')
+                    }
+            }
+        }) );
     }
 
     return(
         <div className='wcp-rule-archive-wrapper'>
             <div className='wcp-rule-custom-post'>
                 <div className='wcp-rule-post-header'>
-                    <h3>NAV: {navigation.current_page_slug}</h3>
+                    <h3>NAV: {wcpGlobalData.navigation.current_page_slug}</h3>
                     <span className='wcp-rule-active'>Active</span>
                 </div>
                 <div className='wcp-rule-post-content'>
@@ -35,7 +41,7 @@ export default function RuleArchive({}){
                 <div className='wcp-rule-post-footer'>
                     <ul>
                         <li>
-                            <a href="" className='wcp-edit-rule' data-rule-id='1' onClick={handleEdit}>Edit</a>
+                            <a href="" className='wcp-edit-rule' data-value='wcp-add-edit' data-rule-id='1' onClick={handleEdit}>Edit</a>
                         </li>
                         <li>
                             <a href="" className='wcp-delete-rule'>Delete</a>

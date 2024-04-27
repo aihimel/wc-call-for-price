@@ -17,11 +17,9 @@ export default function Dashboard({}) {
     return(
         <GlobalDataContext.Provider value={ { wcpGlobalData, setWcpGlobalData } }>
             <div className='wcp-dashboard-header'>Header Section</div>
-            <WCPRouter>
-                <div className='wcp-dashboard-content'>
-                    <RuleArchive />
-                </div>
-            </WCPRouter>
+            <div className='wcp-dashboard-content'>
+                <RuleArchive />
+            </div>
         </GlobalDataContext.Provider>
     );
 }
