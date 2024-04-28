@@ -1,8 +1,7 @@
 import { createContext, useState } from 'react';
-import RuleArchive, { SingleRulePanel } from "./rule-archive";
-import { URL_KEY, ARCHIVE_PAGE, ADD_EDIT_PAGE } from "./constants";
-import WCPRouter from "./wcp-router";
-
+import RuleArchive from "./rule-archive";
+import SingleRule from "./single-rule";
+import { URL_KEY, ADD_EDIT_PAGE } from "./constants";
 
 export const GlobalDataContext = createContext();
 
@@ -22,7 +21,7 @@ export default function Dashboard({}) {
 
     let content = <RuleArchive />
     if (wcpGlobalData.navigation.current_page_slug === ADD_EDIT_PAGE) {
-        content = <SingleRulePanel />
+        content = <SingleRule />
     }
 
     return(

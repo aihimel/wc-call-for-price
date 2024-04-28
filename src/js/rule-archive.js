@@ -1,15 +1,6 @@
 import { useContext } from "react";
 import { GlobalDataContext } from "./dashboard";
-import { WCPNavigationContext } from "./wcp-router";
 import { URL_KEY, ADD_EDIT_PAGE } from "./constants";
-
-export function SingleRulePanel({}){
-    return(
-        <div className='wcp-single-rule-popup-wrapper'>
-            Single Rule Edit page
-        </div>
-    );
-}
 
 export default function RuleArchive({}){
 
