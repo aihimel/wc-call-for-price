@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { GlobalDataContext } from "./dashboard";
 import { WCPNavigationContext } from "./wcp-router";
+import { URL_KEY, ADD_EDIT_PAGE } from "./constants";
 
 export function SingleRulePanel({}){
     return(
         <div className='wcp-single-rule-popup-wrapper'>
-
+            Single Rule Edit page
         </div>
     );
 }
@@ -16,11 +17,15 @@ export default function RuleArchive({}){
 
     const handleEdit = ( e ) => {
         e.preventDefault();
+        let page_slug = e.target.getAttribute('data-value');
+        let _URL = new URL(window.location);
+        _URL.searchParams.set( URL_KEY, page_slug );
+        history.replaceState( null, '', _URL.toString() );
         setWcpGlobalData( prevState => ({
             ...prevState,
             ...{ navigation:
                     {
-                        current_page_slug: e.target.getAttribute('data-value')
+                        current_page_slug: page_slug
                     }
             }
         }) );
@@ -41,7 +46,7 @@ export default function RuleArchive({}){
                 <div className='wcp-rule-post-footer'>
                     <ul>
                         <li>
-                            <a href="" className='wcp-edit-rule' data-value='wcp-add-edit' data-rule-id='1' onClick={handleEdit}>Edit</a>
+                            <a href="" className='wcp-edit-rule' data-value={ADD_EDIT_PAGE} data-rule-id='1' onClick={handleEdit}>Edit</a>
                         </li>
                         <li>
                             <a href="" className='wcp-delete-rule'>Delete</a>
