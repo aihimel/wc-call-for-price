@@ -14,23 +14,15 @@ export function Number( { value, setValue, label, id, name, help, minimum, maxim
 
     const helpContent = '' !== help ? <Help title={help} />: '';
 
-    const [ _value, _setValue ] = useState( value );
-
-    // useEffect(() => {
-    //     _setValue( value );
-    // }, []);
-
     function handleChange( e ) {
-        _setValue( e.target.value );
         setValue( e.target.value );
-        // console.log(e.target.value);
     }
 
     return(
         <div className='wcp-field-wrapper'>
             <label htmlFor={ id }>{ label }</label>
             <input
-                value={_value}
+                value={value}
                 type="number"
                 id={ id }
                 name={ name }
@@ -40,6 +32,27 @@ export function Number( { value, setValue, label, id, name, help, minimum, maxim
                 onChange={handleChange}
             />
             { helpContent }
+        </div>
+    );
+}
+
+export function Checkbox({ checked, toggleChecked, label, id, name, help }) {
+
+    const helpContent = '' !== help ? <Help title={help} />: '';
+
+    function handleChange() {
+        toggleChecked(!checked)
+    }
+    return(
+        <div className='wcp-field-wrapper'>
+            <input
+                type="checkbox"
+                checked={checked}
+                onChange={handleChange}
+                name={name}
+            />
+            <label htmlFor={id}>{label}</label>
+            {helpContent}
         </div>
     );
 }

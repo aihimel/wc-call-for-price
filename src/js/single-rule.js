@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { Number } from "./form-elements";
+import { useState, useEffect } from 'react';
+import { Number, Checkbox } from "./form-elements";
 
 export default function SingleRule({}) {
-    const [priority, setPriority] = useState(2);
+    const [ active, toggleActive ] = useState(false);
+    const [ priority, setPriority ] = useState(2);
 
     return (
         <div className='wcp-single-rule-popup-wrapper'>
@@ -10,10 +11,12 @@ export default function SingleRule({}) {
                 <legend>General Configuration</legend>
                 <div className='wcp-row'>
                     <div className="wcp-col">
-                        <div className="wcp-field-wrapper">
-                            <input type="checkbox" id="activate" name="activate" />
-                            <label htmlFor="activate">Activate</label>
-                        </div>
+                        <Checkbox
+                            checked={active}
+                            toggleChecked={toggleActive}
+                            label='Activate'
+                        />
+                        {true}
                     </div>
                     <div className="wcp-col">
                         <Number
