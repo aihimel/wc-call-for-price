@@ -1,34 +1,29 @@
 import { useState } from 'react';
-
-export function Help( props ) {
-    return (
-        <span title={props.title} data-title={props.title} className="wcp-help">Help</span>
-    );
-}
+import { Number } from "./form-elements";
 
 export default function SingleRule({}) {
-    const [ legend, setLegend ] = useState( 'General Info' );
-    function handleChange( e ) {
-        setLegend( e.target.value );
-    }
+    const [priority, setPriority] = useState(2);
+
     return (
         <div className='wcp-single-rule-popup-wrapper'>
             <fieldset>
                 <legend>General Configuration</legend>
                 <div className='wcp-row'>
                     <div className="wcp-col">
-                        <div className="wcp-field-wrapper checkbox">
+                        <div className="wcp-field-wrapper">
                             <input type="checkbox" id="activate" name="activate" />
                             <label htmlFor="activate">Activate</label>
-                            <Help title="Hello Title" />
                         </div>
                     </div>
                     <div className="wcp-col">
-                        <div className="wcp-field-wrapper checkbox">
-                            <label htmlFor="activate">Priority</label>
-                            <input type="text" id="priority" name="priority" />
-                            <Help title='This is a test title' />
-                        </div>
+                        <Number
+                            value={priority}
+                            setValue={setPriority}
+                            label='Priority'
+                            id='priority'
+                            name='priority'
+                            help='Set Priority'
+                        />
                     </div>
                 </div>
             </fieldset>
