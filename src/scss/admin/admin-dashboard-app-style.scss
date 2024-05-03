@@ -70,3 +70,43 @@
     }
   }
 }
+
+//Form Element Design
+fieldset {
+  background-color: #f9f9fd;
+  padding: 16px 32px;
+  border-radius: 5px;
+  legend {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #8d8686;
+  }
+}
+.wcp-row {
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  .wcp-col {
+    width: 100%;
+  }
+  .wcp-field-wrapper {
+    padding: 8px 0;
+    &.checkbox {
+    }
+    label {
+      //border: 1px solid green;
+      padding: 0 8px;
+    }
+    .wcp-help {
+      text-transform: uppercase;
+      font-size: 10px;
+      background-color: #5e4e4eab;
+      color: #fff;
+      font-weight: 600;
+      padding: 4px 6px;
+      border-radius: 16px;
+      margin-left: 16px;
+      cursor: help;
+    }
+  }
+}
