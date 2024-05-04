@@ -56,3 +56,21 @@ export function Checkbox({ checked, toggleChecked, label, id, name, help }) {
         </div>
     );
 }
+
+    export function SelectorContainer({}) {
+    return(
+        <div className='wcp-selector-container'>
+            <div className='wcp-selector-row'>
+                <select>
+                    <option>All Products</option>
+                    <optgroup label="Inventory">
+                        <option>Stock Management</option>
+                        <option disabled={true}>Stock Status</option>
+                        <option>Minimum Thresh hold</option>
+                        <option disabled={true}>SKU</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+    );
+}

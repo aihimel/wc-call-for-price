@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Number, Checkbox } from "./form-elements";
+import { Number, Checkbox, SelectorContainer } from "./form-elements";
 
 export default function SingleRule({}) {
     const [ active, toggleActive ] = useState(false);
@@ -27,6 +27,14 @@ export default function SingleRule({}) {
                             name='priority'
                             help='Set Priority'
                         />
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Product Selector</legend>
+                <div className='wcp-row'>
+                    <div className='wcp-col'>
+                        <SelectorContainer />
                     </div>
                 </div>
             </fieldset>
