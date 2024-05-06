@@ -31,31 +31,43 @@ class RulesConfiguration {
 
 	public function add_configuration( $data ) {
 		// All the product configuration
-		$data['product'] = [
+		$data['attributes']['product'] = [
 			'type' => self::OPTGROUP,
 			'title' => __( 'Product', 'wc-call-for-price' ),
 			'all_product' => [
 				'type' => self::OPTION,
 				'title' => __( 'All Products', 'wc-call-for-price' ),
-				'value' =>  'all_product'
+				'value' =>  'all_product',
+				'data_type' => 'none',
 			],
 			'category' => [
 				'type' => self::OPTION,
 				'title' => __( 'Category', 'wc-call-for-price' ),
-				'value' =>  'category'
+				'value' =>  'category',
+				'data_type' => 'list',
 			],
 			'tag' => [
 				'type' => self::OPTION,
 				'title' => __( 'Tag', 'wc-call-for-price' ),
-				'value' =>  'tag'
+				'value' =>  'tag',
+				'data_type' => 'list',
 			],
 			'inventory' => [
 				'type' => self::OPTGROUP,
+				'title' => __( 'Inventory', 'wc-call-for-price' ),
+				'manage_stock' => [
+					'type' => self::OPTION,
+					'title' => __( 'Manage Stock', 'wc-call-for-price' ),
+					'value' =>  'manage_stock',
+					'data_type' => 'number',
+				]
 			]
 		];
 
 		/**
 		 * Type of Data
+		 *
+		 * NONE [No following fields only the select box]
 		 *
 		 * NUMBER [ Equals, Greater Than, Less Than, GOE, LOE ]
 		 *
@@ -71,6 +83,7 @@ class RulesConfiguration {
 		 *
 		 */
 		$data['data_types'] = [
+			'not_type' => [],
 			'number' => [
 				'equals' => [
 					'title' => __( 'Equals', 'wc-call-for-price' ),

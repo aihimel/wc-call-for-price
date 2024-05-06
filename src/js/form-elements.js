@@ -57,19 +57,36 @@ export function Checkbox({ checked, toggleChecked, label, id, name, help }) {
     );
 }
 
-    export function SelectorContainer({}) {
-    return(
-        <div className='wcp-selector-container'>
-            <div className='wcp-selector-row'>
-                <select>
-                    <option>All Products</option>
-                    <optgroup label="Inventory">
-                        <option>Stock Management</option>
-                        <option disabled={true}>Stock Status</option>
-                        <option>Minimum Thresh hold</option>
-                        <option disabled={true}>SKU</option>
-                    </optgroup>
-                </select>
+export function SingleRowSelectList({}) {
+    const configuration = wcp_rules_configuration;
+    console.log( Object.entries(configuration.attributes) );
+    return (
+        <select>
+            <optgroup label={configuration.attributes.product.title}>
+                <option value={configuration.attributes.product.all_product.value}>
+                    {configuration.attributes.product.all_product.title}
+                </option>
+                <option value={configuration.attributes.product.category.value}>
+                    {configuration.attributes.product.category.title}
+                </option>
+                <option value={configuration.attributes.product.tag.value}>
+                    {configuration.attributes.product.tag.title}
+                </option>
+                <optgroup label={configuration.attributes.product.inventory.title}>
+                    <option value={configuration.attributes.product.inventory.manage_stock.value} >
+                        {configuration.attributes.product.inventory.manage_stock.title}
+                    </option>
+                </optgroup>
+            </optgroup>
+        </select>
+    );
+}
+
+export function SelectorContainer({}) {
+    return (
+        <div className="wcp-selector-container">
+            <div className="wcp-selector-row">
+            <SingleRowSelectList />
             </div>
         </div>
     );
