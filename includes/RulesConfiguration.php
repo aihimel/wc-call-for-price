@@ -59,9 +59,24 @@ class RulesConfiguration {
 					'type' => self::OPTION,
 					'title' => __( 'Manage Stock', 'wc-call-for-price' ),
 					'value' =>  'manage_stock',
-					'data_type' => 'number',
+					'data_type' => 'boolean',
+				],
+				'stock_status' => [
+					'type' => self::OPTION,
+					'title' => __( 'Stock Status', 'wc-call-for-price' ),
+					'value' =>  'stock_status',
+					'data_type' => 'list',
+				],
+				'minimum_threshold' => [
+					'type' => self::OPTION,
+					'title' => __( 'Minimum Threshold', 'wc-call-for-price' ),
+					'value' =>  'minimum_threshold',
+					'data_type' => '',
 				]
-			]
+			],
+			'price' => [
+				'type' => self::OPTGROUP,
+			],
 		];
 
 		/**
@@ -105,6 +120,14 @@ class RulesConfiguration {
 					'title' => __( 'Less Than or Equals', 'wc-call-for-price' ),
 					'value' => 'less_than_or_equals'
 				],
+				'range_in' => [
+					'title' => __( 'In', 'wc-call-for-price' ),
+					'value' => 'range_in'
+				],
+				'range_not_in' => [
+					'title' => __( 'Not In', 'wc-call-for-price' ),
+					'value' => 'range_not_in'
+				]
 			],
 			'string' => [
 				'contains' => [
@@ -130,6 +153,7 @@ class RulesConfiguration {
 					'value' => 'boolean_false'
 				]
 			],
+			// @TODO Need to remove this
 			'number_range' => [
 				'range_in' => [
 					'title' => __( 'In', 'wc-call-for-price' ),
