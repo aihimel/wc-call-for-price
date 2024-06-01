@@ -18,34 +18,34 @@
 
 Copyright 2015  Aftabul Islam  (email : toaihimel@gmail.com)
 
-  This program is free software; you can redistribute it and/or modify
-  it under the terms of the GNU General Public License, version 2, as
-  published by the Free Software Foundation.
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as
+    published by the Free Software Foundation.
 
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-  You should have received a copy of the GNU General Public License
-  along with this program; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-use \WCPress\WCP\WCCallForPrice;
+use WCPress\WCP\WCCallForPrice;
 
 // Security Check
 defined('ABSPATH') || die();
 
-require_once( 'vendor/autoload.php' );
-require_once ( 'functions.php' );
+require_once 'vendor/autoload.php' ;
+require_once 'functions.php' ;
 
 // Constants
 defined( 'WC_CALL_FOR_PRICE_VERSION' ) || define('WC_CALL_FOR_PRICE_VERSION', '1.4.4');
 defined('WC_CALL_FOR_PRICE_PATH') || define('WC_CALL_FOR_PRICE_PATH', plugin_basename(__FILE__));
 defined('WC_CALL_FOR_PRICE_TEMPLATE_PATH') || define('WC_CALL_FOR_PRICE_TEMPLATE_PATH', plugin_dir_path( __FILE__ ) );
 
-defined( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH' ) || define( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH', dirname( __FILE__ ) );
+defined( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH' ) || define( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH', __DIR__ );
 
 // Activation Deactivation
 register_activation_hook(__FILE__, 'wc_call_for_price__activate');
