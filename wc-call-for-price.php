@@ -32,6 +32,8 @@ Copyright 2015  Aftabul Islam  (email : toaihimel@gmail.com)
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+use \WCPress\WCP\WCCallForPrice;
+
 // Security Check
 defined('ABSPATH') || die();
 
@@ -50,4 +52,4 @@ register_activation_hook(__FILE__, 'wc_call_for_price__activate');
 register_deactivation_hook(__FILE__, 'wc_call_for_price__deactivate');
 
 // Booting the plugin
-\WCPress\WCP\WCCallForPrice::init();
+WCCallForPrice::init();
