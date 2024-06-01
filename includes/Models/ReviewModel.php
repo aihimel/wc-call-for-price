@@ -65,7 +65,7 @@ class ReviewModel extends Model {
 	 *
 	 * @return string
 	 */
-	public function getOptionKey(): string {
+	public function get_option_key(): string {
 		return self::OPTION_KEY;
 	}
 
