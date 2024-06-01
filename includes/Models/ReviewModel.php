@@ -76,7 +76,7 @@ class ReviewModel extends Model {
 	 *
 	 * @return array
 	 */
-	public function getDefaultData(): array {
+	public function get_default_data(): array {
 		return [
 			self::REVIEW_REQUESTED => Constants::NO,
 			self::LAST_PROMPTED_AT => (new Datetime())->modify('-8 days')->getTimestamp(),

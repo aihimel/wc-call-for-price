@@ -48,7 +48,7 @@ class ActivationDeactivation extends Model implements DefaultDataInterface {
 	 *
 	 * @return array
 	 */
-	public function getDefaultData(): array {
+	public function get_default_data(): array {
 		return [
 			self::FIRST_ACTIVATED_AT => wcp_current_time(),
 			self::ACTIVATION_DEACTIVATION_LIST => [
@@ -70,7 +70,7 @@ class ActivationDeactivation extends Model implements DefaultDataInterface {
 	public function activation() {
 		$settings = get_option( self::KEY );
 		if ( ! $settings ) {
-			add_option( self::KEY, $this->getDefaultData(), '', false );
+			add_option( self::KEY, $this->get_default_data(), '', false );
 		} else {
 			$last_element_index = count( $settings[ self::ACTIVATION_DEACTIVATION_LIST ] ) - 1;
 			$settings[ self::ACTIVATION_DEACTIVATION_LIST ][ $last_element_index ][ self::DEACTIVATED_AT ] = wcp_current_time();
@@ -87,7 +87,7 @@ class ActivationDeactivation extends Model implements DefaultDataInterface {
 	 */
 	public function deactivation() {
 		// Settings deactivation time to the last element
-		$settings = get_option( self::KEY, $this->getDefaultData() );
+		$settings = get_option( self::KEY, $this->get_default_data() );
 		$last_element_index = count( $settings[ self::ACTIVATION_DEACTIVATION_LIST ] ) - 1;
 		$settings[ self::ACTIVATION_DEACTIVATION_LIST ][ $last_element_index ][ self::DEACTIVATED_AT ] = wcp_current_time();
 		update_option( self::KEY, $settings );
