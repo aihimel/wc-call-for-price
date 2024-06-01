@@ -49,15 +49,15 @@ class ActivationDeactivation extends Model implements DefaultDataInterface {
 	 * @return array
 	 */
 	public function get_default_data(): array {
-		return [
+		return array(
 			self::FIRST_ACTIVATED_AT => wcp_current_time(),
-			self::ACTIVATION_DEACTIVATION_LIST => [
-				[
+			self::ACTIVATION_DEACTIVATION_LIST => array(
+				array(
 					self::ACTIVATED_AT => wcp_current_time(),
-					self::DEACTIVATED_AT => 0
-				]
-			]
-		];
+					self::DEACTIVATED_AT => 0,
+				),
+			),
+		);
 	}
 
 	/**
