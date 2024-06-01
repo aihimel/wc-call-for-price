@@ -29,6 +29,15 @@ class RulesConfiguration {
 		);
 	}
 
+	/**
+	 * Adds configuration
+	 *
+	 * @since WCP_SINCE
+	 *
+	 * @param $data
+	 *
+	 * @return array
+	 */
 	public function add_configuration( $data ) {
 		// All the product configuration
 		$data['attributes']['product'] = [
@@ -71,11 +80,24 @@ class RulesConfiguration {
 					'type' => self::OPTION,
 					'title' => __( 'Minimum Threshold', 'wc-call-for-price' ),
 					'value' =>  'minimum_threshold',
-					'data_type' => '',
+					'data_type' => 'number',
 				]
 			],
 			'price' => [
 				'type' => self::OPTGROUP,
+				'title' => __( 'Price', 'wc-call-for-price' ),
+				'empty_price' => [
+					'type' => self::OPTION,
+					'title' => __( 'Empty Price', 'wc-call-for-price' ),
+					'value' =>  'empty_price',
+					'data_type' => 'boolean',
+				],
+				'regular_price' => [
+					'type' => self::OPTION,
+					'title' => __( 'Regular Price', 'wc-call-for-price' ),
+					'value' =>  'regular_price',
+					'data_type' => 'number',
+				]
 			],
 		];
 

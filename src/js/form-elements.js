@@ -73,9 +73,18 @@ export function SingleRowSelectList({}) {
                     {configuration.attributes.product.tag.title}
                 </option>
                 <optgroup label={configuration.attributes.product.inventory.title}>
-                    <option value={configuration.attributes.product.inventory.manage_stock.value} >
+                    <option value={configuration.attributes.product.inventory.manage_stock.value}>
                         {configuration.attributes.product.inventory.manage_stock.title}
                     </option>
+                    <option value={configuration.attributes.product.inventory.stock_status.value}>
+                        {configuration.attributes.product.inventory.stock_status.title}
+                    </option>
+                    <option value={configuration.attributes.product.inventory.minimum_threshold.value}>
+                        {configuration.attributes.product.inventory.minimum_threshold.title}
+                    </option>
+                </optgroup>
+                <optgroup >
+
                 </optgroup>
             </optgroup>
         </select>
