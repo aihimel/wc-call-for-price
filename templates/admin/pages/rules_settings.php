@@ -31,7 +31,7 @@ use WCPress\WCP\Constants;
                 <?php checked( get_option( Constants::OUT_OF_STOCK ), Constants::ON ); ?>
             />
             <p class="help-block">
-                <?php esc_html_e( 'If checked, all the out of products will show call for price.', 'wc-call-for-price'); ?>
+                <?php esc_html_e( 'If checked, all the out of stock products will show call for price.', 'wc-call-for-price'); ?>
             </p>
         </div>
         <div>
