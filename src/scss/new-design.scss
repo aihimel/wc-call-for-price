@@ -1,0 +1,43 @@
+// Text Colors
+$text_color_regular: #000;
+$text_color_light: #6d6565;
+
+// Background Colors
+$background_color_regular: #fff;
+$background_color_light: #f6f9f9;
+
+// Border Color
+$border_color_light: #e5eaea;
+
+// Color Swatches
+$swatch_primary: #42a5f5;
+
+// Border Radius
+$border_radius_standard: 8px;
+$border_radius_light: 4px;
+
+
+.wcp-admin-panel-wrapper {
+  margin: 16px;
+  background-color: $background_color_regular;
+  border-radius: $border_radius_standard;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  .sidebar {
+    width: 200px;
+    border-radius: $border-radius_standard 0 0 $border-radius_standard;
+    background-color: $background_color_light;
+    display: flex;
+    flex-direction: column;
+    .logo-wrapper {
+      padding: 16px 0;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .main {
+    padding: 0 16px;
+    width: 600px;
+  }
+}
