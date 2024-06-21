@@ -20,7 +20,7 @@ class ReviewRequest {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'admin_notices', [ $this, 'renderNotice' ] );
+		add_action( 'admin_notices', [ $this, 'render_notice' ] );
 		add_action( 'admin_init', [ $this, 'action' ] );
 	}
 
@@ -31,7 +31,7 @@ class ReviewRequest {
 	 *
 	 * @return void
 	 */
-	public function renderNotice() {
+	public function render_notice() {
 		if ( wcp_is_settings_page() ) {
 			$review = new ReviewModel();
 			$last_prompted_timestamp = $review->getLastPromptedAt();
@@ -45,17 +45,17 @@ class ReviewRequest {
 				&& ReviewModel::USER_STATUS__REMIND_ME_LATER === $current_status
 			) {
 				$show_review = true;
-			} elseif( // Notice Removed or Dismissed
+			} elseif ( // Notice Removed or Dismissed
 				$interval_days >= 14
 				&& ReviewModel::USER_STATUS__NOTICE_REMOVED === $current_status
 			) {
 				$show_review = true;
-			} elseif( // Already Clicked review once
+			} elseif ( // Already Clicked review once
 				$interval_days >= 30
 				&& ReviewModel::USER_STATUS__REVIEW_NOW === $current_status
 			) {
 				$show_review = true;
-			} elseif( // Given Review already and confirmed that
+			} elseif ( // Given Review already and confirmed that
 				$interval_days >= 60
 				&& ReviewModel::USER_STATUS__ALREADY_GIVEN === $current_status
 			) {
@@ -76,17 +76,16 @@ class ReviewRequest {
 	 * @return void
 	 */
 	public function action() {
-		if ( is_admin() && isset( $_GET['page'] ) && $_GET['page'] === 'wc-call-for-price' ) {
-			if( isset( $_GET['action'] ) ) {
-				$action = sanitize_text_field( $_GET['action'] );
+		if ( is_admin() && isset( $_GET['page'] ) && 'wc-call-for-price' === $_GET['page'] ) { // phpcs:ignore
+			if( isset( $_GET['action'] ) ) { // phpcs:ignore
+				$action = sanitize_text_field( $_GET['action'] ); // phpcs:ignore
 				$review = new ReviewModel();
 				$review->setReviewStatus( $action );
 				$review->save();
-				if( $action === ReviewModel::USER_STATUS__REVIEW_NOW ) {
-					wp_redirect( 'https://wordpress.org/support/plugin/wc-call-for-price/reviews/?filter=5#new-post' );
+				if ( ReviewModel::USER_STATUS__REVIEW_NOW === $action ) {
+					wp_safe_redirect( 'https://wordpress.org/support/plugin/wc-call-for-price/reviews/?filter=5#new-post' );
 				}
 			}
 		}
 	}
-
 }

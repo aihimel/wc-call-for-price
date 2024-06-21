@@ -21,7 +21,7 @@ class Upgrader {
      *
      * @since 1.3.0
      */
-    function __construct() {
+    public function __construct() {
         add_action( 'upgrader_process_complete', [ $this, 'is_plugin_upgraded' ], 10, 2 );
         add_action( 'admin_init', [ $this, 'run_upgrade' ] );
     }
@@ -36,14 +36,14 @@ class Upgrader {
      *
      * @return void
      */
-    function is_plugin_upgraded( $upgrader_object, $options ) {
-        if(
-            $options['action'] == 'update'
-            && $options['type'] == 'plugin'
+    public function is_plugin_upgraded( $upgrader_object, $options ) { // phpcs:ignore
+        if (
+			'update' === $options['action']
+            && 'plugin' === $options['type']
             && isset( $options['plugins'] )
         ) {
-            foreach( $options['plugins'] as $plugin ) {
-                if ( $plugin == WC_CALL_FOR_PRICE_PATH ) {
+            foreach ( $options['plugins'] as $plugin ) {
+                if ( WC_CALL_FOR_PRICE_PATH === $plugin ) {
                     set_transient( Constants::WCP_RECENTLY_UPDATED, 1 );
                 }
             }
@@ -57,8 +57,8 @@ class Upgrader {
      *
      * @return void
      */
-    function run_upgrade() {
-        if( get_transient ( Constants::WCP_RECENTLY_UPDATED ) ) {
+    public function run_upgrade() {
+        if ( get_transient( Constants::WCP_RECENTLY_UPDATED ) ) {
             delete_transient( Constants::WCP_RECENTLY_UPDATED );
             $this->updated_options();
 			$this->add_activation_time();
@@ -72,7 +72,7 @@ class Upgrader {
      *
      * @return void
      */
-    function updated_options() {
+    public function updated_options() {
         // For existing users WCP_ACTIVATE should be activated
         if ( ! get_option( Constants::WCP_ACTIVATE ) ) {
             update_option( Constants::WCP_ACTIVATE, Constants::ON );
@@ -86,9 +86,8 @@ class Upgrader {
 	 *
 	 * @return void
 	 */
-	function add_activation_time() {
+	public function add_activation_time() {
 		$activation_deactivation = new ActivationDeactivation();
 		$activation_deactivation->activation();
 	}
-
 }

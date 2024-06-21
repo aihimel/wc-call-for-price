@@ -14,7 +14,7 @@
 		<exclude name="WordPress.Arrays.ArrayDeclarationSpacing"/>
 		<exclude name="Generic.Formatting.MultipleStatementAlignment"/>
 		<exclude name="WordPress.Arrays.MultipleStatementAlignment"/>
-		<exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
 		<exclude name="Squiz.PHP.EmbeddedPhp"/>
 		<exclude name="Squiz.PHP.EmbeddedPhp.SpacingBefore"/>
 		<exclude name="Squiz.PHP.EmbeddedPhp.Indent"/>

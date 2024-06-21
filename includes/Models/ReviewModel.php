@@ -107,7 +107,7 @@ class ReviewModel extends Model {
 	 */
 	public function setReviewStatus( string $status ) {
 		// If user status is not known then set to remind me later
-		if ( ! in_array( $status, self::USER_STATUS__LIST ) ) {
+		if ( ! in_array( $status, self::USER_STATUS__LIST, true ) ) {
 			$status = current( self::USER_STATUS__LIST );
 		}
 		$this->data[ self::USER_RESPONSE ] = $status;
