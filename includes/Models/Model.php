@@ -17,7 +17,7 @@ abstract class Model implements OptionKeyInterface, DefaultDataInterface {
 	 *
 	 * @var array
 	 */
-	protected $data = [];
+	protected $data = array();
 
 	/**
 	 * Fetches the option on object creation
@@ -28,7 +28,7 @@ abstract class Model implements OptionKeyInterface, DefaultDataInterface {
 	 */
 	public function __construct() {
 		$this->data = get_option( $this->get_option_key(), $this->get_default_data() );
-		$this->data = ( empty( $this->data ) || ! is_array( $this->data ) ) ? [] : $this->data; // For empty value
+		$this->data = ( empty( $this->data ) || ! is_array( $this->data ) ) ? array() : $this->data; // For empty value
 		$this->data = array_merge( $this->get_default_data(), $this->data ); // For incomplete data
 	}
 
@@ -62,6 +62,6 @@ abstract class Model implements OptionKeyInterface, DefaultDataInterface {
 	 * @return array
 	 */
 	public function get_default_data(): array {
-		return [];
+		return array();
 	}
 }

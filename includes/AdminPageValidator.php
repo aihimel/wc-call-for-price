@@ -27,7 +27,7 @@ class AdminPageValidator {
      *
      * @return bool
      */
-    function is_admin_page_valid( $query_page_string ) {
+    function is_admin_page_valid( string $query_page_string ): bool {
         $list_of_admin_pages = [
             Constants::WCP_SUB_PAGE_GENERAL_SETTINGS,
             Constants::WCP_SUB_PAGE_BUTTON_SETTINGS,

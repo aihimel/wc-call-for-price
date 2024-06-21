@@ -57,10 +57,11 @@ class AdminMenu {
      *
      * @since 1.4.0
      *
-     * @param string $links
-     * @return string
+     * @param array $links
+     *
+     * @return array
      */
-    function add_plugin_page_extra_links( $links ) {
+    function add_plugin_page_extra_links( array $links ): array {
         $url = wcp_slug_to_admin_menu_url();
         $links[] = "<a href='$url'>" . __( 'Settings', 'wc-call-for-price' ) . '</a>';
         return $links;

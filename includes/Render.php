@@ -54,7 +54,7 @@ class Render {
      *
      * @return string
      */
-    public function out_of_stock( $price, $product ) {
+    public function out_of_stock( $price, WC_Product $product ) {
         if ( ! ( $product->get_stock_status() == Constants::OUT0FSTOCK ) ) {
             return $price;
         } else {
@@ -87,7 +87,7 @@ class Render {
      *
      * @return string
      */
-    public function woocommerce_low_on_stock( $price, $product ) {
+    public function woocommerce_low_on_stock( $price, WC_Product $product ) {
         $low_stock_amount = get_option( 'woocommerce_notify_low_stock_amount' );
         $custom_low_stock_amount = get_option( Constants::BELOW_STOCK_AMOUNT, 0 );
         $stock_limit = ! empty( $custom_low_stock_amount ) ? $custom_low_stock_amount : $low_stock_amount;
@@ -107,7 +107,7 @@ class Render {
      *
      * @return string
      */
-    public function button_html( $price, $product ) {
+    public function button_html( $price, WC_Product $product ) {
 
         if ( is_admin() ) {
             return $price;

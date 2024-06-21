@@ -29,7 +29,7 @@ class AdminFormSave {
      *
      * @return void
      */
-    function process_post_request( $admin_sub_page_slug ) {
+    function process_post_request( string $admin_sub_page_slug ) {
 
         if ( ! empty( $_POST[ $admin_sub_page_slug ] ) ) {
             if(
@@ -37,7 +37,7 @@ class AdminFormSave {
                 && wp_verify_nonce( $_POST[ Constants::NONCE_FIELD_NAME ], Constants::ADMIN_FORM_NONCE_ACTION )
                 && current_user_can( 'manage_options' )
         ) {
-                do_action( "wcp_process_admin_form_{$admin_sub_page_slug}", $admin_sub_page_slug );
+                do_action( "wcp_process_admin_form_$admin_sub_page_slug", $admin_sub_page_slug );
                 // @TODO Post a success message that the data is saved properly
             } else {
                 // @TODO Post an unsuccessful message
@@ -55,7 +55,7 @@ class AdminFormSave {
      *
      * @return void
      */
-    function save_general_settings( $form_slug ) {
+    function save_general_settings( string $form_slug ) {
         $this->update_checkbox( Constants::WCP_ACTIVATE );
         $this->update_checkbox( Constants::ONLY_EMPTY_PRICE );
         $this->update_checkbox( Constants::SHOW_ON_ALL_PRODUCTS );
@@ -71,7 +71,7 @@ class AdminFormSave {
      *
      * @return void
      */
-    function save_button_settings( $form_slug ) {
+    function save_button_settings( string $form_slug ) {
 		$this->update_checkbox( Constants::SHOW_TEXT );
 	    $this->update_text( Constants::TEXT );
 

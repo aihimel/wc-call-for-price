@@ -1,5 +1,6 @@
 <?php
 namespace WCPress\WCP;
+
 /**
  * Main Plugin class to load all the hooks and initialization
  *
@@ -45,7 +46,7 @@ final class WCCallForPrice {
      *
      * @return WCCallForPrice
      */
-    public static function init() {
+    public static function init(): WCCallForPrice {
         if ( ! WCCallForPrice::$self ) {
             WCCallForPrice::$self = new WCCallForPrice();
         }

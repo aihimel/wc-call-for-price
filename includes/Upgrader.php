@@ -9,6 +9,11 @@ namespace WCPress\WCP;
 
 use WCPress\WCP\Models\ActivationDeactivation;
 
+/**
+ * Setup upgrader transient to database to run upgrade code on next iteration
+ *
+ * @since 1.4
+ */
 class Upgrader {
 
     /**

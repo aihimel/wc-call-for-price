@@ -39,7 +39,7 @@ final class Initilize {
 	 *
 	 * @return \WCPress\WCP\Initilize
 	 */
-	public static function init() {
+	public static function init(): Initilize {
 		if ( empty( Initilize::$self ) ) {
 			Initilize::$self = new Initilize();
 		}

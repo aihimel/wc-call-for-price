@@ -51,12 +51,12 @@ class ReviewModel extends Model {
 	const USER_STATUS__ALREADY_GIVEN = 'already_given'; // User inputs that review is already given
 	const USER_STATUS__REMIND_ME_LATER = 'remind_me_later'; // User inputs that to remind later, also set as initial value
 	const USER_STATUS__NOTICE_REMOVED = 'notice_removed'; // User clicks the cross button
-	const USER_STATUS__LIST = [
+	const USER_STATUS__LIST = array(
 		self::USER_STATUS__REMIND_ME_LATER, // 7 Days
 		self::USER_STATUS__REVIEW_NOW, // 30 Days
 		self::USER_STATUS__ALREADY_GIVEN, // 180 Days
 		self::USER_STATUS__NOTICE_REMOVED, // 14 Days
-	];
+	);
 
 	/**
 	 * Return option key
@@ -77,12 +77,12 @@ class ReviewModel extends Model {
 	 * @return array
 	 */
 	public function get_default_data(): array {
-		return [
+		return array(
 			self::REVIEW_REQUESTED => Constants::NO,
 			self::LAST_PROMPTED_AT => (new Datetime())->modify('-8 days')->getTimestamp(),
 			self::TOTAL_SHOWN => 0,
 			self::USER_RESPONSE => self::USER_STATUS__REMIND_ME_LATER,
-		];
+		);
 	}
 
 	/**
@@ -112,7 +112,7 @@ class ReviewModel extends Model {
 		}
 		$this->data[ self::USER_RESPONSE ] = $status;
 		$this->data[ self::LAST_PROMPTED_AT ] = wcp_current_time();
-		$this->data[ self::TOTAL_SHOWN ]++;
+		++$this->data[ self::TOTAL_SHOWN ];
 	}
 
 	/**
@@ -129,5 +129,4 @@ class ReviewModel extends Model {
 	public function getCurrentStatus(): string {
 		return $this->data[ self::USER_RESPONSE ];
 	}
-
 }
