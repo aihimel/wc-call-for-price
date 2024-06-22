@@ -1,5 +1,6 @@
 <?php
 namespace WCPress\WCP;
+
 /**
  * Main Plugin class to load all the hooks and initialization
  *
@@ -33,7 +34,7 @@ final class WCCallForPrice {
         new AdminPageValidator();
         new AdminFormSave();
 		new ReviewRequest();
-        if ( get_option( Constants::WCP_ACTIVATE ) == Constants::ON ) {
+        if ( get_option( Constants::WCP_ACTIVATE ) === Constants::ON ) {
             new Render();
         }
     }
@@ -45,11 +46,10 @@ final class WCCallForPrice {
      *
      * @return WCCallForPrice
      */
-    public static function init() {
-        if ( ! WCCallForPrice::$self ) {
-            WCCallForPrice::$self = new WCCallForPrice();
+    public static function init(): WCCallForPrice {
+        if ( ! self::$self ) {
+            self::$self = new WCCallForPrice();
         }
-        return WCCallForPrice::$self;
+        return self::$self;
     }
-
 }

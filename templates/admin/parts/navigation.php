@@ -34,9 +34,10 @@ $admin_main_nav = apply_filters( 'wcp_admin_main_nav', [
 <div class="wcp-admin-main-menu-wrapper">
     <ul>
         <?php foreach( $admin_main_nav as $single_nav ): ?>
-        <li>
+        <li
+          class="<?php echo checked( wcp_get_admin_sub_page_slug(), $single_nav['slug'], false) ? 'active' : ''?>"
+        >
             <a
-                class="<?php echo checked( wcp_get_admin_sub_page_slug(), $single_nav['slug'], false) ? 'active' : ''?>"
                 href="<?php echo wcp_slug_to_admin_menu_url( $single_nav['slug'] ); ?>"
             >
                 <?php echo esc_html( $single_nav['title'] ); ?>

@@ -9,15 +9,20 @@ namespace WCPress\WCP;
 
 class AdminFormSave {
 
-    function __construct() {
+	/**
+	 * Initializes the admin form save object
+	 *
+	 * @since 1.4.0
+	 */
+    public function __construct() {
 
         add_action( 'wcp_admin_form_header', [ $this, 'process_post_request' ] );
 
         // Form Processing
-        add_action( "wcp_process_admin_form_" . Constants::WCP_SUB_PAGE_GENERAL_SETTINGS, [ $this, 'save_general_settings' ] );
-        add_action( "wcp_process_admin_form_" . Constants::WCP_SUB_PAGE_BUTTON_SETTINGS, [ $this, 'save_button_settings' ] );
-        add_action( "wcp_process_admin_form_" . Constants::WCP_SUB_PAGE_RULES_SETTINGS, [ $this, 'save_rule_settings' ] );
-        add_action( "wcp_process_admin_form_" . Constants::WCP_SUB_PAGE_ACTIONS_SETTINGS, [ $this, 'save_action_settings' ] );
+        add_action( 'wcp_process_admin_form_' . Constants::WCP_SUB_PAGE_GENERAL_SETTINGS, [ $this, 'save_general_settings' ] );
+        add_action( 'wcp_process_admin_form_' . Constants::WCP_SUB_PAGE_BUTTON_SETTINGS, [ $this, 'save_button_settings' ] );
+        add_action( 'wcp_process_admin_form_' . Constants::WCP_SUB_PAGE_RULES_SETTINGS, [ $this, 'save_rule_settings' ] );
+        add_action( 'wcp_process_admin_form_' . Constants::WCP_SUB_PAGE_ACTIONS_SETTINGS, [ $this, 'save_action_settings' ] );
     }
 
     /**
@@ -29,17 +34,17 @@ class AdminFormSave {
      *
      * @return void
      */
-    function process_post_request( $admin_sub_page_slug ) {
+    public function process_post_request( string $admin_sub_page_slug ) {
 
         if ( ! empty( $_POST[ $admin_sub_page_slug ] ) ) {
-            if(
+            if (
                 isset( $_POST[ Constants::NONCE_FIELD_NAME ] )
                 && wp_verify_nonce( $_POST[ Constants::NONCE_FIELD_NAME ], Constants::ADMIN_FORM_NONCE_ACTION )
                 && current_user_can( 'manage_options' )
         ) {
-                do_action( "wcp_process_admin_form_{$admin_sub_page_slug}", $admin_sub_page_slug );
+                do_action( "wcp_process_admin_form_$admin_sub_page_slug", $admin_sub_page_slug );
                 // @TODO Post a success message that the data is saved properly
-            } else {
+            } else { // phpcs:ignore
                 // @TODO Post an unsuccessful message
             }
 
@@ -55,7 +60,7 @@ class AdminFormSave {
      *
      * @return void
      */
-    function save_general_settings( $form_slug ) {
+    public function save_general_settings( string $form_slug ) { // phpcs:ignore
         $this->update_checkbox( Constants::WCP_ACTIVATE );
         $this->update_checkbox( Constants::ONLY_EMPTY_PRICE );
         $this->update_checkbox( Constants::SHOW_ON_ALL_PRODUCTS );
@@ -71,7 +76,7 @@ class AdminFormSave {
      *
      * @return void
      */
-    function save_button_settings( $form_slug ) {
+    public function save_button_settings( string $form_slug ) { // phpcs:ignore
 		$this->update_checkbox( Constants::SHOW_TEXT );
 	    $this->update_text( Constants::TEXT );
 
@@ -96,7 +101,7 @@ class AdminFormSave {
      *
      * @return void
      */
-    function save_rule_settings( $form_slug ) {
+    public function save_rule_settings( string $form_slug ) { // phpcs:ignore
         $this->update_checkbox( Constants::OUT_OF_STOCK );
         $this->update_checkbox( Constants::MINIMUM_STOCK_THRESHOLD );
 
@@ -112,7 +117,7 @@ class AdminFormSave {
      *
      * @return void
      */
-    function save_action_settings( $form_slug ) {
+    public function save_action_settings( string $form_slug ) { // phpcs:ignore
         $this->update_checkbox( Constants::REDIRECT_TO );
         $this->update_checkbox( Constants::OPEN_NEW_PAGE );
 
@@ -128,8 +133,8 @@ class AdminFormSave {
      *
      * @return void
      */
-    protected function update_checkbox( $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? Constants::ON: Constants::OFF;
+    protected function update_checkbox( string $input_name ) {
+        $value = ! empty( $_POST[ $input_name ] ) ? Constants::ON: Constants::OFF; // phpcs:ignore
         update_option( $input_name, $value );
     }
 
@@ -142,8 +147,8 @@ class AdminFormSave {
      *
      * @return void
      */
-    protected function update_text( $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): '';
+    protected function update_text( string $input_name ) {
+        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): ''; // phpcs:ignore
         update_option( $input_name, $value );
     }
 
@@ -156,8 +161,8 @@ class AdminFormSave {
      *
      * @return void
      */
-    protected function update_filename( $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_file_name( $_POST[ $input_name ] ): '';
+    protected function update_filename( string $input_name ) {
+        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_file_name( $_POST[ $input_name ] ): ''; // phpcs:ignore
         update_option( $input_name, $value );
     }
 
@@ -170,8 +175,8 @@ class AdminFormSave {
      *
      * @return void
      */
-    protected function update_url( $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_url( $_POST[ $input_name ] ): '';
+    protected function update_url( string $input_name ) {
+        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_url( $_POST[ $input_name ] ): ''; // phpcs:ignore
         update_option( $input_name, $value );
     }
 
@@ -184,8 +189,8 @@ class AdminFormSave {
      *
      * @return void
      */
-    protected function update_number( $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): '';
+    protected function update_number( string $input_name ) {
+        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): ''; // phpcs:ignore
         $value = absint( $value );
         update_option( $input_name, $value );
     }

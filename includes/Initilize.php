@@ -1,5 +1,6 @@
 <?php
 namespace WCPress\WCP;
+
 // @TODO Update all file packages
 use WCPress\WCP\Models\ActivationDeactivation;
 
@@ -29,7 +30,7 @@ final class Initilize {
 	 * @return void
 	 */
 	private function __construct() {
-		$this->setDefaultValues();
+		$this->set_default_values();
 	}
 
 	/**
@@ -39,11 +40,11 @@ final class Initilize {
 	 *
 	 * @return \WCPress\WCP\Initilize
 	 */
-	public static function init() {
-		if ( empty( Initilize::$self ) ) {
-			Initilize::$self = new Initilize();
+	public static function init(): Initilize {
+		if ( empty( self::$self ) ) {
+			self::$self = new Initilize();
 		}
-		return Initilize::$self;
+		return self::$self;
 	}
 
 	/**
@@ -53,7 +54,7 @@ final class Initilize {
 	 *
 	 * @return void
 	 */
-	protected function setDefaultValues() {
+	protected function set_default_values() {
 		/**
 		 * Plugin feature activated if not set
 		 */

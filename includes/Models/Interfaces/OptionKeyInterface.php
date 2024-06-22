@@ -7,5 +7,5 @@ namespace WCPress\WCP\Models\Interfaces;
  * @since 1.4.3
  */
 interface OptionKeyInterface {
-	public function getOptionKey(): string;
+	public function get_option_key(): string;
 }

@@ -1,12 +1,12 @@
 === WC Call For Price ===
 Contributors: wcpress
 Tags: call for price, request a quote, name your price, catalog mode, hide price
-Requires at least: 4.9
+Requires at least: 5.8
 Tested up to: 6.5
-WC requires at least: 5.0.0
-WC tested up to: 8.7
+WC requires at least: 6.6
+WC tested up to: 9.0
 Requires PHP: 7.2
-Stable tag: 1.4.4
+Stable tag: 1.5.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -139,6 +139,11 @@ This is a minor release with tweaking and fixes.
 
 
 == Changelog ==
+
+= 1.5.0 (22 June 2024) =
+* ✅ **Feature:** UI updated
+* 🪛 **Tweak:** PHPCS standard followed for coding standards
+* 🧩 **Compatibility:** Tested for WooCommerce 9.0
 
 = 1.4.4 (5 April 2024) =
 * 🪛 **Tweak:** Variable product add to cart button not showing issue fixed

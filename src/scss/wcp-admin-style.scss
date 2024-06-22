@@ -5,7 +5,6 @@ $lightBorder: #beb8b8;
 
 // General Form Design
 .wcp-admin-panel-wrapper {
-    padding: 16px;
     form {
         fieldset {
             border: 1px solid $lightBorder;
@@ -46,7 +45,6 @@ $lightBorder: #beb8b8;
 .wcp-admin-panel-wrapper {
     .header {
         .wcp-admin-main-menu-wrapper {
-            border-bottom: 1px solid #000;
             ul {
                 text-decoration: none;
                 li {
@@ -58,9 +56,6 @@ $lightBorder: #beb8b8;
                         padding: 8px;
                         margin: 0;
                         font-weight: 800;
-                        &:hover, &.active {
-                            background-color: #ffffff;
-                        }
                     }
                 }
             }
@@ -74,7 +69,6 @@ $lightBorder: #beb8b8;
         }
     }
     .main {
-        margin: 24px 0;
         padding: 24px 0;
         h4 {
             text-align: center;
@@ -116,3 +110,5 @@ $lightBorder: #beb8b8;
         }
     }
 }
+
+@import "new-design";
