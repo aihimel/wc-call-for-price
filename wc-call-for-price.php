@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WC Call For Price
  * Plugin URI: http://www.wordpress.org/wc-call-for-price
- * Version: 1.4.4
+ * Version: 1.5.0
  * Author: WCPress
  * Author URI: https://wcpress.net/wc-call-for-price-woocommerce-plugin
  * Author Email: toaihimel@gmail.com
@@ -14,7 +14,7 @@
  * Description: This plugin shows "call for price" text/HTML or image on empty price fields. It depends on woocommerce.
  * License: GPLv3 or later
  * WC requires at least: 6.6
- * WC tested up to: 8.7
+ * WC tested up to: 9.0
 
 Copyright 2015  Aftabul Islam  (email : toaihimel@gmail.com)
 
@@ -41,7 +41,7 @@ require_once 'vendor/autoload.php' ;
 require_once 'functions.php' ;
 
 // Constants
-defined( 'WC_CALL_FOR_PRICE_VERSION' ) || define( 'WC_CALL_FOR_PRICE_VERSION', '1.4.4' );
+defined( 'WC_CALL_FOR_PRICE_VERSION' ) || define( 'WC_CALL_FOR_PRICE_VERSION', '1.5.0' );
 defined('WC_CALL_FOR_PRICE_PATH') || define('WC_CALL_FOR_PRICE_PATH', plugin_basename(__FILE__));
 defined('WC_CALL_FOR_PRICE_TEMPLATE_PATH') || define('WC_CALL_FOR_PRICE_TEMPLATE_PATH', plugin_dir_path( __FILE__ ) );
 
