@@ -20,9 +20,5 @@ do_action( 'wcp_admin_form_header', wcp_get_admin_sub_page_slug() );
 ?>
 
 <div class="header">
-
-    <h3>
-        <?php esc_html_e( 'WC Call For Price', 'wc-call-for-price'); ?>
-    </h3>
     <?php wcp_get_admin_template( 'parts/navigation.php' ); ?>
 </div>

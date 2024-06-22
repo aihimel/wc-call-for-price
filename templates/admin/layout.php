@@ -26,6 +26,12 @@ $wcp_is_page_valid = apply_filters( 'wcp_is_admin_subpage_valid', $wcp_sub_page 
           alt="WCPress Logo"
         >
       </div>
+      <div class="link-wrapper">
+        <ul>
+          <li class="review"><a target="_blank" href="<?php echo esc_attr( 'https://wordpress.org/support/plugin/wc-call-for-price/reviews/#new-post' ); ?>">Review</a></li>
+          <li class="supprt"><a target="_blank" href="<?php echo esc_attr( 'https://wordpress.org/support/plugin/wc-call-for-price/' ); ?>">Support</a></li>
+        </ul>
+      </div>
     </div>
     <div class="main">
     		<?php wcp_get_admin_template( 'parts/header.php' ); ?>
