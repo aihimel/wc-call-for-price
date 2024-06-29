@@ -66,6 +66,51 @@ use WCPress\WCP\Constants;
         </div>
     </fieldset>
 
+    <fieldset>
+        <legend><?php esc_html_e( 'Taxonomy ', 'wc-call-for-price' ); ?></legend>
+        <div>
+            <label for="wcp_enabled_taxonomy">Enable Taxonomy:</label>
+            <input
+            id="wcp_enabled_taxonomy"
+            type="checkbox"
+            name="<?php echo esc_attr( Constants::WCP_ENABLED_TAXONOMY ); ?>"
+            value="1" <?php checked(1, get_option( Constants::WCP_ENABLED_TAXONOMY, 0 )); ?> />
+            <p class="help-block">
+                <?php esc_html_e( 'Select any category from above dropdown to enable call for price for that category.', 'wc-call-for-price'); ?>
+            </p>
+        </div>
+
+        <div>
+            <label for="wcp_selected_categories">Select Categories:</label>
+            <select multiple id="wcp_selected_categories" name="wcp_selected_categories[]">
+                <?php
+                $categories = get_terms('product_cat', array('hide_empty' => false));
+                foreach ($categories as $category) {
+                    echo '<option value="' . $category->term_id . '">' . $category->name . '</option>';
+                }
+                ?>
+            </select>
+            <p class="help-block">
+                <?php esc_html_e( 'Select any category from above dropdown to enable call for price for that category.', 'wc-call-for-price'); ?>
+            </p>
+        </div>
+
+        <div>
+            <label for="wcp_selected_tags">Select Tags:</label>
+            <select multiple id="wcp_selected_tags" name="wcp_selected_tags[]">
+                <?php
+                $tags = get_terms('product_tag', array('hide_empty' => false));
+                foreach ($tags as $tag) {
+                    echo '<option value="' . $tag->term_id . '">' . $tag->name . '</option>';
+                }
+                ?>
+            </select>
+            <p class="help-block">
+                <?php esc_html_e( 'Select tags from above dropdown to enable call for price for that tag, You can select multiple tags.', 'wc-call-for-price'); ?>
+            </p>
+        </div>
+    </fieldset>
+
     <button
             type="submit"
             class="save-button"

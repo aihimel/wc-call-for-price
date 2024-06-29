@@ -106,6 +106,12 @@ class AdminFormSave {
         $this->update_checkbox( Constants::MINIMUM_STOCK_THRESHOLD );
 
         $this->update_number( Constants::BELOW_STOCK_AMOUNT );
+
+        // Inside the save settings method
+        update_option(Constants::WCP_ENABLED_TAXONOMY, isset($_POST[Constants::WCP_ENABLED_TAXONOMY]) ? 1 : 0);
+        update_option('cfp_selected_categories', $_POST['cfp_selected_categories'] ?? []);
+        update_option('cfp_selected_tags', $_POST['cfp_selected_tags'] ?? []);
+
     }
 
     /**
