@@ -9,3 +9,4 @@ build
 /vendor/
 composer.lock
 assets/css
+assets/js/admin

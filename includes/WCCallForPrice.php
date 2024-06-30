@@ -20,6 +20,15 @@ final class WCCallForPrice {
 	 */
     private static $self;
 
+	/**
+	 * Contains initialized objects
+	 *
+	 * @since WCP_SINCE
+	 *
+	 * @var array
+	 */
+	protected $container = [];
+
     /**
      * Initializes the plugin
      *
@@ -28,8 +37,9 @@ final class WCCallForPrice {
     private function __construct() {
 		// @TODO Keep records of the initialized object
         Initilize::init();
+	    new Assets();
+		$this->container[ RulesConfiguration::INSTANCE_KEY ] = new RulesConfiguration();
 	    new AdminMenu();
-        new Assets();
         new Upgrader();
         new AdminPageValidator();
         new AdminFormSave();
