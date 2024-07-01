@@ -45,6 +45,7 @@ class Render {
         }
 
         if ( get_option( Constants::WCP_ENABLED_TAXONOMY ) ) {
+            add_filter( 'woocommerce_is_purchasable', '__return_false' );
             add_filter( 'woocommerce_get_price_html', [ $this, 'enable_taxonomy' ], 12, 2 );
             add_action( 'woocommerce_single_variation', [ $this, 'hide_single_variation_add_to_cart' ] );
         }
@@ -162,7 +163,7 @@ class Render {
         return apply_filters( 'wcp_button_html', ob_get_clean() );
     }
 
-    public function enable_taxonomy( $price, WC_Product $product, ) { // phpcs:ignore
+    public function enable_taxonomy( $price, WC_Product $product ) { // phpcs:ignore
 
         $enabled_taxonomy= get_option(Constants::WCP_ENABLED_TAXONOMY, 0);
         $selected_category = get_option('wcp_selected_category', '');
@@ -183,7 +184,6 @@ class Render {
                 // echo '<p>Enable Taxonomy Price</p>';
                 return $this->button_html($price, $product);
             }
-
         }
         return $price;
     }
