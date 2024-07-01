@@ -81,12 +81,20 @@ use WCPress\WCP\Constants;
         </div>
 
         <div>
-            <label for="wcp_selected_categories">Select Categories:</label>
-            <select multiple id="wcp_selected_categories" name="wcp_selected_categories[]">
-                <?php
+            <label for="wcp_selected_category">Select Categories:</label>
+            <select id="wcp_selected_category" name="wcp_selected_category">
+            <?php
                 $categories = get_terms('product_cat', array('hide_empty' => false));
                 foreach ($categories as $category) {
-                    echo '<option value="' . $category->term_id . '">' . $category->name . '</option>';
+                    // error_log(print_r($category, true)); die;
+                    // echo '<option value="' . $category->term_id . '">' . $category->name . '</option>';
+                    ?>
+                    <option value="<?php echo $category->term_id ;?>"
+                    <?php echo (get_option('wcp_selected_category') == $category->term_id) ? 'selected' : ''; ?> >
+                    <?php echo $category->name; ?>
+                    </option>
+
+                    <?php
                 }
                 ?>
             </select>
@@ -99,9 +107,16 @@ use WCPress\WCP\Constants;
             <label for="wcp_selected_tags">Select Tags:</label>
             <select multiple id="wcp_selected_tags" name="wcp_selected_tags[]">
                 <?php
+                $saved_tags = get_option('selected_tags_option', array());
                 $tags = get_terms('product_tag', array('hide_empty' => false));
                 foreach ($tags as $tag) {
-                    echo '<option value="' . $tag->term_id . '">' . $tag->name . '</option>';
+                    // echo '<option value="' . $tag->term_id . '">' . $tag->name . '</option>';
+                    ?>
+                    <option value="<?php echo $tag->term_id ;?>"
+                    <?php if(is_array($saved_tags)) { echo in_array($tag->term_id, $saved_tags) ? 'selected' : '' ; } ?> >
+                    <?php echo $tag->name; ?>
+                    </option>
+                    <?php
                 }
                 ?>
             </select>
