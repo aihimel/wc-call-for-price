@@ -69,12 +69,13 @@ use WCPress\WCP\Constants;
     <fieldset>
         <legend><?php esc_html_e( 'Taxonomy ', 'wc-call-for-price' ); ?></legend>
         <div>
-            <label for="wcp_enabled_taxonomy">Enable Taxonomy:</label>
+            <label for="wcp_enable_taxonomy">Enable Taxonomy:</label>
             <input
-            id="wcp_enabled_taxonomy"
+            id="wcp_enable_taxonomy"
             type="checkbox"
-            name="<?php echo esc_attr( Constants::WCP_ENABLED_TAXONOMY ); ?>"
-            value="1" <?php checked(1, get_option( Constants::WCP_ENABLED_TAXONOMY, 0 )); ?> />
+            name="<?php echo esc_attr( Constants::ENABLE_TAXONOMY ); ?>"
+            value='<?php echo esc_attr( Constants::ON ); ?>'
+                <?php checked( get_option( Constants::ENABLE_TAXONOMY ), Constants::ON ); ?> />
             <p class="help-block">
                 <?php esc_html_e( 'Select any category from above dropdown to enable call for price for that category.', 'wc-call-for-price'); ?>
             </p>
@@ -86,9 +87,7 @@ use WCPress\WCP\Constants;
             <?php
                 $categories = get_terms('product_cat', array('hide_empty' => false));
                 foreach ($categories as $category) {
-                    // error_log(print_r($category, true)); die;
-                    // echo '<option value="' . $category->term_id . '">' . $category->name . '</option>';
-                    ?>
+                   ?>
                     <option value="<?php echo $category->term_id ;?>"
                     <?php echo (get_option('wcp_selected_category') == $category->term_id) ? 'selected' : ''; ?> >
                     <?php echo $category->name; ?>
@@ -110,7 +109,6 @@ use WCPress\WCP\Constants;
                 $saved_tags = get_option('selected_tags_option', array());
                 $tags = get_terms('product_tag', array('hide_empty' => false));
                 foreach ($tags as $tag) {
-                    // echo '<option value="' . $tag->term_id . '">' . $tag->name . '</option>';
                     ?>
                     <option value="<?php echo $tag->term_id ;?>"
                     <?php if(is_array($saved_tags)) { echo in_array($tag->term_id, $saved_tags) ? 'selected' : '' ; } ?> >

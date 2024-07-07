@@ -44,7 +44,7 @@ class Render {
             add_filter( 'woocommerce_get_price_html', [ $this, 'woocommerce_low_on_stock' ], 10, 2 );
         }
 
-        if ( get_option( Constants::WCP_ENABLED_TAXONOMY ) ) {
+        if ( wcp_is_on( Constants::ENABLE_TAXONOMY ) ) {
             add_filter( 'woocommerce_is_purchasable', '__return_false' );
             add_filter( 'woocommerce_get_price_html', [ $this, 'enable_taxonomy' ], 12, 2 );
             add_action( 'woocommerce_single_variation', [ $this, 'hide_single_variation_add_to_cart' ] );
@@ -165,7 +165,7 @@ class Render {
 
     public function enable_taxonomy( $price, WC_Product $product ) { // phpcs:ignore
 
-        $enabled_taxonomy= get_option(Constants::WCP_ENABLED_TAXONOMY, 0);
+        $enabled_taxonomy= get_option(Constants::ENABLE_TAXONOMY, Constants::OFF);
         $selected_category = get_option('wcp_selected_category', '');
         $selected_tags = get_option('selected_tags_option', []);
 

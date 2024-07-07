@@ -104,32 +104,13 @@ class AdminFormSave {
     public function save_rule_settings( string $form_slug ) { // phpcs:ignore
         $this->update_checkbox( Constants::OUT_OF_STOCK );
         $this->update_checkbox( Constants::MINIMUM_STOCK_THRESHOLD );
-
+        $this->update_checkbox( Constants::ENABLE_TAXONOMY );
         $this->update_number( Constants::BELOW_STOCK_AMOUNT );
 
         // Inside the save settings method
-        update_option(Constants::WCP_ENABLED_TAXONOMY, isset($_POST[Constants::WCP_ENABLED_TAXONOMY]) ? 1 : 0);
+        update_option(Constants::ENABLE_TAXONOMY, isset($_POST[Constants::ENABLE_TAXONOMY]) ? Constants::ON : Constants::OFF);
         update_option('wcp_selected_category', $_POST['wcp_selected_category'] ?? '');
-        // update_option('wcp_selected_tags', $_POST['wcp_selected_tags'] ?? []);
-
-        // Accept selected tags
-        $selected_tags = isset($_POST['wcp_selected_tags']) ? $_POST['wcp_selected_tags'] : array();
-        // Save as option
-        update_option('selected_tags_option', $selected_tags);
-        
-        /* if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Check if the taxonomy option is enabled
-            $enabled_taxonomy = isset($_POST[Constants::WCP_ENABLED_TAXONOMY]) ? 1 : 0;
-            update_option(Constants::WCP_ENABLED_TAXONOMY, $enabled_taxonomy);
-        
-            // Save selected category
-            $selected_category = $_POST['wcp_selected_category'] ?? '';
-            update_option('wcp_selected_category', sanitize_text_field($selected_category));
-        
-            // Save selected tags
-            $selected_tags = $_POST['wcp_selected_tags'] ?? [];
-            update_option('wcp_selected_tags', array_map('sanitize_text_field', $selected_tags));
-        } */
+        update_option('selected_tags_option', isset($_POST['wcp_selected_tags']) ? $_POST['wcp_selected_tags'] : array());
 
     }
 
@@ -159,7 +140,7 @@ class AdminFormSave {
      * @return void
      */
     protected function update_checkbox( string $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? Constants::ON: Constants::OFF; // phpcs:ignore
+        $value = ! empty( $_POST[ $input_name ] ) ? Constants::ON : Constants::OFF; // phpcs:ignore
         update_option( $input_name, $value );
     }
 
