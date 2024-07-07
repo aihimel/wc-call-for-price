@@ -47,16 +47,11 @@ defined('WC_CALL_FOR_PRICE_TEMPLATE_PATH') || define('WC_CALL_FOR_PRICE_TEMPLATE
 
 defined( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH' ) || define( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH', __DIR__ );
 
+defined( 'WC_CALL_FOR_PRICE_ROOT_FILE' ) || define( 'WC_CALL_FOR_PRICE_ROOT_FILE', __FILE__ );
+
 // Activation Deactivation
 register_activation_hook(__FILE__, 'wc_call_for_price__activate');
 register_deactivation_hook(__FILE__, 'wc_call_for_price__deactivate');
 
 // Booting the plugin
 WCCallForPrice::init();
-
-// WooCommerce new order compatibility
-add_action( 'before_woocommerce_init', function() {
-	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
-		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
-	}
-} );

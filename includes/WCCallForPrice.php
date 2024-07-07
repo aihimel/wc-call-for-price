@@ -37,6 +37,7 @@ final class WCCallForPrice {
         if ( get_option( Constants::WCP_ACTIVATE ) === Constants::ON ) {
             new Render();
         }
+        new WooCommerceSupport();
     }
 
     /**
