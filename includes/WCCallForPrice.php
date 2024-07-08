@@ -28,7 +28,8 @@ final class WCCallForPrice {
     private function __construct() {
 		// @TODO Keep records of the initialized object
         Initilize::init();
-	    new AdminMenu();
+		new WooCommerceSupport();
+		new AdminMenu();
         new Assets();
         new Upgrader();
         new AdminPageValidator();
@@ -37,7 +38,6 @@ final class WCCallForPrice {
         if ( get_option( Constants::WCP_ACTIVATE ) === Constants::ON ) {
             new Render();
         }
-        new WooCommerceSupport();
     }
 
     /**
