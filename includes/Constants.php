@@ -37,7 +37,10 @@ class Constants {
     const MINIMUM_STOCK_THRESHOLD = 'wcp_minimum_stock_threshold';
     const BELOW_STOCK_AMOUNT = 'wcp_below_stock_amount';
 
+    // Taxonomy Settings
     const ENABLE_TAXONOMY = 'wcp_enable_taxonomy';
+    const CATEGORY = 'wcp_category';
+    const TAGS = 'wcp_tags';
 
     // Action Settings
     const REDIRECT_TO = 'wcp_redirect_to';

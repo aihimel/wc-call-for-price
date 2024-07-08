@@ -99,7 +99,7 @@ class Render {
         $custom_low_stock_amount = get_option( Constants::BELOW_STOCK_AMOUNT, 0 );
         $stock_limit = ! empty( $custom_low_stock_amount ) ? $custom_low_stock_amount : $low_stock_amount;
         if ( $product->managing_stock() && $stock_limit >= $product->get_stock_quantity() ) {
-            return $this->button_html($price, $product);
+            return $this->button_html( $price, $product );
         }
         return $price;
     }
@@ -165,24 +165,24 @@ class Render {
 
     public function enable_taxonomy( $price, WC_Product $product ) { // phpcs:ignore
 
-        $enabled_taxonomy= get_option(Constants::ENABLE_TAXONOMY, 0);
-        $selected_category = get_option('wcp_selected_category', '');
-        $selected_tags = get_option('selected_tags_option', []);
+        $enabled_taxonomy= wcp_is_on( Constants::ENABLE_TAXONOMY, 0 );
+        $selected_category = get_option( Constants::CATEGORY, '' );
+        $selected_tags = get_option( Constants::TAGS, [] );
 
-        if ($enabled_taxonomy) {
+        if ( $enabled_taxonomy ) {
             $product_categories = $product->get_category_ids();
             $product_tags = $product->get_tag_ids();
     
             // Check if product category matches selected category
-            if (in_array($selected_category, $product_categories)) {
+            if ( in_array( $selected_category, $product_categories ) ) {
                 // echo '<p>Enable Taxonomy Price</p>';
-                return $this->button_html($price, $product);
+                return $this->button_html( $price, $product );
             }
     
             // Check if product tags match selected tags
-            if (array_intersect($selected_tags, $product_tags)) {
+            if ( array_intersect( $selected_tags, $product_tags ) ) {
                 // echo '<p>Enable Taxonomy Price</p>';
-                return $this->button_html($price, $product);
+                return $this->button_html( $price, $product );
             }
         }
         return $price;

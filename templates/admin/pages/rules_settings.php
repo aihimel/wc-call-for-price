@@ -69,9 +69,11 @@ use WCPress\WCP\Constants;
     <fieldset>
         <legend><?php esc_html_e( 'Taxonomy ', 'wc-call-for-price' ); ?></legend>
         <div>
-            <label for="wcp_enable_taxonomy">Enable Taxonomy:</label>
+            <label for="<?php echo esc_attr( Constants::ENABLE_TAXONOMY ); ?>">
+                <?php esc_html_e( 'Enable Taxonomy', 'wc-call-for-price' ); ?>:
+            </label>
             <input
-            id="wcp_enable_taxonomy"
+            id="<?php echo esc_attr( Constants::ENABLE_TAXONOMY ); ?>"
             type="checkbox"
             name="<?php echo esc_attr( Constants::ENABLE_TAXONOMY ); ?>"
             value='<?php echo esc_attr( Constants::ON ); ?>'
@@ -82,14 +84,16 @@ use WCPress\WCP\Constants;
         </div>
 
         <div>
-            <label for="wcp_selected_category">Select Categories:</label>
-            <select id="wcp_selected_category" name="wcp_selected_category">
+            <label for="<?php echo esc_attr( Constants::CATEGORY ); ?>">
+                <?php esc_html_e( 'Select Categories', 'wc-call-for-price' ); ?>:
+            </label>
+            <select id="<?php echo esc_attr( Constants::CATEGORY ); ?>" name="<?php echo esc_attr( Constants::CATEGORY ); ?>">
             <?php
-                $categories = get_terms('product_cat', array('hide_empty' => false));
-                foreach ($categories as $category) {
+                $categories = get_terms('product_cat', array( 'hide_empty' => false ) );
+                foreach ( $categories as $category ) {
                    ?>
                     <option value="<?php echo $category->term_id ;?>"
-                    <?php echo (get_option('wcp_selected_category') == $category->term_id) ? 'selected' : ''; ?> >
+                    <?php echo (get_option(Constants::CATEGORY) == $category->term_id) ? 'selected' : ''; ?> >
                     <?php echo $category->name; ?>
                     </option>
 
@@ -98,28 +102,30 @@ use WCPress\WCP\Constants;
                 ?>
             </select>
             <p class="help-block">
-                <?php esc_html_e( 'Select any category from above dropdown to enable call for price for that category.', 'wc-call-for-price'); ?>
+                <?php esc_html_e( 'Select any category from above dropdown to enable call for price for that category.', 'wc-call-for-price' ); ?>
             </p>
         </div>
 
         <div>
-            <label for="wcp_selected_tags">Select Tags:</label>
-            <select multiple id="wcp_selected_tags" name="wcp_selected_tags[]">
+            <label for="<?php echo esc_attr( Constants::TAGS ); ?>">
+                <?php esc_html_e( 'Select Tags', 'wc-call-for-price' ); ?>:
+            </label>
+            <select multiple id="<?php echo esc_attr( Constants::TAGS ); ?>" name="<?php echo esc_attr( Constants::TAGS ); ?>[]">
                 <?php
-                $saved_tags = get_option('selected_tags_option', array());
-                $tags = get_terms('product_tag', array('hide_empty' => false));
-                foreach ($tags as $tag) {
+                $saved_tags = get_option( Constants::TAGS, array() );
+                $tags = get_terms( 'product_tag', array( 'hide_empty' => false ) );
+                foreach ( $tags as $tag ) {
                     ?>
                     <option value="<?php echo $tag->term_id ;?>"
-                    <?php if(is_array($saved_tags)) { echo in_array($tag->term_id, $saved_tags) ? 'selected' : '' ; } ?> >
-                    <?php echo $tag->name; ?>
+                    <?php if( is_array( $saved_tags ) ) { echo in_array( $tag->term_id, $saved_tags ) ? 'selected' : '' ; } ?> >
+                    <?php echo in_array( $tag->term_id, $saved_tags ) ? '✔ ' : '☒ ' ; echo $tag->name; ?>
                     </option>
                     <?php
                 }
                 ?>
             </select>
             <p class="help-block">
-                <?php esc_html_e( 'Select tags from above dropdown to enable call for price for that tag, You can select multiple tags.', 'wc-call-for-price'); ?>
+                <?php esc_html_e( 'Select tags from above dropdown to enable call for price for that tag, You can select multiple tags.', 'wc-call-for-price' ); ?>
             </p>
         </div>
     </fieldset>
