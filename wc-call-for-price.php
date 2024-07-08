@@ -40,9 +40,8 @@ defined('ABSPATH') || die();
 require_once 'vendor/autoload.php' ;
 require_once 'functions.php' ;
 
-defined( 'WC_CALL_FOR_PRICE_ROOT_FILE' ) || define( 'WC_CALL_FOR_PRICE_ROOT_FILE', __FILE__ );
-
 // Constants
+defined( 'WC_CALL_FOR_PRICE_ROOT_FILE' ) || define( 'WC_CALL_FOR_PRICE_ROOT_FILE', __FILE__ );
 defined( 'WC_CALL_FOR_PRICE_VERSION' ) || define( 'WC_CALL_FOR_PRICE_VERSION', '1.5.0' );
 defined('WC_CALL_FOR_PRICE_PATH') || define('WC_CALL_FOR_PRICE_PATH', plugin_basename(__FILE__));
 defined('WC_CALL_FOR_PRICE_TEMPLATE_PATH') || define('WC_CALL_FOR_PRICE_TEMPLATE_PATH', plugin_dir_path( __FILE__ ) );
