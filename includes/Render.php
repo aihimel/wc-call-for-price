@@ -165,7 +165,7 @@ class Render {
 
     public function enable_taxonomy( $price, WC_Product $product ) { // phpcs:ignore
 
-        $enabled_taxonomy= get_option(Constants::ENABLE_TAXONOMY, Constants::OFF);
+        $enabled_taxonomy= get_option(Constants::ENABLE_TAXONOMY, 0);
         $selected_category = get_option('wcp_selected_category', '');
         $selected_tags = get_option('selected_tags_option', []);
 
