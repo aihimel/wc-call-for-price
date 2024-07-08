@@ -102,10 +102,18 @@ class AdminFormSave {
      * @return void
      */
     public function save_rule_settings( string $form_slug ) { // phpcs:ignore
+        // Inside the save stock settings method
         $this->update_checkbox( Constants::OUT_OF_STOCK );
         $this->update_checkbox( Constants::MINIMUM_STOCK_THRESHOLD );
-
         $this->update_number( Constants::BELOW_STOCK_AMOUNT );
+
+        // Inside the save taxonomy settings method
+        $this->update_checkbox( Constants::ENABLE_TAXONOMY );
+        $this->update_text( Constants::CATEGORY );
+        $this->update_multiselect( Constants::TAGS );
+
+        // update_option(Constants::TAGS, isset($_POST[Constants::TAGS]) ? $_POST[Constants::TAGS] : array());
+
     }
 
     /**
@@ -134,7 +142,7 @@ class AdminFormSave {
      * @return void
      */
     protected function update_checkbox( string $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? Constants::ON: Constants::OFF; // phpcs:ignore
+        $value = ! empty( $_POST[ $input_name ] ) ? Constants::ON : Constants::OFF; // phpcs:ignore
         update_option( $input_name, $value );
     }
 
@@ -150,6 +158,22 @@ class AdminFormSave {
     protected function update_text( string $input_name ) {
         $value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): ''; // phpcs:ignore
         update_option( $input_name, $value );
+        
+    }
+
+    /**
+     * Updated multiselect from with sanitization
+     *
+     * @since 1.4.0
+     *
+     * @param string $input_name
+     *
+     * @return void
+     */
+    protected function update_multiselect( string $input_name ) {
+        $value = ! empty( $_POST[ $input_name ] ) ? $_POST[ $input_name ] : []; // phpcs:ignore
+        update_option( $input_name, array_map( 'sanitize_text_field', $value ) );
+        
     }
 
     /**

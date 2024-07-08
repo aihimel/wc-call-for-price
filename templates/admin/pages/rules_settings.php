@@ -66,6 +66,70 @@ use WCPress\WCP\Constants;
         </div>
     </fieldset>
 
+    <fieldset>
+        <legend><?php esc_html_e( 'Taxonomy ', 'wc-call-for-price' ); ?></legend>
+        <div>
+            <label for="<?php echo esc_attr( Constants::ENABLE_TAXONOMY ); ?>">
+                <?php esc_html_e( 'Enable Taxonomy', 'wc-call-for-price' ); ?>:
+            </label>
+            <input
+            id="<?php echo esc_attr( Constants::ENABLE_TAXONOMY ); ?>"
+            type="checkbox"
+            name="<?php echo esc_attr( Constants::ENABLE_TAXONOMY ); ?>"
+            value='<?php echo esc_attr( Constants::ON ); ?>'
+                <?php checked( get_option( Constants::ENABLE_TAXONOMY ), Constants::ON ); ?> />
+            <p class="help-block">
+                <?php esc_html_e( 'Select any category from above dropdown to enable call for price for that category.', 'wc-call-for-price'); ?>
+            </p>
+        </div>
+
+        <div>
+            <label for="<?php echo esc_attr( Constants::CATEGORY ); ?>">
+                <?php esc_html_e( 'Select Categories', 'wc-call-for-price' ); ?>:
+            </label>
+            <select id="<?php echo esc_attr( Constants::CATEGORY ); ?>" name="<?php echo esc_attr( Constants::CATEGORY ); ?>">
+            <?php
+                $categories = get_terms('product_cat', array( 'hide_empty' => false ) );
+                foreach ( $categories as $category ) {
+                   ?>
+                    <option value="<?php echo $category->term_id ;?>"
+                    <?php echo (get_option(Constants::CATEGORY) == $category->term_id) ? 'selected' : ''; ?> >
+                    <?php echo $category->name; ?>
+                    </option>
+
+                    <?php
+                }
+                ?>
+            </select>
+            <p class="help-block">
+                <?php esc_html_e( 'Select any category from above dropdown to enable call for price for that category.', 'wc-call-for-price' ); ?>
+            </p>
+        </div>
+
+        <div>
+            <label for="<?php echo esc_attr( Constants::TAGS ); ?>">
+                <?php esc_html_e( 'Select Tags', 'wc-call-for-price' ); ?>:
+            </label>
+            <select multiple id="<?php echo esc_attr( Constants::TAGS ); ?>" name="<?php echo esc_attr( Constants::TAGS ); ?>[]">
+                <?php
+                $saved_tags = get_option( Constants::TAGS, array() );
+                $tags = get_terms( 'product_tag', array( 'hide_empty' => false ) );
+                foreach ( $tags as $tag ) {
+                    ?>
+                    <option value="<?php echo $tag->term_id ;?>"
+                    <?php if( is_array( $saved_tags ) ) { echo in_array( $tag->term_id, $saved_tags ) ? 'selected' : '' ; } ?> >
+                    <?php echo in_array( $tag->term_id, $saved_tags ) ? '✔ ' : '☒ ' ; echo $tag->name; ?>
+                    </option>
+                    <?php
+                }
+                ?>
+            </select>
+            <p class="help-block">
+                <?php esc_html_e( 'Select tags from above dropdown to enable call for price for that tag, You can select multiple tags.', 'wc-call-for-price' ); ?>
+            </p>
+        </div>
+    </fieldset>
+
     <button
             type="submit"
             class="save-button"
