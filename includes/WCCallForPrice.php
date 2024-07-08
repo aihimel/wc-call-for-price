@@ -28,6 +28,7 @@ final class WCCallForPrice {
     private function __construct() {
 		// @TODO Keep records of the initialized object
         Initilize::init();
+        new WooCommerceSupport();
 	    new AdminMenu();
         new Assets();
         new Upgrader();
