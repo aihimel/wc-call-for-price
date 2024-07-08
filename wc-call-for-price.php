@@ -41,13 +41,12 @@ require_once 'vendor/autoload.php' ;
 require_once 'functions.php' ;
 
 // Constants
+defined( 'WC_CALL_FOR_PRICE_ROOT_FILE' ) || define( 'WC_CALL_FOR_PRICE_ROOT_FILE', __FILE__ );
 defined( 'WC_CALL_FOR_PRICE_VERSION' ) || define( 'WC_CALL_FOR_PRICE_VERSION', '1.5.0' );
 defined('WC_CALL_FOR_PRICE_PATH') || define('WC_CALL_FOR_PRICE_PATH', plugin_basename(__FILE__));
 defined('WC_CALL_FOR_PRICE_TEMPLATE_PATH') || define('WC_CALL_FOR_PRICE_TEMPLATE_PATH', plugin_dir_path( __FILE__ ) );
 
 defined( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH' ) || define( 'WC_CALL_FOR_PRICE_PLUGIN_ROOT_PATH', __DIR__ );
-
-defined( 'WC_CALL_FOR_PRICE_ROOT_FILE' ) || define( 'WC_CALL_FOR_PRICE_ROOT_FILE', __FILE__ );
 
 // Activation Deactivation
 register_activation_hook(__FILE__, 'wc_call_for_price__activate');
