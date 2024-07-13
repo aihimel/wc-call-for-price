@@ -53,13 +53,27 @@ $(document).ready(() => {
         }
     });
 
-    // Upload from media
-        $('#wc_call_for_price__upload_image_button').click(function(e){
+    // Show Uploaded Image from media
+    $('#wc_call_for_price__upload_image_button').on('click', function(e) {
         e.preventDefault();
-        let image = wp.media({title: 'Upload Image', multiple: false}).open().on('select', function(e){
-            let uploaded_image = image.state().get('selection').first();
-            $('#wc_call_for_price__upload_image').val(uploaded_image.attributes.url);
+        
+        let imageFrame = wp.media({
+            title: 'Select or Upload Image',
+            button: {
+                text: 'Use this image'
+            },
+            multiple: false
         });
+    
+        imageFrame.on('select', function() {
+            let attachment = imageFrame.state().get('selection').first().toJSON();
+            let imageUrl = attachment.url;
+    
+            $('#wc_call_for_price__upload_image').val(imageUrl);
+            $('#wc_call_for_price_image_preview').attr('src', imageUrl).show();
+        });
+    
+        imageFrame.open();
     });
 
     // General Settings
@@ -76,6 +90,7 @@ $(document).ready(() => {
 
 
     $('.wcp-rquery').rQuery({})
+
 });
 
 
