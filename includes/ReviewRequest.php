@@ -32,39 +32,37 @@ class ReviewRequest {
 	 * @return void
 	 */
 	public function render_notice() {
-		if ( wcp_is_settings_page() ) {
-			$review = new ReviewModel();
-			$last_prompted_timestamp = $review->getLastPromptedAt();
-			$current_time = new DateTime();
-			$last_prompted_time = (new DateTime())->setTimestamp( $last_prompted_timestamp );
-			$interval_days = ( $current_time->diff( $last_prompted_time ) )->days;
-			$current_status = $review->getCurrentStatus();
-			$show_review = false;
-			if ( // Initial Status or Remind Me Later
-				$interval_days >= 7
-				&& ReviewModel::USER_STATUS__REMIND_ME_LATER === $current_status
-			) {
-				$show_review = true;
-			} elseif ( // Notice Removed or Dismissed
-				$interval_days >= 14
-				&& ReviewModel::USER_STATUS__NOTICE_REMOVED === $current_status
-			) {
-				$show_review = true;
-			} elseif ( // Already Clicked review once
-				$interval_days >= 30
-				&& ReviewModel::USER_STATUS__REVIEW_NOW === $current_status
-			) {
-				$show_review = true;
-			} elseif ( // Given Review already and confirmed that
-				$interval_days >= 60
-				&& ReviewModel::USER_STATUS__ALREADY_GIVEN === $current_status
-			) {
-				$show_review = true;
-			}
+		$review = new ReviewModel();
+		$last_prompted_timestamp = $review->getLastPromptedAt();
+		$current_time = new DateTime();
+		$last_prompted_time = (new DateTime())->setTimestamp( $last_prompted_timestamp );
+		$interval_days = ( $current_time->diff( $last_prompted_time ) )->days;
+		$current_status = $review->getCurrentStatus();
+		$show_review = false;
+		if ( // Initial Status or Remind Me Later
+			$interval_days >= 7
+			&& ReviewModel::USER_STATUS__REMIND_ME_LATER === $current_status
+		) {
+			$show_review = true;
+		} elseif ( // Notice Removed or Dismissed
+			$interval_days >= 14
+			&& ReviewModel::USER_STATUS__NOTICE_REMOVED === $current_status
+		) {
+			$show_review = true;
+		} elseif ( // Already Clicked review once
+			$interval_days >= 30
+			&& ReviewModel::USER_STATUS__REVIEW_NOW === $current_status
+		) {
+			$show_review = true;
+		} elseif ( // Given Review already and confirmed that
+			$interval_days >= 60
+			&& ReviewModel::USER_STATUS__ALREADY_GIVEN === $current_status
+		) {
+			$show_review = true;
+		}
 
-			if ( $show_review ) {
-				wcp_get_admin_template( 'review-notice.php' );
-			}
+		if ( $show_review ) {
+			wcp_get_admin_template( 'review-notice.php' );
 		}
 	}
 
@@ -76,14 +74,17 @@ class ReviewRequest {
 	 * @return void
 	 */
 	public function action() {
-		if ( is_admin() && isset( $_GET['page'] ) && 'wc-call-for-price' === $_GET['page'] ) { // phpcs:ignore
+		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+			return;
+		}
+		if ( is_admin() ) { // phpcs:ignore
 			if( isset( $_GET['action'] ) ) { // phpcs:ignore
 				$action = sanitize_text_field( $_GET['action'] ); // phpcs:ignore
 				$review = new ReviewModel();
 				$review->setReviewStatus( $action );
 				$review->save();
 				if ( ReviewModel::USER_STATUS__REVIEW_NOW === $action ) {
-					wp_safe_redirect( 'https://wordpress.org/support/plugin/wc-call-for-price/reviews/?filter=5#new-post' );
+					wp_redirect( 'https://wordpress.org/support/plugin/wc-call-for-price/reviews/?filter=5#new-post' );
 				}
 			}
 		}
