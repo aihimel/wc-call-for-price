@@ -91,6 +91,15 @@ $(document).ready(() => {
 
     $('.wcp-rquery').rQuery({})
 
+    // Rules Taxonomy Select2
+    // $('#wcp_category').select2();
+    $('#wcp_tags').select2({
+        placeholder: "Select tags",
+        width: "100%",
+        closeOnSelect: false,
+        // minimumInputLength: 1
+    });
+
 });
 
 

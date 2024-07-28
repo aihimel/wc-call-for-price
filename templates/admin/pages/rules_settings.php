@@ -116,11 +116,10 @@ use WCPress\WCP\Constants;
                 $tags = get_terms( 'product_tag', array( 'hide_empty' => false ) );
                 foreach ( $tags as $tag ) {
                     ?>
-                    <option value="<?php echo $tag->term_id; ?>"
+                    <option value="<?php echo esc_attr( $tag->term_id ); ?>"
                     <?php if( is_array( $saved_tags ) ) { echo in_array( $tag->term_id, $saved_tags ) ? 'selected' : '' ; } ?>
                     >
-                    <?php if( is_array( $saved_tags ) ) { echo in_array( $tag->term_id, $saved_tags ) ? '✔ ' : '☒ ' ; }else { echo '☒ '; }
-                    echo $tag->name; ?>
+                    <?php echo $tag->name; ?>
                     </option>
                     <?php
                 }

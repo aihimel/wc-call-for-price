@@ -34,6 +34,14 @@ class Assets {
 	        [ 'dashicons' ],
 			WC_CALL_FOR_PRICE_VERSION
         );
+        // Select2 CDN Style Start
+        wp_register_style(
+            'wcp-select2-style',
+            'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css',
+	        [ 'dashicons' ],
+			'4.1.0'
+        );
+        // Select2 CDN Style End
         wp_register_script(
             'wcp-admin-script',
             plugin_dir_url( WC_CALL_FOR_PRICE_PATH ) . 'assets/js/wcp-admin-script.js',
@@ -48,6 +56,15 @@ class Assets {
 			WC_CALL_FOR_PRICE_VERSION,
 			true
         );
+        // Select2 CDN Script Start
+		wp_register_script(
+            'wcp-select2-script',
+            'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
+            [ 'jquery' ],
+			'4.1.0',
+			true
+        );
+        // Select2 CDN Script End
     }
 
 	/**
