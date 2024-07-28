@@ -96,13 +96,13 @@ $button_alt_text = get_option( Constants::BUTTON_ALT_TEXT );
         <div  id='wc_call_for_price__upload_image_wrapper'>
             <?php if( ! empty( $upload_image_url ) ) : ?>
             <div class="wcp-uploaded-image-preview_wrapper">
-                <img src="<?php echo esc_attr( $upload_image_url );?>" alt="">
+                <img src="<?php echo esc_attr( $upload_image_url );?>" alt="<?php echo esc_attr( 'Button Image', 'wc-call-for-price' ); ?>" id="wc_call_for_price_image_preview">
             </div>
             <?php endif; ?>
             <div class="form-group" >
                 <label for="wc_call_for_price__upload_image"><?php esc_html_e( 'Upload Your Image', 'wc-call-for-price' ); ?></label>
                 <input
-                    type="text"
+                    type="hidden"
                     id="wc_call_for_price__upload_image"
                     value="<?php echo esc_attr( $upload_image_url );?>"
                     name='wc_call_for_price__upload_image'
