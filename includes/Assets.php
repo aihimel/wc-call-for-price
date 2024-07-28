@@ -37,7 +37,7 @@ class Assets {
         // Select2 CDN Style Start
         wp_register_style(
             'wcp-select2-style',
-            plugin_dir_url( WC_CALL_FOR_PRICE_PATH ) . 'assets/css/select2.min.css',
+			plugin_dir_url( WC_CALL_FOR_PRICE_PATH ) . 'assets/lib/select2.min.css',
 	        [ 'dashicons' ],
 			'4.1.0'
         );

@@ -110,16 +110,21 @@ use WCPress\WCP\Constants;
             <label for="<?php echo esc_attr( Constants::TAGS ); ?>">
                 <?php esc_html_e( 'Select Tags', 'wc-call-for-price' ); ?>:
             </label>
-            <select multiple id="<?php echo esc_attr( Constants::TAGS ); ?>" name="<?php echo esc_attr( Constants::TAGS ); ?>[]">
+            <select
+              multiple="multiple"
+              id="<?php echo esc_attr( Constants::TAGS ); ?>"
+              name="<?php echo esc_attr( Constants::TAGS ); ?>[]"
+            >
                 <?php
                 $saved_tags = get_option( Constants::TAGS, array() );
                 $tags = get_terms( 'product_tag', array( 'hide_empty' => false ) );
                 foreach ( $tags as $tag ) {
                     ?>
-                    <option value="<?php echo esc_attr( $tag->term_id ); ?>"
-                    <?php if( is_array( $saved_tags ) ) { echo in_array( $tag->term_id, $saved_tags ) ? 'selected' : '' ; } ?>
+                    <option
+                      value="<?php echo esc_attr( $tag->term_id ); ?>"
+                      <?php if( is_array( $saved_tags ) ) { echo in_array( $tag->term_id, $saved_tags ) ? 'selected' : '' ; } ?>
                     >
-                    <?php echo $tag->name; ?>
+                      <?php echo $tag->name; ?>
                     </option>
                     <?php
                 }
