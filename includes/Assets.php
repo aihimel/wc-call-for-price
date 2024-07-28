@@ -37,7 +37,7 @@ class Assets {
         // Select2 CDN Style Start
         wp_register_style(
             'wcp-select2-style',
-            'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css',
+            plugin_dir_url( WC_CALL_FOR_PRICE_PATH ) . 'assets/css/select2.min.css',
 	        [ 'dashicons' ],
 			'4.1.0'
         );
@@ -59,7 +59,7 @@ class Assets {
         // Select2 CDN Script Start
 		wp_register_script(
             'wcp-select2-script',
-            'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
+            plugin_dir_url( WC_CALL_FOR_PRICE_PATH ) . 'assets/js/select2.min.js',
             [ 'jquery' ],
 			'4.1.0',
 			true
