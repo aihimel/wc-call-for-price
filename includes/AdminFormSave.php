@@ -4,10 +4,18 @@
  *
  * @since 1.4.0
  */
-
 namespace WCPress\WCP;
 
+defined( 'ABSPATH' ) || exit;
+
+/**
+ * Saves admin from submitted via post
+ *
+ * @since WCP_SINCE Segregated option update function to be reused in pro addon
+ */
 class AdminFormSave {
+
+	use SaveAdminSettingsTrait;
 
 	/**
 	 * Initializes the admin form save object
@@ -15,7 +23,6 @@ class AdminFormSave {
 	 * @since 1.4.0
 	 */
     public function __construct() {
-
         add_action( 'wcp_admin_form_header', [ $this, 'process_post_request' ] );
 
         // Form Processing
@@ -111,9 +118,6 @@ class AdminFormSave {
         $this->update_checkbox( Constants::ENABLE_TAXONOMY );
         $this->update_text( Constants::CATEGORY );
         $this->update_multiselect( Constants::TAGS );
-
-        // update_option(Constants::TAGS, isset($_POST[Constants::TAGS]) ? $_POST[Constants::TAGS] : array());
-
     }
 
     /**
@@ -128,94 +132,6 @@ class AdminFormSave {
     public function save_action_settings( string $form_slug ) { // phpcs:ignore
         $this->update_checkbox( Constants::REDIRECT_TO );
         $this->update_checkbox( Constants::OPEN_NEW_PAGE );
-
         $this->update_url( Constants::REDIRECT_LINK );
-    }
-
-    /**
-     * Updates checkbox options using default on/off
-     *
-     * @since 1.4.0
-     *
-     * @param string $input_name
-     *
-     * @return void
-     */
-    protected function update_checkbox( string $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? Constants::ON : Constants::OFF; // phpcs:ignore
-        update_option( $input_name, $value );
-    }
-
-    /**
-     * Updated text from with sanitization
-     *
-     * @since 1.4.0
-     *
-     * @param string $input_name
-     *
-     * @return void
-     */
-    protected function update_text( string $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): ''; // phpcs:ignore
-        update_option( $input_name, $value );
-        
-    }
-
-    /**
-     * Updated multiselect from with sanitization
-     *
-     * @since 1.4.0
-     *
-     * @param string $input_name
-     *
-     * @return void
-     */
-    protected function update_multiselect( string $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? $_POST[ $input_name ] : []; // phpcs:ignore
-        update_option( $input_name, array_map( 'sanitize_text_field', $value ) );
-        
-    }
-
-    /**
-     * Updates filename options
-     *
-     * @since 1.4.0
-     *
-     * @param string $input_name
-     *
-     * @return void
-     */
-    protected function update_filename( string $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_file_name( $_POST[ $input_name ] ): ''; // phpcs:ignore
-        update_option( $input_name, $value );
-    }
-
-    /**
-     * Update URL options
-     *
-     * @since 1.4.0
-     *
-     * @param string $input_name
-     *
-     * @return void
-     */
-    protected function update_url( string $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_url( $_POST[ $input_name ] ): ''; // phpcs:ignore
-        update_option( $input_name, $value );
-    }
-
-    /**
-     * Updates number options
-     *
-     * @since 1.4.0
-     *
-     * @param string $input_name
-     *
-     * @return void
-     */
-    protected function update_number( string $input_name ) {
-        $value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): ''; // phpcs:ignore
-        $value = absint( $value );
-        update_option( $input_name, $value );
     }
 }

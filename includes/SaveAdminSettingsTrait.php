@@ -1,0 +1,98 @@
+<?php
+namespace WCPress\WCP;
+
+defined( 'ABSPATH' ) || exit;
+
+/**
+ * Admin settings save methods to be used on free and pro plugin
+ *
+ * @since WCP_SINCE
+ */
+trait SaveAdminSettingsTrait {
+	/**
+	 * Updates checkbox options using default on/off
+	 *
+	 * @since WCP_SINCE
+	 *
+	 * @param string $input_name
+	 *
+	 * @return void
+	 */
+	protected function update_checkbox( string $input_name ) {
+		$value = ! empty( $_POST[ $input_name ] ) ? Constants::ON : Constants::OFF; // phpcs:ignore
+		update_option( $input_name, $value );
+	}
+
+	/**
+	 * Updated text from with sanitization
+	 *
+	 * @since WCP_SINCE
+	 *
+	 * @param string $input_name
+	 *
+	 * @return void
+	 */
+	protected function update_text( string $input_name ) {
+		$value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): ''; // phpcs:ignore
+		update_option( $input_name, $value );
+
+	}
+
+	/**
+	 * Updated multiselect from with sanitization
+	 *
+	 * @since WCP_SINCE
+	 *
+	 * @param string $input_name
+	 *
+	 * @return void
+	 */
+	protected function update_multiselect( string $input_name ) {
+		$value = ! empty( $_POST[ $input_name ] ) ? $_POST[ $input_name ] : []; // phpcs:ignore
+		update_option( $input_name, array_map( 'sanitize_text_field', $value ) );
+
+	}
+
+	/**
+	 * Updates filename options
+	 *
+	 * @since WCP_SINCE
+	 *
+	 * @param string $input_name
+	 *
+	 * @return void
+	 */
+	protected function update_filename( string $input_name ) {
+		$value = ! empty( $_POST[ $input_name ] ) ? sanitize_file_name( $_POST[ $input_name ] ): ''; // phpcs:ignore
+		update_option( $input_name, $value );
+	}
+
+	/**
+	 * Update URL options
+	 *
+	 * @since WCP_SINCE
+	 *
+	 * @param string $input_name
+	 *
+	 * @return void
+	 */
+	protected function update_url( string $input_name ) {
+		$value = ! empty( $_POST[ $input_name ] ) ? sanitize_url( $_POST[ $input_name ] ): ''; // phpcs:ignore
+		update_option( $input_name, $value );
+	}
+
+	/**
+	 * Updates number options
+	 *
+	 * @since WCP_SINCE
+	 *
+	 * @param string $input_name
+	 *
+	 * @return void
+	 */
+	protected function update_number( string $input_name ) {
+		$value = ! empty( $_POST[ $input_name ] ) ? sanitize_text_field( $_POST[ $input_name ] ): ''; // phpcs:ignore
+		$value = absint( $value );
+		update_option( $input_name, $value );
+	}
+}
