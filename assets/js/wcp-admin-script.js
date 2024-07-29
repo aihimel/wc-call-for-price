@@ -6,6 +6,7 @@
 (($) => {
 $(document).ready(() => {
 
+    let show_text = $('#wc_call_for_price__show_text');
     let text = $('#wc_call_for_price__text');
     let show_image = $('#wc_call_for_price__show_image');
     let uploaded_image = $('#wc_call_for_price__show_uploaded_image');
@@ -25,6 +26,14 @@ $(document).ready(() => {
         upload_image_wrapper.hide();
     }
 
+    show_text.on('change', () => {
+        if( show_text.is(':checked') ) {
+            show_image.prop( 'checked', false );
+            uploaded_image.prop( 'checked', false );    
+            images.slideUp('slow');
+            upload_image_wrapper.slideUp('slow');
+        }
+    });
 
     text.on('keyup', () => {
         show_image.prop( 'checked', false );
@@ -35,6 +44,7 @@ $(document).ready(() => {
 
     show_image.on('change', () => {
         if( show_image.is(':checked') ) {
+            show_text.prop( 'checked', false );
             uploaded_image.prop( 'checked', false );
             images.slideDown('slow');
             upload_image_wrapper.slideUp('slow');
@@ -45,6 +55,7 @@ $(document).ready(() => {
 
     uploaded_image.on('change', () => {
         if( uploaded_image.is(':checked') ) {
+            show_text.prop( 'checked', false );
             show_image.prop( 'checked', false );
             images.slideUp('slow');
             upload_image_wrapper.slideDown('slow');
