@@ -8,7 +8,6 @@ namespace WCPress\WCP;
  *
  * @since 1.2.1
  */
-
 final class WCCallForPrice {
 
 	/**
@@ -38,6 +37,13 @@ final class WCCallForPrice {
         if ( get_option( Constants::WCP_ACTIVATE ) === Constants::ON ) {
             new Render();
         }
+
+		/**
+		 * Signaling Free plugin is loaded and the pro plugin could be rendered
+		 *
+		 * @since WCP_SINCE
+		 */
+		do_action( 'wcp_free_plugin_initialized' );
     }
 
     /**
