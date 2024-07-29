@@ -80,17 +80,16 @@ $(document).ready(() => {
     let only_on_empty_price = $('#wcp-only-empty-price');
     let show_on_all_products = $('#wcp-show-on-all-products');
 
-    only_on_empty_price.change(function() {
-            if(this.checked) {
-                show_on_all_products.prop('checked', false);
-            }
-        });
-    
-        show_on_all_products.change(function() {
-            if(this.checked) {
-                only_on_empty_price.prop('checked', false);
-            }
-        });
+    only_on_empty_price.on( 'change', function(){
+        if(this.checked) {
+            show_on_all_products.prop('checked', false);
+        }
+    });
+    show_on_all_products.on( 'change', function(){
+        if(this.checked) {
+            only_on_empty_price.prop('checked', false);
+        }
+    });
 
     $('.wcp-rquery').rQuery({})
 

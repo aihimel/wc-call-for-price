@@ -106,7 +106,7 @@ $button_alt_text = get_option( Constants::BUTTON_ALT_TEXT );
                     id="wc_call_for_price__upload_image"
                     value="<?php echo esc_attr( $upload_image_url );?>"
                     name='wc_call_for_price__upload_image'
-                    placeholder='Input image url'
+                    placeholder="<?php esc_attr_e( 'Input Image URL', 'wc-call-for-price' ); ?>"
                     readonly
                 />
                 <input type='button' id='wc_call_for_price__upload_image_button' name='wc_call_for_price__upload_image_button' value='Upload' />
