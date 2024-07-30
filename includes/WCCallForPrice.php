@@ -25,6 +25,7 @@ final class WCCallForPrice {
      * @since 1.4.0
      */
     private function __construct() {
+		new WooCommerceSupport();
 		add_action( 'init', [ $this, 'load_plugin' ] );
     }
 
@@ -38,7 +39,6 @@ final class WCCallForPrice {
 	public function load_plugin() {
 		// @TODO Keep records of the initialized object
 		Initilize::init();
-		new WooCommerceSupport();
 		new AdminMenu();
 		new Assets();
 		new Upgrader();

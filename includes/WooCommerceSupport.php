@@ -19,33 +19,33 @@ defined( 'ABSPATH' ) || exit;
  */
 class WooCommerceSupport {
     
-  /**
-   * Constructor.
-   * 
-   * Initializes the class by adding the 'before_woocommerce_init' action hook to declare HPOS support.
-   * 
-   * @since WCP_SINCE
-   */
-  public function __construct() {
-      add_action( 'before_woocommerce_init', [ $this, 'add_hpos_support_declaration' ] );
-  }
+    /**
+    * Constructor.
+    * 
+    * Initializes the class by adding the 'before_woocommerce_init' action hook to declare HPOS support.
+    * 
+    * @since WCP_SINCE
+    */
+    public function __construct() {
+        add_action( 'before_woocommerce_init', [ $this, 'add_hpos_support_declaration' ] );
+    }
 
-  /**
-   * Declare HPOS Support.
-   * 
-   * Declares compatibility with WooCommerce's High-Performance Order Storage (HPOS) feature.
-   * 
-   * This function checks if the FeaturesUtil class exists in WooCommerce and declares compatibility for custom order tables.
-   * 
-   * @since WCP_SINCE
-   */
-  public function add_hpos_support_declaration() {
-      if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
-          \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility(
-              'custom_order_tables', 
-              WC_CALL_FOR_PRICE_ROOT_FILE, 
-              true 
-          );
-      }
-  }
+    /**
+    * Declare HPOS Support.
+    * 
+    * Declares compatibility with WooCommerce's High-Performance Order Storage (HPOS) feature.
+    * 
+    * This function checks if the FeaturesUtil class exists in WooCommerce and declares compatibility for custom order tables.
+    * 
+    * @since WCP_SINCE
+    */
+    public function add_hpos_support_declaration() {
+        if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+            \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility(
+                'custom_order_tables', 
+                WC_CALL_FOR_PRICE_ROOT_FILE, 
+                true 
+            );
+        }
+    }
 }
