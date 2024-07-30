@@ -92,11 +92,13 @@ $button_alt_text = get_option( Constants::BUTTON_ALT_TEXT );
             <p class="help-block"><?php esc_html_e( 'Check this box if you want to show your uploaded image.', 'wc-call-for-price' ); ?></p>
         </div>
         <div  id='wc_call_for_price__upload_image_wrapper'>
-            <?php if( ! empty( $upload_image_url ) ) : ?>
             <div class="wcp-uploaded-image-preview_wrapper">
-                <img src="<?php echo esc_attr( $upload_image_url );?>" alt="<?php echo esc_attr( 'Button Image', 'wc-call-for-price' ); ?>" id="wc_call_for_price_image_preview">
+                <?php if( empty( $upload_image_url ) ) : ?>
+                    <img src="<?php echo esc_attr( $upload_image_url );?>" id="wc_call_for_price_image_preview">
+                <?php else: ?>
+                    <img src="<?php echo esc_attr( $upload_image_url );?>" alt="<?php echo esc_attr( 'Button Image', 'wc-call-for-price' ); ?>" id="wc_call_for_price_image_preview">
+                <?php endif; ?>
             </div>
-            <?php endif; ?>
             <div class="form-group" >
                 <label for="wc_call_for_price__upload_image"><?php esc_html_e( 'Upload Your Image', 'wc-call-for-price' ); ?></label>
                 <input
@@ -104,7 +106,7 @@ $button_alt_text = get_option( Constants::BUTTON_ALT_TEXT );
                     id="wc_call_for_price__upload_image"
                     value="<?php echo esc_attr( $upload_image_url );?>"
                     name='wc_call_for_price__upload_image'
-                    placeholder='input image url'
+                    placeholder="<?php esc_attr_e( 'Input Image URL', 'wc-call-for-price' ); ?>"
                     readonly
                 />
                 <input type='button' id='wc_call_for_price__upload_image_button' name='wc_call_for_price__upload_image_button' value='Upload' />
