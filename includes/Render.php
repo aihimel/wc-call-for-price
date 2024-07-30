@@ -142,6 +142,13 @@ class Render {
         $target = get_option( Constants::OPEN_NEW_PAGE ) === Constants::ON ? '_blank': '_self' ;
         $link = $do_redirect ? get_option( Constants::REDIRECT_LINK, '#' ): '#';
 
+        /**
+         * Filter to manipulate button link
+         *
+         * @since WCP_SINCE
+         */
+        $link = apply_filters( 'wcp_button_link', $link, $product );
+
         $style = "cursor: pointer; height: {$height}px; width: {$width}px; background-color: transparent; background-repeat: no-repeat; background-size: contain;";
         $style .= ! empty( $background_image_url ) ? 'background-image:url(' . $background_image_url . ');' : '';
         $style .= 'display:inline-block;';
