@@ -13,8 +13,6 @@ use WCPress\WCP\Constants;
 
 ?>
 
-<h4><?php _e( 'Actions Settings', 'wc-call-for-price' ); ?></h4>
-
 <form class="" method="POST" action="">
     <?php wp_nonce_field( Constants::ADMIN_FORM_NONCE_ACTION, Constants::NONCE_FIELD_NAME ); ?>
     <fieldset>
