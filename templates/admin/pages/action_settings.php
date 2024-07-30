@@ -72,6 +72,8 @@ use WCPress\WCP\Constants;
 
     </fieldset>
 
+    <?php do_action( 'wcp_template_action_settings_end' ); ?>
+
     <button
             type="submit"
             class="save-button"

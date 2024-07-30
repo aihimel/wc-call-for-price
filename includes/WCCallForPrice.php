@@ -25,26 +25,37 @@ final class WCCallForPrice {
      * @since 1.4.0
      */
     private function __construct() {
+		add_action( 'init', [ $this, 'load_plugin' ] );
+    }
+
+	/**
+	 * Loads this plugin object
+	 *
+	 * @since WCP_SINCE
+	 *
+	 * @return void
+	 */
+	public function load_plugin() {
 		// @TODO Keep records of the initialized object
-        Initilize::init();
-        new WooCommerceSupport();
-	    new AdminMenu();
-        new Assets();
-        new Upgrader();
-        new AdminPageValidator();
-        new AdminFormSave();
+		Initilize::init();
+		new WooCommerceSupport();
+		new AdminMenu();
+		new Assets();
+		new Upgrader();
+		new AdminPageValidator();
+		new AdminFormSave();
 		new ReviewRequest();
-        if ( get_option( Constants::WCP_ACTIVATE ) === Constants::ON ) {
-            new Render();
-        }
+		if ( get_option( Constants::WCP_ACTIVATE ) === Constants::ON ) {
+			new Render();
+		}
 
 		/**
 		 * Signaling Free plugin is loaded and the pro plugin could be rendered
 		 *
 		 * @since WCP_SINCE
 		 */
-		do_action( 'wcp_free_plugin_initialized' );
-    }
+		do_action( 'wcp_free_plugin_loaded' );
+	}
 
     /**
      * Returns only the single instance of the main plugin class
