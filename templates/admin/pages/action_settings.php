@@ -22,7 +22,7 @@ use WCPress\WCP\Constants;
                 <?php esc_html_e( 'Redirect To', 'wc-call-for-price' ); ?>:
             </label>
             <input
-                class="wcp-rquery"
+                class="wcp-rquery action-options"
                 data-uncheck-on-uncheck="#wcp-open-in-a-new-page"
                 data-disable-on-uncheck="#wcp-redirect-link"
                 data-enable-on-check="#wcp-redirect-link"
