@@ -95,4 +95,17 @@ trait SaveAdminSettingsTrait {
 		$value = absint( $value );
 		update_option( $input_name, $value );
 	}
+
+	/**
+	 * Clears data for the specific option
+	 *
+	 * @since WCP_SINCE
+	 *
+	 * @param string $input_name
+	 *
+	 * @return void
+	 */
+	protected function flush_data( string $input_name ) {
+		update_option( $input_name, '' );
+	}
 }
