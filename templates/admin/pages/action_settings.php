@@ -60,8 +60,9 @@ use WCPress\WCP\Constants;
             <input
                 id="wcp-redirect-link"
                 type="text"
+                placeholder="https://wcpress.net"
                 name='<?php echo esc_attr( Constants::REDIRECT_LINK ); ?>'
-                value='<?php echo get_option( Constants::REDIRECT_LINK ); ?>'
+                value='<?php echo esc_attr( get_option( Constants::REDIRECT_LINK ) ); ?>'
             />
             <p class="help-block">
                 <?php esc_html_e( 'Redirect to the above link', 'wc-call-for-price'); ?>

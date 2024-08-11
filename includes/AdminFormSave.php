@@ -131,7 +131,12 @@ class AdminFormSave {
      */
     public function save_action_settings( string $form_slug ) { // phpcs:ignore
         $this->update_checkbox( Constants::REDIRECT_TO );
-        $this->update_checkbox( Constants::OPEN_NEW_PAGE );
-        $this->update_url( Constants::REDIRECT_LINK );
+		if ( wcp_is_on( Constants::REDIRECT_TO ) ) {
+			$this->update_checkbox( Constants::OPEN_NEW_PAGE );
+			$this->update_url( Constants::REDIRECT_LINK );
+		} else {
+			$this->flush_data( Constants::OPEN_NEW_PAGE );
+			$this->flush_data( Constants::REDIRECT_LINK );
+		}
     }
 }
