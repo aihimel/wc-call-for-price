@@ -123,7 +123,20 @@ class Render {
         // Features
         $show_uploaded_image = wcp_is_on( Constants::SHOW_UPLOADED_IMAGE );
         $show_preset_image = wcp_is_on( Constants::SHOW_PRESET_IMAGE );
-        $do_redirect = wcp_is_on( Constants::REDIRECT_TO );
+
+        /**
+         * Filter to activate redirect from button click
+         *
+         * @since WCP_SINCE
+         *
+         * @params bool
+         * @param WC_Product
+         */
+        $do_redirect = apply_filters(
+            'wcp_redirect_on',
+            wcp_is_on( Constants::REDIRECT_TO ),
+            $product
+        );
         $text = get_option( Constants::TEXT, __( 'Call For Price', 'wc-call-for-price' ) );
 
         $height = get_option( Constants::BUTTON_HEIGHT, 40 );
