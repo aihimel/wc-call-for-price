@@ -166,7 +166,19 @@ class Render {
         $style .= ! empty( $background_image_url ) ? 'background-image:url(' . $background_image_url . ');' : '';
         $style .= 'display:inline-block;';
 
-        $click_event = ! $do_redirect ? 'return false': '';
+        /**
+         * Click event filter to pass a function name to be executed on click
+         *
+         * @since WCP_SINCE
+         *
+         * @param string $click_event
+         * @param WC_Product $product
+         */
+    		$click_event = apply_filters(
+            'wcp_button_click_event',
+            ( ! $do_redirect ? 'return false': '' ),
+            $product
+        );
 
         ob_start();
         ?>
