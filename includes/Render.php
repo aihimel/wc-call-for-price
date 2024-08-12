@@ -184,10 +184,14 @@ class Render {
         ?>
         <a
             style="<?php echo esc_attr( $style );?>"
+            class="wcp-action-button"
             target="<?php echo esc_attr( $target ); ?>"
             href="<?php echo esc_attr( $link ); ?>"
             title="<?php echo esc_attr( $title ); ?>"
             onclick="<?php echo esc_js( $click_event ); ?>"
+            data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
+            data-product-title="<?php echo esc_attr( $product->get_title() ); ?>"
+            data-product-link="<?php echo esc_attr( $product->get_permalink() ); ?>"
         >
             <?php echo esc_html( ! $show_preset_image && ! $show_uploaded_image ? $text : '' ) ?>
         </a>
