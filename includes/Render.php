@@ -42,13 +42,29 @@ class Render {
 
         if ( wcp_is_on( Constants::MINIMUM_STOCK_THRESHOLD ) ) {
             add_filter( 'woocommerce_get_price_html', [ $this, 'woocommerce_low_on_stock' ], 10, 2 );
+            add_action( 'woocommerce_single_variation', [ $this, 'hide_single_variation_add_to_cart' ] );
         }
 
         if ( wcp_is_on( Constants::ENABLE_TAXONOMY ) ) {
-            add_filter( 'woocommerce_is_purchasable', '__return_false' );
-            add_filter( 'woocommerce_get_price_html', [ $this, 'enable_taxonomy' ], 12, 2 );
+            add_filter( 'woocommerce_get_price_html', [ $this, 'handle_taxonomy' ], 10, 2 );
+            add_filter( 'woocommerce_is_purchasable', [ $this, 'handle_purchasable' ], 10, 2 );
             add_action( 'woocommerce_single_variation', [ $this, 'hide_single_variation_add_to_cart' ] );
         }
+    }
+
+    /**
+    * Hide WooCommerce variable product single variation add to cart button
+    *
+    * @since 1.4.4
+    *
+        * @return void
+        */
+    public function hide_single_variation_add_to_cart() {
+        remove_action(
+        'woocommerce_single_variation',
+        'woocommerce_single_variation_add_to_cart_button',
+        20
+        );
     }
 
     /**
@@ -65,23 +81,8 @@ class Render {
         if ( ! ( $product->get_stock_status() === Constants::OUT0FSTOCK ) ) {
             return $price;
         } else {
-            return $this->button_html($price, $product);
+            return $this->button_html( $price, $product );
         }
-    }
-
-	/**
-    * Hide WooCommerce variable product single variation add to cart button
-    *
-    * @since 1.4.4
-    *
-	 * @return void
-	 */
-    public function hide_single_variation_add_to_cart() {
-	    remove_action(
-        'woocommerce_single_variation',
-        'woocommerce_single_variation_add_to_cart_button',
-        20
-        );
     }
 
     /**
@@ -199,27 +200,49 @@ class Render {
         return apply_filters( 'wcp_button_html', ob_get_clean() );
     }
 
-    public function enable_taxonomy( $price, WC_Product $product ) { // phpcs:ignore
-
-        $enabled_taxonomy= wcp_is_on( Constants::ENABLE_TAXONOMY, 0 );
+    /**
+     * Enable a special button or modify the price for products based on taxonomy settings.
+     *
+     * @since 1.4.0
+     * 
+     * @param WC_Product $product
+     * @return bool
+     */
+    private function is_product_in_selected_taxonomy( WC_Product $product ) {
         $selected_category = get_option( Constants::CATEGORY, '' );
         $selected_tags = get_option( Constants::TAGS, [] );
 
-        if ( $enabled_taxonomy ) {
-            $product_categories = $product->get_category_ids();
-            $product_tags = $product->get_tag_ids();
-    
-            // Check if product category matches selected category
-            if ( in_array( $selected_category, $product_categories ) ) {
-                // echo '<p>Enable Taxonomy Price</p>';
-                return $this->button_html( $price, $product );
-            }
-    
-            // Check if product tags match selected tags
-            if ( array_intersect( $selected_tags, $product_tags ) ) {
-                // echo '<p>Enable Taxonomy Price</p>';
-                return $this->button_html( $price, $product );
-            }
+        $product_category = $product->get_category_ids();
+        $product_tags = $product->get_tag_ids();
+
+        return (in_array( $selected_category, $product_category ) || array_intersect( $selected_tags, $product_tags ));
+    }
+
+    /**
+     * Handles the 'Add to Cart' button visibility
+     *
+     * @param bool $purchasable
+     * @param WC_Product $product
+     * @return bool
+     */
+    public function handle_purchasable( $purchasable, WC_Product $product ) {
+        if ( $this->is_product_in_selected_taxonomy( $product ) ) {
+            return false;
+        }
+        return $purchasable;
+    }
+
+    /**
+     * Handles the price HTML output
+     *
+     * @param string $price
+     * @param WC_Product $product
+     * @return string
+     */
+    public function handle_taxonomy( $price, WC_Product $product ) {
+        if ( $this->is_product_in_selected_taxonomy( $product ) ) {
+            // Optionally modify or return the price HTML here
+            return $this->button_html( $price, $product );
         }
         return $price;
     }
