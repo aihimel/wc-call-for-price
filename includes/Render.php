@@ -201,32 +201,38 @@ class Render {
     }
 
     /**
-     * Enable a special button or modify the price for products based on taxonomy settings.
+     * Checks if a product is associated with the selected category or tags based on taxonomy settings.
      *
      * @since 1.4.0
      * 
      * @param WC_Product $product
-     * @return bool
+     * @return array
      */
-    private function is_product_in_selected_taxonomy( WC_Product $product ) {
+    public function is_product_in_selected_taxonomy( WC_Product $product ) {
         $selected_category = get_option( Constants::CATEGORY, '' );
         $selected_tags = get_option( Constants::TAGS, [] );
-
+    
         $product_category = $product->get_category_ids();
         $product_tags = $product->get_tag_ids();
-
-        return (in_array( $selected_category, $product_category ) || array_intersect( $selected_tags, $product_tags ));
+    
+        return [
+            'is_in_category' => in_array( $selected_category, $product_category ),
+            'is_in_tags'     => !empty(array_intersect( $selected_tags, $product_tags ))
+        ];
     }
 
     /**
      * Handles the 'Add to Cart' button visibility
      *
+     * @since 1.4.0
+     * 
      * @param bool $purchasable
      * @param WC_Product $product
      * @return bool
      */
     public function handle_purchasable( $purchasable, WC_Product $product ) {
-        if ( $this->is_product_in_selected_taxonomy( $product ) ) {
+        if ( $this->is_product_in_selected_taxonomy( $product )['is_in_category'] || 
+             $this->is_product_in_selected_taxonomy( $product )['is_in_tags'] ) {
             return false;
         }
         return $purchasable;
@@ -235,13 +241,15 @@ class Render {
     /**
      * Handles the price HTML output
      *
+     * @since 1.4.0
+     * 
      * @param string $price
      * @param WC_Product $product
      * @return string
      */
     public function handle_taxonomy( $price, WC_Product $product ) {
-        if ( $this->is_product_in_selected_taxonomy( $product ) ) {
-            // Optionally modify or return the price HTML here
+        if ( $this->is_product_in_selected_taxonomy( $product )['is_in_category'] || 
+             $this->is_product_in_selected_taxonomy( $product )['is_in_tags'] ) {
             return $this->button_html( $price, $product );
         }
         return $price;
