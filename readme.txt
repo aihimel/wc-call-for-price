@@ -141,7 +141,16 @@ This is a minor release with tweaking and fixes.
 == Changelog ==
 
 = 1.5.1 ( 28 August 2024 ) =
-
+* ✅ **Feature** Category selection added
+* ✅ **Feature** Tags selection added
+* ✅ **Feature** Image upload ui updated
+* 🪛 **Tweak:** Code refactor and improvement
+* 🪛 **Tweak:** UI bug fixes
+* 🪛 **Tweak:** Redirect issue fixed
+* 🪛 **Tweak:** Review request logic updated
+* 🧩 **Compatibility:** Tested upto WordPress 6.6
+* 🧩 **Compatibility:** WooCommerce notice support added
+* 🧩 **Compatibility:** Tested upto WooCommerce 9.2
 
 = 1.5.0 (22 June 2024) =
 * ✅ **Feature:** UI updated
