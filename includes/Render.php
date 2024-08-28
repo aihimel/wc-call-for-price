@@ -192,6 +192,7 @@ class Render {
             data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
             data-product-title="<?php echo esc_attr( $product->get_title() ); ?>"
             data-product-link="<?php echo esc_attr( $product->get_permalink() ); ?>"
+            data-product-type="<?php echo esc_attr( $product->get_type() ); ?>"
         >
             <?php echo esc_html( ! $show_preset_image && ! $show_uploaded_image ? $text : '' ) ?>
         </a>
