@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
  * 
  * This class initializes the actions and declares support for High-Performance Order Storage (HPOS) by using WooCommerce's FeaturesUtil.
  * 
- * @since WCP_SINCE
+ * @since 1.5.1
  */
 class WooCommerceSupport {
     
@@ -24,7 +24,7 @@ class WooCommerceSupport {
     * 
     * Initializes the class by adding the 'before_woocommerce_init' action hook to declare HPOS support.
     * 
-    * @since WCP_SINCE
+    * @since 1.5.1
     */
     public function __construct() {
         add_action( 'before_woocommerce_init', [ $this, 'add_hpos_support_declaration' ] );
@@ -37,7 +37,7 @@ class WooCommerceSupport {
     * 
     * This function checks if the FeaturesUtil class exists in WooCommerce and declares compatibility for custom order tables.
     * 
-    * @since WCP_SINCE
+    * @since 1.5.1
     */
     public function add_hpos_support_declaration() {
         if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {

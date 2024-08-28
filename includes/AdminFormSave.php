@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Saves admin from submitted via post
  *
- * @since WCP_SINCE Segregated option update function to be reused in pro addon
+ * @since 1.5.1 Segregated option update function to be reused in pro addon
  */
 class AdminFormSave {
 

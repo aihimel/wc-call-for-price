@@ -32,7 +32,7 @@ final class WCCallForPrice {
 	/**
 	 * Loads this plugin object
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.5.1
 	 *
 	 * @return void
 	 */
@@ -52,7 +52,7 @@ final class WCCallForPrice {
 		/**
 		 * Signaling Free plugin is loaded and the pro plugin could be rendered
 		 *
-		 * @since WCP_SINCE
+		 * @since 1.5.1
 		 */
 		do_action( 'wcp_free_plugin_loaded' );
 	}

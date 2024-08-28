@@ -6,13 +6,13 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Admin settings save methods to be used on free and pro plugin
  *
- * @since WCP_SINCE
+ * @since 1.5.1
  */
 trait SaveAdminSettingsTrait {
 	/**
 	 * Updates checkbox options using default on/off
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.5.1
 	 *
 	 * @param string $input_name
 	 *
@@ -26,7 +26,7 @@ trait SaveAdminSettingsTrait {
 	/**
 	 * Updated text from with sanitization
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.5.1
 	 *
 	 * @param string $input_name
 	 *
@@ -40,7 +40,7 @@ trait SaveAdminSettingsTrait {
 	/**
 	 * Updated multiselect from with sanitization
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.5.1
 	 *
 	 * @param string $input_name
 	 *
@@ -54,7 +54,7 @@ trait SaveAdminSettingsTrait {
 	/**
 	 * Updates filename options
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.5.1
 	 *
 	 * @param string $input_name
 	 *
@@ -68,7 +68,7 @@ trait SaveAdminSettingsTrait {
 	/**
 	 * Update URL options
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.5.1
 	 *
 	 * @param string $input_name
 	 *
@@ -82,7 +82,7 @@ trait SaveAdminSettingsTrait {
 	/**
 	 * Updates number options
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.5.1
 	 *
 	 * @param string $input_name
 	 *
@@ -97,7 +97,7 @@ trait SaveAdminSettingsTrait {
 	/**
 	 * Clears data for the specific option
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.5.1
 	 *
 	 * @param string $input_name
 	 *

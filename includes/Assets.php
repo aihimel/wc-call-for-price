@@ -11,7 +11,7 @@ class Assets {
 	/**
 	 * jQuery select one plugin js file handle
 	 *
-	 * @since WCP_SINCE
+	 * @since 1.5.1
 	 */
 	const JQUERY_SELECT_ONE = 'jquery-select-one';
 
@@ -85,7 +85,7 @@ class Assets {
 		/**
 		 * To register new admin assets
 		 *
-		 * @since WCP_SINCE
+		 * @since 1.5.1
 		 */
 		do_action( 'wcp_admin_asset_registerer' );
     }

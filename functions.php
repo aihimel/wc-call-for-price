@@ -144,7 +144,7 @@ function wcp_is_settings_page(): bool {
 /**
  * Generates review action URL
  *
- * @since WCP_SINCE
+ * @since 1.5.1
  *
  * @param string $action
  *
