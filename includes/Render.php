@@ -127,7 +127,7 @@ class Render {
         /**
          * Filter to activate redirect from button click
          *
-         * @since WCP_SINCE
+         * @since 1.5.1
          *
          * @params bool
          * @param WC_Product
@@ -158,7 +158,7 @@ class Render {
         /**
          * Filter to manipulate button link
          *
-         * @since WCP_SINCE
+         * @since 1.5.1
          */
         $link = apply_filters( 'wcp_button_link', $link, $product );
 
@@ -169,7 +169,7 @@ class Render {
         /**
          * Click event filter to pass a function name to be executed on click
          *
-         * @since WCP_SINCE
+         * @since 1.5.1
          *
          * @param string $click_event
          * @param WC_Product $product

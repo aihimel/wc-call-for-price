@@ -2,7 +2,7 @@
     /**
      * jQuery plugin to select only one checkbox of the selected class elements
      *
-     * @since WCP_SINCE
+     * @since 1.5.1
      */
     $.fn.selectOne = function () {
         let list = this;
