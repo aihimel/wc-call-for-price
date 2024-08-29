@@ -1,0 +1,30 @@
+name: wordpress.org deploy
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        description: On dry-run mode
+  push:
+    tags:
+      - "*.*"
+jobs:
+  tag:
+    name: Releasing new version on wordpress.org plugin repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Build Plugin
+        run: |
+          composer install --no-dev
+          npm install
+      - name: WordPress Plugin Deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        with:
+          dry-run: ${{ github.event.inputs.dry_run }}
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_WCP_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_WCP_USERNAME }}
+          SLUG: wc-call-for-price
+          VERSION: 1.5.1
