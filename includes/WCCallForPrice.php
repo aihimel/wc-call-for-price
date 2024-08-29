@@ -8,7 +8,6 @@ namespace WCPress\WCP;
  *
  * @since 1.2.1
  */
-
 final class WCCallForPrice {
 
 	/**
@@ -26,18 +25,37 @@ final class WCCallForPrice {
      * @since 1.4.0
      */
     private function __construct() {
-		// @TODO Keep records of the initialized object
-        Initilize::init();
-	    new AdminMenu();
-        new Assets();
-        new Upgrader();
-        new AdminPageValidator();
-        new AdminFormSave();
-		new ReviewRequest();
-        if ( get_option( Constants::WCP_ACTIVATE ) === Constants::ON ) {
-            new Render();
-        }
+		new WooCommerceSupport();
+		add_action( 'init', [ $this, 'load_plugin' ] );
     }
+
+	/**
+	 * Loads this plugin object
+	 *
+	 * @since 1.5.1
+	 *
+	 * @return void
+	 */
+	public function load_plugin() {
+		// @TODO Keep records of the initialized object
+		Initilize::init();
+		new AdminMenu();
+		new Assets();
+		new Upgrader();
+		new AdminPageValidator();
+		new AdminFormSave();
+		new ReviewRequest();
+		if ( get_option( Constants::WCP_ACTIVATE ) === Constants::ON ) {
+			new Render();
+		}
+
+		/**
+		 * Signaling Free plugin is loaded and the pro plugin could be rendered
+		 *
+		 * @since 1.5.1
+		 */
+		do_action( 'wcp_free_plugin_loaded' );
+	}
 
     /**
      * Returns only the single instance of the main plugin class

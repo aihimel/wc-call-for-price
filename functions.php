@@ -140,3 +140,16 @@ function wcp_is_settings_page(): bool {
 
 	return false;
 }
+
+/**
+ * Generates review action URL
+ *
+ * @since 1.5.1
+ *
+ * @param string $action
+ *
+ * @return string
+ */
+function wcp_review_action_url( string $action ): string {
+	return admin_url( "admin.php?page=wc-call-for-price&action=$action" );
+}

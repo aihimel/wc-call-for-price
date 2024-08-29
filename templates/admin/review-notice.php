@@ -20,10 +20,31 @@ use \WCPress\WCP\Models\ReviewModel;
         <p>Thank you for being part of our journey! ✨</p>
     </div>
 <div class="wcp-footer">
-    <a class="wcp-review-now" target="_blank" href="?page=wc-call-for-price&action=<?php echo ReviewModel::USER_STATUS__REVIEW_NOW; ?>">Review Now</a>
-    <a class="wcp-remind-me-later" href="?page=wc-call-for-price&action=<?php echo ReviewModel::USER_STATUS__REMIND_ME_LATER; ?>">Remind Me Later</a>
-    <a class="wcp-already-reviewed" href="?page=wc-call-for-price&action=<?php echo ReviewModel::USER_STATUS__ALREADY_GIVEN; ?>">Already Reviewed</a>
-    <a class="wcp-dismiss" href="?page=wc-call-for-price&action=<?php echo ReviewModel::USER_STATUS__NOTICE_REMOVED; ?>">Dismiss</a>
+    <a
+      class="wcp-review-now"
+      target="_blank"
+      href="<?php echo esc_attr( wcp_review_action_url( ReviewModel::USER_STATUS__REVIEW_NOW ) ); ?>"
+    >
+        <?php esc_html_e( 'Review Now', 'wc-call-for-price' ); ?>
+    </a>
+    <a
+      class="wcp-remind-me-later"
+      href="<?php echo esc_attr( wcp_review_action_url( ReviewModel::USER_STATUS__REMIND_ME_LATER ) ); ?>"
+    >
+  		<?php esc_html_e( 'Remind Me Later', 'wc-call-for-price' ); ?>
+    </a>
+    <a
+      class="wcp-already-reviewed"
+      href="<?php echo esc_attr( wcp_review_action_url( ReviewModel::USER_STATUS__ALREADY_GIVEN ) ); ?>"
+    >
+  		<?php esc_html_e( 'Already Reviewed', 'wc-call-for-price' ); ?>
+    </a>
+    <a
+      class="wcp-dismiss"
+      href="<?php echo esc_attr( wcp_review_action_url( ReviewModel::USER_STATUS__NOTICE_REMOVED ) ); ?>"
+    >
+  		<?php esc_html_e( 'Dismiss', 'wc-call-for-price' ); ?>
+    </a>
 </div>
 </div>
 

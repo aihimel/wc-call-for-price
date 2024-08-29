@@ -13,8 +13,6 @@ use WCPress\WCP\Constants;
 
 ?>
 
-<h4><?php _e( 'Actions Settings', 'wc-call-for-price' ); ?></h4>
-
 <form class="" method="POST" action="">
     <?php wp_nonce_field( Constants::ADMIN_FORM_NONCE_ACTION, Constants::NONCE_FIELD_NAME ); ?>
     <fieldset>
@@ -24,7 +22,7 @@ use WCPress\WCP\Constants;
                 <?php esc_html_e( 'Redirect To', 'wc-call-for-price' ); ?>:
             </label>
             <input
-                class="wcp-rquery"
+                class="wcp-rquery action-options"
                 data-uncheck-on-uncheck="#wcp-open-in-a-new-page"
                 data-disable-on-uncheck="#wcp-redirect-link"
                 data-enable-on-check="#wcp-redirect-link"
@@ -62,8 +60,9 @@ use WCPress\WCP\Constants;
             <input
                 id="wcp-redirect-link"
                 type="text"
+                placeholder="https://wcpress.net"
                 name='<?php echo esc_attr( Constants::REDIRECT_LINK ); ?>'
-                value='<?php echo get_option( Constants::REDIRECT_LINK ); ?>'
+                value='<?php echo esc_attr( get_option( Constants::REDIRECT_LINK ) ); ?>'
             />
             <p class="help-block">
                 <?php esc_html_e( 'Redirect to the above link', 'wc-call-for-price'); ?>
@@ -71,6 +70,8 @@ use WCPress\WCP\Constants;
         </div>
 
     </fieldset>
+
+    <?php do_action( 'wcp_template_action_settings_end' ); ?>
 
     <button
             type="submit"
