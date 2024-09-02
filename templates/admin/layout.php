@@ -51,8 +51,10 @@ $wcp_is_page_valid = apply_filters( 'wcp_is_admin_subpage_valid', $wcp_sub_page 
     
   </div>
 
+  <?php if ( ! defined( 'WPA_PLUGIN_ACTIVE' ) ) : ?>
   <div class="wpa-promotion-widget">
     <?php wcp_get_admin_template( 'parts/wpa-promotion-widget-sidebar.php' ); ?>
   </div>
+  <?php endif; ?>
     
 </div>
