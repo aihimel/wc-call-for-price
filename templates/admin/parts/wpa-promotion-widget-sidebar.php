@@ -12,5 +12,5 @@ defined( 'ABSPATH' ) || die();
         <li>Get priority support and regular updates</li>
         <li>Early bird discount going on, save up to 40%</li>
     </ul>
-    <a href="#">Get Now</a>
+    <a href="<?php echo esc_attr( 'https://wcpress.net/wc-call-for-price-woocommerce-plugin/' ); ?>" target="_blank">Get Now</a>
 </div>

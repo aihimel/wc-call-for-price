@@ -60,6 +60,9 @@ $transformation_duration_medium: 0.4s;
           font-size: 18px;
           margin-right: 10px;
         }
+        &:last-child::before {
+          color: #db246b;
+        }
       }
     }
 
