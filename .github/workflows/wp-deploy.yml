@@ -13,6 +13,8 @@ jobs:
     name: Releasing new version on wordpress.org plugin repository
     runs-on: ubuntu-latest
     steps:
+      - name: Installing WP-CLI
+        uses: holyhope/install-wp-cli-github-action@main
       - name: Checkout code
         uses: actions/checkout@master
       - name: Build Plugin
