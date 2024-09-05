@@ -1,0 +1,26 @@
+{
+    "name": "wcpress/wcp",
+    "autoload": {
+        "psr-4": {
+            "WCPress\\WCP\\": "includes/"
+        },
+        "files": [
+            "activation-deactivation.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Aftabul Islam",
+            "email": "toaihimel@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.10",
+        "wp-coding-standards/wpcs": "^3.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

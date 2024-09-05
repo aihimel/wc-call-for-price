@@ -1,0 +1,6 @@
+;(function($){$(document).ready(function(){
+    let pluginRow = $('#the-list').find('tr[data-slug="wc-call-for-price"]');
+    let description = pluginRow.find('.column-description.desc .plugin-version-author-uri');
+    let reviewLink = ' | <a href="https://wordpress.org/support/plugin/wc-call-for-price/reviews/?filter=5" target="_blank" rel="noopener noreferrer" title="Rate WC Call For Price Plugin at wordpress.org" style="color: #ffb900"><span class="dashicons dashicons-star-filled" style="font-size: 16px; width:16px; height: 16px"></span><span class="dashicons dashicons-star-filled" style="font-size: 16px; width:16px; height: 16px"></span><span class="dashicons dashicons-star-filled" style="font-size: 16px; width:16px; height: 16px"></span><span class="dashicons dashicons-star-filled" style="font-size: 16px; width:16px; height: 16px"></span><span class="dashicons dashicons-star-filled" style="font-size: 16px; width:16px; height: 16px"></span></a>'
+    description.append( reviewLink );
+})})(jQuery);

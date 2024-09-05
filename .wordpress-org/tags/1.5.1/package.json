@@ -1,0 +1,23 @@
+{
+  "name": "wc-call-for-price",
+  "version": "1.2.0",
+  "description": "WordPress and WooCommerce plugin to show text/image instead for empty price.",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start --progress",
+    "build": "wp-scripts build",
+    "sass:watch": "gulp sass:watch",
+    "makepot": "wp i18n make-pot . --domain='wc-call-for-price' --include='templates,activation-deactivation.php,wc-call-for-price.php' languages/wc-call-for-price.pot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aftabul Islam",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@wordpress/scripts": "^26.9.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^5.1.0"
+  },
+  "overrides": {
+    "graceful-fs": "^4.2.11"
+  }
+}

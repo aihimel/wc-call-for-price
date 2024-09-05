@@ -1,0 +1,71 @@
+.wcp-admin-panel-wrapper {
+  margin: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+}
+.wcp-admin-panel-wrapper .sidebar {
+  width: 200px;
+  border-radius: 8px 0 0 8px;
+  background-color: #f6f9f9;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.wcp-admin-panel-wrapper .sidebar .logo-wrapper {
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+}
+.wcp-admin-panel-wrapper .sidebar .link-wrapper {
+  padding: 0 0 16px 32px;
+}
+.wcp-admin-panel-wrapper .sidebar .link-wrapper a {
+  text-decoration: none;
+}
+.wcp-admin-panel-wrapper .main {
+  padding: 16px;
+  width: 600px;
+}
+.wcp-admin-panel-wrapper .main .header .wcp-admin-main-menu-wrapper ul li {
+  margin: 4px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #f6f9f9;
+  transition-duration: 0.2s;
+}
+.wcp-admin-panel-wrapper .main .header .wcp-admin-main-menu-wrapper ul li:hover {
+  transition-duration: 0.2s;
+  background-color: #e7f2f2;
+}
+.wcp-admin-panel-wrapper .main .header .wcp-admin-main-menu-wrapper ul li:first-child {
+  margin-left: 0;
+}
+.wcp-admin-panel-wrapper .main .header .wcp-admin-main-menu-wrapper ul li a {
+  color: #f25500;
+}
+.wcp-admin-panel-wrapper .main .header .wcp-admin-main-menu-wrapper ul li a:focus {
+  box-shadow: unset;
+  color: #f25500;
+}
+.wcp-admin-panel-wrapper .main .header .wcp-admin-main-menu-wrapper ul li.active {
+  background-color: #f25500;
+}
+.wcp-admin-panel-wrapper .main .header .wcp-admin-main-menu-wrapper ul li.active a {
+  color: #ffffff;
+}
+.wcp-admin-panel-wrapper .main form fieldset {
+  border: 0.5px solid #e5eaea;
+  border-radius: 4px;
+}
+.wcp-admin-panel-wrapper .main form fieldset legend {
+  margin: 0 16px;
+  padding: 8px 16px;
+  border-right: 4px;
+  background-color: #f6f9f9;
+}
+.wcp-admin-panel-wrapper .main form fieldset .wcp-uploaded-image-preview_wrapper img {
+  max-width: 300px;
+}
