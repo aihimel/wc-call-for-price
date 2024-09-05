@@ -4,7 +4,7 @@ todos.txt
 .svn
 .package.json.swp
 node_modules
-build
+dist
 /vendor/
 assets/css
 languages
