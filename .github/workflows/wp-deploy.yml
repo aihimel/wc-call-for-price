@@ -31,4 +31,3 @@ jobs:
           SVN_PASSWORD: ${{ secrets.SVN_WCP_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_WCP_USERNAME }}
           SLUG: wc-call-for-price
-          VERSION: 1.5.1
