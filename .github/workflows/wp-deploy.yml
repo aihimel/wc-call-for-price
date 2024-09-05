@@ -28,6 +28,11 @@ jobs:
           npm run makepot
       - name: WordPress Plugin Deploy
         uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_WCP_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_WCP_USERNAME }}
+          SLUG: wc-call-for-price
+          VERSION: ${{ github.event.inputs.version }}
         with:
           dry-run: ${{ github.event.inputs.dry_run }}
       - name: Build ZIP
@@ -35,7 +40,4 @@ jobs:
         with:
           retention-days: 2
         env:
-          SVN_PASSWORD: ${{ secrets.SVN_WCP_PASSWORD }}
-          SVN_USERNAME: ${{ secrets.SVN_WCP_USERNAME }}
           SLUG: wc-call-for-price
-          VERSION: ${{ github.event.inputs.version }}
