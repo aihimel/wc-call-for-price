@@ -10,6 +10,8 @@ jobs:
     name: Push to trunk
     runs-on: ubuntu-latest
     steps:
+      - name: Installing WP-CLI
+        uses: godaddy-wordpress/setup-wp-cli@1
       - uses: actions/checkout@master
       - name: Build Plugin
         run: |
