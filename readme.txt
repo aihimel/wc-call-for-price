@@ -16,6 +16,9 @@ A Feature-Rich Plugin (aka Extension) for Dynamic Control to Show/Hide Price or 
 
 > **Hide your product price with a message or button. Redirect your customers to another page to get the know the price. With WC Call for Price for WooCommerce, get more engagement from your customers**
 
+
+> **[See Feature Details](https://wcpress.net/wc-call-for-price-woocommerce-plugin/?utm_source=WordPressPlugin&utm_medium=readme&utm_campaign=organic&utm_content=SeeFetureDetails)**
+
 === Features At a Glance===
 **📣 Hide Price:** Hide your product price with a message like `Call for Price` or `Contact for Price`.
 **📣 Show Button Instead of Text:** You can show any image instead of text if you want. You have to upload the image and select to show your custom image.
