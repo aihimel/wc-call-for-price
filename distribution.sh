@@ -18,3 +18,4 @@ cp package.json dist/package.json
 cp package-lock.json dist/package-lock.json
 cp readme.txt dist/readme.txt
 cp wc-call-for-price.php dist/cp-call-for-price.php
+ls dist
