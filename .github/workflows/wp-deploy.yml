@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Installing WP-CLI
-        uses: holyhope/install-wp-cli-github-action@main
+        uses: godaddy-wordpress/setup-wp-cli@1
       - name: Checkout code
         uses: actions/checkout@master
       - name: Build Plugin
