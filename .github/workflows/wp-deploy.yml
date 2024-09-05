@@ -41,3 +41,4 @@ jobs:
           retention-days: 1
         env:
           SLUG: wc-call-for-price
+          BUILD_DIR: dist
