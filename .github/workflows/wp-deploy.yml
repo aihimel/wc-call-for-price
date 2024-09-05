@@ -5,9 +5,12 @@ on:
       dry_run:
         type: boolean
         description: On dry-run mode
-  push:
-    tags:
-      - "*"
+      version:
+        type: string
+        description: Version tag
+#  push:
+#    tags:
+#      - "*"
 jobs:
   tag:
     name: Releasing new version on wordpress.org plugin repository
@@ -31,3 +34,4 @@ jobs:
           SVN_PASSWORD: ${{ secrets.SVN_WCP_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_WCP_USERNAME }}
           SLUG: wc-call-for-price
+          VERSION: ${{ github.event.inputs.version }}
