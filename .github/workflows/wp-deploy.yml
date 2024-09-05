@@ -7,7 +7,7 @@ on:
         description: On dry-run mode
   push:
     tags:
-      - "*.*.*"
+      - "*"
 jobs:
   tag:
     name: Releasing new version on wordpress.org plugin repository
