@@ -1,3 +1,19 @@
 name: wordpress.org asset updated
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - trunk
+
+jobs:
+  trunk:
+    name: Push to trunk
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Updating wordpress.org assets
+        uses: 10up/action-wordpress-plugin-asset-update@stable
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_WCP_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_WCP_USERNAME }}
+          SLUG: wc-call-for-price
