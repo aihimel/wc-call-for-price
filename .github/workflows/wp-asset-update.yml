@@ -1,0 +1,3 @@
+name: wordpress.org asset updated
+on:
+  workflow_dispatch:
