@@ -8,9 +8,6 @@ on:
       version:
         type: string
         description: Version tag
-#  push:
-#    tags:
-#      - "*"
 jobs:
   tag:
     name: Releasing new version on wordpress.org plugin repository
@@ -26,6 +23,8 @@ jobs:
           npm install
           npm run build
           npm run makepot
+      - name: Copy resource to distribution directory
+        run: bash distribution.sh
       - name: WordPress Plugin Deploy
         uses: 10up/action-wordpress-plugin-deploy@stable
         env:
@@ -33,11 +32,12 @@ jobs:
           SVN_USERNAME: ${{ secrets.SVN_WCP_USERNAME }}
           SLUG: wc-call-for-price
           VERSION: ${{ github.event.inputs.version }}
+          BUILD_DIR: dist
         with:
           dry-run: ${{ github.event.inputs.dry_run }}
       - name: Build ZIP
         uses: 10up/action-wordpress-plugin-build-zip@stable
         with:
-          retention-days: 2
+          retention-days: 1
         env:
           SLUG: wc-call-for-price
