@@ -4,7 +4,7 @@ $fieldsetBorder: #462b2b3d;
 $lightBorder: #beb8b8;
 
 // General Form Design
-.wcp-admin-panel-wrapper {
+.wcp-admin-panel-content {
     form {
         fieldset {
             border: 1px solid $lightBorder;
@@ -42,7 +42,7 @@ $lightBorder: #beb8b8;
 
 // Specific Design
 
-.wcp-admin-panel-wrapper {
+.wcp-admin-panel-content {
     .header {
         .wcp-admin-main-menu-wrapper {
             ul {

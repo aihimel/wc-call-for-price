@@ -17,6 +17,9 @@ $wcp_is_page_valid = apply_filters( 'wcp_is_admin_subpage_valid', $wcp_sub_page 
 ?>
 
 <div class="wcp-admin-panel-wrapper">
+
+  <div class="wcp-admin-panel-content">
+
     <div class="sidebar">
       <div class="logo-wrapper">
         <img
@@ -33,6 +36,7 @@ $wcp_is_page_valid = apply_filters( 'wcp_is_admin_subpage_valid', $wcp_sub_page 
         </ul>
       </div>
     </div>
+
     <div class="main">
     		<?php wcp_get_admin_template( 'parts/header.php' ); ?>
         <?php
@@ -44,4 +48,13 @@ $wcp_is_page_valid = apply_filters( 'wcp_is_admin_subpage_valid', $wcp_sub_page 
         ?>
     		<?php wcp_get_admin_template( 'parts/footer.php' ); ?>
     </div>
+    
+  </div>
+
+  <?php if ( ! defined( 'WPA_PLUGIN_ACTIVE' ) ) : ?>
+  <div class="wpa-promotion-widget">
+    <?php wcp_get_admin_template( 'parts/wpa-promotion-widget-sidebar.php' ); ?>
+  </div>
+  <?php endif; ?>
+    
 </div>
