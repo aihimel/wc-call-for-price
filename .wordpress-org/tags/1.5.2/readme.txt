@@ -1,6 +1,6 @@
 === WC Call For Price ===
 Contributors: wcpress
-Tags: call for price, request a quote, name your price, catalog mode, hide price
+Tags: call for price, hide price, catalog mode, request a quote, b2b, get a quote, product inquiry, name your price, hide add to cart, woocommerce catalog, wholesale, custom quote, pricing visibility, woocommerce hide price, woocommerce call for price, quote, inquiry, product catalog, disable add to cart
 Requires at least: 5.8
 Tested up to: 6.8
 WC requires at least: 6.6
@@ -10,40 +10,27 @@ Stable tag: 1.5.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-A Feature-Rich Plugin (aka Extension) for Dynamic Control to Show/Hide Price or “Call For Price/Quote For Price” Button
+Hide prices & 'Add to Cart' button. Replace with a 'Call For Price' button, text, or quote form. Ideal for catalog mode, B2B & variable pricing.
 
 == Description ==
 
-> **Hide your product price with a message or button. Redirect your customers to another page to get the know the price. With WC Call for Price for WooCommerce, get more engagement from your customers**
-
+> **Transform your WooCommerce store into a lead-generation machine! WC Call for Price empowers you to strategically hide product prices and the 'Add to Cart' button, encouraging customers to contact you for a quote. This is the perfect solution for B2B stores, wholesale operations, products with fluctuating prices, or when you simply want to engage customers in a sales conversation.**
 
 > **[See Feature Details](https://wcpress.net/wc-call-for-price-woocommerce-plugin/?utm_source=WordPressPlugin&utm_medium=readme&utm_campaign=organic&utm_content=SeeFetureDetails)**
 
-=== Features At a Glance===
-**📣 Hide Price:** Hide your product price with a message like `Call for Price` or `Contact for Price`.
-**📣 Show Button Instead of Text:** You can show any image instead of text if you want. You have to upload the image and select to show your custom image.
-**📣 Show Predefined Button:** There is a list of button that you can show your customers instead of text.
-**📣 Activate/Deactivate**: You can activate or deactivate the plugins feature form settings dashboard.
-**📣 Show on All Products:** You can force call for price to show on all products.
-**📣 Only Empty Price:** You can choose to show call for button text or button image on only empty prices.
-**📣 Button Settings:** If you choose to show button then you can choose button settings like width, height and alt text.
-**📣 Custom Rules:** If you have not chosen to show `call for price` on all product then you can imply `call for price` based on rules like `out of stock` `minimum threshold` or a `custom minimum threshold` input by you.
-**📣 Out of Stock:** Show `call for price` or any text or image for out of stock products.
-**📣 Minimum Threshold:** You can imply `call for price` on minimum threshold products. Your a product of specific quantity left on stock.
-**📣 Button Redirect:** You will be able to set a link with other settings. Which will be used to redirect users when the click `call for price` button.
+This plugin enables you to hide the price and/or 'Add to Cart' button for specific products or all products. Instead of the price, you can display custom text like "Call for Price," a button, or even your own custom image. This encourages customers to contact you for pricing, allowing you to build a relationship and potentially upsell.
 
-
-Experience enhanced pricing control and customer engagement with **WC Call for Price for WooCommerce**, an advanced plugin designed to seamlessly integrate with your WooCommerce store. This powerful extension empowers you to effortlessly manage your product pricing strategy by **revealing or concealing prices based on a variety of flexible criteria**.
-
-**WC Call for Price for WooCommerce** is a plugin (aka extension) that works with WooCommerce, enables you to show/hide your price based on different flexible criteria **like product price, stock status, minimum inventory/stock threshold or custom inventory/stock threshold**.
-
-Also lets you customize the button display settings like button height, width, help text etc. You can choose from predefined buttons or upload your own button image.
-
-Additionally, you can configure the plugin to **send your customer’s to a specific page** when clicking the button.
-
-The plugin supports all kinds of product types like: *simple product*, *variable product*, *grouped product*, *external product* or any kind of custom product type that extends WooCommerce’s product class.
-
-**WC Call for Price for WooCommerce** supports all kinds of frontend views like *single page*, *archive page*, *related product*, *upsell product*, WooCommerce product *shortcodes*, *Elementor elements*, *Gutenberg blocks* and any other view system that works with WooCommerce.
+=== Features At a Glance ===
+*   **Hide Price:** Hide the product price and replace it with custom text.
+*   **Hide 'Add to Cart' Button:** Remove the 'Add to Cart' button to encourage inquiries.
+*   **Custom Text:** Display any text you want, such as "Call for Price" or "Request a Quote."
+*   **Custom Button:** Show a clickable button instead of text.
+*   **Image Button:** Upload your own image to use as a button.
+*   **Rule-Based Display:** Show "Call for Price" for specific products, categories, or user roles.
+*   **Out of Stock:** Automatically show "Call for Price" for out-of-stock items.
+*   **Redirect URL:** Redirect users to a contact page or quote form when they click the button.
+*   **All Product Types:** Works with simple, variable, grouped, and external products.
+*   **Easy to Use:** Simple and intuitive settings panel.
 
 Elevate your WooCommerce store's capabilities with **WC Call for Price for WooCommerce**. Seamlessly manage your pricing strategy, enhance customer engagement, and create a user-friendly shopping environment. **Maximize your store's potential with dynamic pricing control** and a personalized customer journey. Unlock new opportunities for growth and success today.
 
@@ -90,7 +77,7 @@ That's all you need to do.
 
 == Frequently Asked Questions ==
 
-= Can I show the “Call For Price/Quote For Price” button on out of stock products? =
+= How can I hide the price for out-of-stock products and show a 'Call for Price' button instead? =
 
 Yes you can definitely show the “Call For Price/Quote For Price” button on your out of stock products. We have specific settings to show “Call For Price/Quote For Price” on out of stock products. You can find it under the Rules tab. Additionally you can also set the settings for WooCommerce minimum inventor/stock threshold products or set a custom inventory minimum threshold.
 It will only work when you manage stock for that product. If you do not manage the product for that specific product, then WC Call for Price for WooCommerce will ignore that product.
