@@ -6,7 +6,7 @@ Tested up to: 6.8
 WC requires at least: 6.6
 WC tested up to: 9.9
 Requires PHP: 7.2
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -139,6 +139,10 @@ This is a minor release with tweaking and fixes.
 
 
 == Changelog ==
+
+= 1.5.2 ( 01 July 2025 ) =
+* 🧩 **Compatibility:** Tested upto WordPress 6.8
+* 🧩 **Compatibility:** Tested upto WooCommerce 9.9
 
 = 1.5.1 ( 28 August 2024 ) =
 * ✅ **Feature** Category selection added
