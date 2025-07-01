@@ -2,9 +2,9 @@
 Contributors: wcpress
 Tags: call for price, request a quote, name your price, catalog mode, hide price
 Requires at least: 5.8
-Tested up to: 6.6
+Tested up to: 6.8
 WC requires at least: 6.6
-WC tested up to: 9.2
+WC tested up to: 9.9
 Requires PHP: 7.2
 Stable tag: 1.5.1
 License: GPLv3 or later

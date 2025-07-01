@@ -14,7 +14,7 @@
  * Description: This plugin shows "call for price" text/HTML or image on empty price fields. It depends on woocommerce.
  * License: GPLv3 or later
  * WC requires at least: 6.6
- * WC tested up to: 9.0
+ * WC tested up to: 9.9
 
 Copyright 2015  Aftabul Islam  (email : toaihimel@gmail.com)
 
