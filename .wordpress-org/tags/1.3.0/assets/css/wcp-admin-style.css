@@ -1,0 +1,67 @@
+.wcp-admin-panel-wrapper {
+  padding: 16px;
+}
+.wcp-admin-panel-wrapper form fieldset {
+  border: 1px solid rgba(70, 43, 43, 0.2392156863);
+  padding: 16px;
+  margin: 16px 0;
+}
+.wcp-admin-panel-wrapper form fieldset legend {
+  margin: 0 24px;
+  padding: 0 16px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  color: #737171;
+}
+.wcp-admin-panel-wrapper form input[type=text] {
+  border: 0;
+  border-radius: 5px;
+  width: 300px;
+  color: #464242;
+}
+.wcp-admin-panel-wrapper form button[type=submit] {
+  border: 0;
+  color: white;
+  background-color: #13c413;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.wcp-admin-panel-wrapper form label {
+  font-weight: 700;
+}
+
+.wcp-admin-panel-wrapper .header h3 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  color: #504242;
+}
+.wcp-admin-panel-wrapper .main {
+  margin: 24px 0;
+  padding: 24px 0;
+}
+.wcp-admin-panel-wrapper .main form #wc_call_for_price__images {
+  display: flex;
+  flex-flow: wrap;
+}
+.wcp-admin-panel-wrapper .main form #wc_call_for_price__images .radio {
+  margin: 8px 16px;
+}
+.wcp-admin-panel-wrapper .main form #wc_call_for_price__images .radio input[type=radio] {
+  position: relative;
+  top: -10px;
+}
+.wcp-admin-panel-wrapper .main form #wc_call_for_price__images .radio img {
+  width: 100px;
+  height: 28px;
+}
+.wcp-admin-panel-wrapper .footer {
+  text-align: center;
+  color: #737171;
+}
+.wcp-admin-panel-wrapper .help-block {
+  color: #737171;
+}

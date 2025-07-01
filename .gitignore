@@ -2,10 +2,9 @@
 todos.txt
 */**/.DS_Store
 .svn
-package-lock.json
 .package.json.swp
 node_modules
-build
+dist
 /vendor/
-composer.lock
 assets/css
+languages

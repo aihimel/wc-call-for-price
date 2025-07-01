@@ -1,0 +1,111 @@
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/admin/admin-dashboard-app-style.scss ***!
+  \****************************************************************************************************************************************/
+#wcp-admin-settings-app {
+  background-color: #ffffff;
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid #c3c4c7;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+#wcp-admin-settings-app .wcp-dashboard-content {
+  margin: 15px 0;
+}
+#wcp-admin-settings-app .wcp-rule-archive-wrapper {
+  transition-duration: 500ms;
+  width: 320px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  background: #f7f5f5;
+  padding: 15px;
+  margin: 15px 15px 0 0;
+}
+#wcp-admin-settings-app .wcp-rule-archive-wrapper:hover {
+  background-color: #d6d4d4;
+  transition-duration: 500ms;
+}
+#wcp-admin-settings-app .wcp-rule-archive-wrapper .wcp-rule-post-header {
+  position: relative;
+}
+#wcp-admin-settings-app .wcp-rule-archive-wrapper .wcp-rule-post-header h3 {
+  margin: 0;
+  padding: 0;
+}
+#wcp-admin-settings-app .wcp-rule-archive-wrapper .wcp-rule-post-header span.wcp-rule-active {
+  position: absolute;
+  top: -14px;
+  float: left;
+  padding: 4px 8px;
+  left: 274px;
+  background-color: #5f5fed;
+  color: #fff;
+  border-radius: 0 3px 0 0;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+#wcp-admin-settings-app .wcp-rule-archive-wrapper .wcp-rule-post-footer ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+#wcp-admin-settings-app .wcp-rule-archive-wrapper .wcp-rule-post-footer ul li {
+  display: inline-block;
+  margin-right: 7.5px;
+}
+#wcp-admin-settings-app .wcp-rule-archive-wrapper .wcp-rule-post-footer ul li a {
+  padding: 4px 8px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 3px;
+}
+#wcp-admin-settings-app .wcp-rule-archive-wrapper .wcp-rule-post-footer ul li a.wcp-edit-rule {
+  background-color: #13c413;
+}
+#wcp-admin-settings-app .wcp-rule-archive-wrapper .wcp-rule-post-footer ul li a.wcp-delete-rule {
+  background-color: red;
+}
+
+fieldset {
+  background-color: #f9f9fd;
+  padding: 16px 32px;
+  margin: 16px 0;
+  border-radius: 5px;
+}
+fieldset legend {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #8d8686;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+fieldset input[type=text], fieldset input[type=checkbox], fieldset input[type=number] {
+  border: 1px solid #dedee0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.wcp-row {
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.wcp-row .wcp-col {
+  width: 100%;
+}
+.wcp-row .wcp-field-wrapper {
+  padding: 8px 0;
+}
+.wcp-row .wcp-field-wrapper label {
+  padding: 0 8px;
+}
+.wcp-row .wcp-field-wrapper .wcp-help {
+  text-transform: uppercase;
+  font-size: 10px;
+  background-color: rgba(94, 78, 78, 0.6705882353);
+  color: #fff;
+  font-weight: 600;
+  padding: 4px 6px;
+  border-radius: 16px;
+  margin-left: 16px;
+  cursor: help;
+}

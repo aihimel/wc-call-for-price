@@ -13,11 +13,14 @@
   "author": "Aftabul Islam",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "@wordpress/scripts": "^26.9.0",
-    "gulp": "^3.9.1",
+    "@wordpress/scripts": "^19.2.4",
+    "gulp": "^5.0.0",
     "gulp-sass": "^5.1.0"
   },
   "overrides": {
     "graceful-fs": "^4.2.11"
+  },
+  "dependencies": {
+    "latest": "^0.2.0"
   }
 }
