@@ -10,7 +10,7 @@ Stable tag: 1.5.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Easily hide product prices and the 'Add to Cart' button in WooCommerce. Replace them with a customizable "Call For Price" button, text, or a custom quote form. Perfect for catalog mode, B2B, and products with variable pricing.
+Hide prices & 'Add to Cart' button. Replace with a 'Call For Price' button, text, or quote form. Ideal for catalog mode, B2B & variable pricing.
 
 == Description ==
 
