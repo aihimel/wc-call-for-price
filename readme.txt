@@ -1,6 +1,6 @@
 === WC Call For Price ===
 Contributors: wcpress
-Tags: call for price, request a quote, get a quote, product inquiry, name your price, hide price, hide add to cart, catalog mode, woocommerce catalog, b2b, wholesale, custom quote, pricing visibility
+Tags: call for price, hide price, catalog mode, request a quote, b2b, get a quote, product inquiry, name your price, hide add to cart, woocommerce catalog, wholesale, custom quote, pricing visibility, woocommerce hide price, woocommerce call for price, quote, inquiry, product catalog, disable add to cart
 Requires at least: 5.8
 Tested up to: 6.8
 WC requires at least: 6.6
