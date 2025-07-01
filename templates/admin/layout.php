@@ -44,4 +44,38 @@ $wcp_is_page_valid = apply_filters( 'wcp_is_admin_subpage_valid', $wcp_sub_page 
         ?>
     		<?php wcp_get_admin_template( 'parts/footer.php' ); ?>
     </div>
+    <?php if ( ! defined( 'WCP_PRO_ADDON_ROOT_FILE' ) ) : ?>
+    <aside>
+        <div class="wcp-marketing-block">
+            <h3>
+                🚀 Upgrade to <span class="wcp-marketing-pro">Pro</span> &amp; Unlock More Features!
+            </h3>
+            <ul>
+                <li>
+                    <span class="wcp-marketing-icon wcp-marketing-icon-yellow">💬</span>
+                    <span>Direct Whatsapp message with product details</span>
+                </li>
+                <li>
+                    <span class="wcp-marketing-icon wcp-marketing-icon-teal dashicons dashicons-email-alt"></span>
+                    <span>Contact From 7 Popup integration</span>
+                </li>
+<!--                <li>-->
+<!--                    <span class="wcp-marketing-icon wcp-marketing-icon-pink">🎨</span>-->
+<!--                    <span>Customizable call-for-price button styles</span>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <span class="wcp-marketing-icon wcp-marketing-icon-blue">📊</span>-->
+<!--                    <span>Advanced analytics &amp; reporting</span>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <span class="wcp-marketing-icon wcp-marketing-icon-red">⚡</span>-->
+<!--                    <span>Priority support &amp; updates</span>-->
+<!--                </li>-->
+            </ul>
+            <a href="https://www.wcpress.net/wc-call-for-price-woocommerce-plugin/" target="_blank" class="button button-primary wcp-marketing-btn">
+                Learn More
+            </a>
+        </div>
+    </aside>
+    <?php endif; ?>
 </div>

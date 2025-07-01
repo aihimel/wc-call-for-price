@@ -1,0 +1,260 @@
+# Copyright (C) 2024 WCPress
+# This file is distributed under the GPLv3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WC Call For Price 1.5.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-call-for-price\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-08-28T02:03:16+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: wc-call-for-price\n"
+
+#. Plugin Name of the plugin
+msgid "WC Call For Price"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "http://www.wordpress.org/wc-call-for-price"
+msgstr ""
+
+#. Description of the plugin
+msgid "This plugin shows \"call for price\" text/HTML or image on empty price fields. It depends on woocommerce."
+msgstr ""
+
+#. Author of the plugin
+msgid "WCPress"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://wcpress.net/wc-call-for-price-woocommerce-plugin"
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:19
+msgid "Redirect "
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:22
+msgid "Redirect To"
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:36
+msgid "Redirect to a new page."
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:41
+msgid "Open in a new page"
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:52
+msgid "Opens a new tab."
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:58
+msgid "Link"
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:68
+msgid "Redirect to the above link"
+msgstr ""
+
+#: templates/admin/pages/action_settings.php:82
+#: templates/admin/pages/button_settings.php:166
+#: templates/admin/pages/general_settings.php:68
+#: templates/admin/pages/rules_settings.php:143
+msgid "Save Settings"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:24
+msgid "Text"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:29
+msgid "Show Text"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:39
+msgid "Check to show only text on a simple html button."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:42
+msgid "Text To Show :"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:44
+msgid "Write here what you want to see on front end. Plain text or HTML."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:49
+msgid "Select Image"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:51
+msgid "Show Image :"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:54
+msgid "Check this box if you want to select an image form some specific list of \"Call for price\" images."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:83
+msgid "Check any one form here."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:88
+msgid "Upload Image"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:90
+msgid "Show Uploaded Image :"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:92
+msgid "Check this box if you want to show your uploaded image."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:103
+msgid "Upload Your Image"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:109
+msgid "Input Image URL"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:113
+msgid "If you want to upload your custom image, upload here."
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:119
+msgid "Button Attributes"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:130
+msgid "Button height in pixel"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:143
+msgid "Button width in pixel"
+msgstr ""
+
+#: templates/admin/pages/button_settings.php:156
+msgid "Button alt attribute text"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:18
+msgid "Plugin Features"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:19
+msgid "Activate"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:28
+msgid "This checkbox will activate the plugin features. This must be on for the plugin to work."
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:33
+msgid "Display Settings"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:34
+msgid "Only Empty Price"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:45
+msgid "If checked, this will show call for price only on empty price products."
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:47
+msgid "Show On All Products"
+msgstr ""
+
+#: templates/admin/pages/general_settings.php:58
+msgid "If checked, this will show call for price on all products."
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:19
+msgid "Stock "
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:22
+msgid "Out of stocks"
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:32
+msgid "If checked, all the out of stock products will show call for price."
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:37
+#: templates/admin/pages/rules_settings.php:53
+msgid "Minimum Threshold"
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:47
+msgid "If checked, all the products with minimum threshold will show."
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:62
+msgid "Minimum stock quantity to show call for price."
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:68
+msgid "Taxonomy "
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:71
+msgid "Enable Taxonomy"
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:80
+#: templates/admin/pages/rules_settings.php:103
+msgid "Select any category from above dropdown to enable call for price for that category."
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:86
+msgid "Select Categories"
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:109
+msgid "Select Tags"
+msgstr ""
+
+#: templates/admin/pages/rules_settings.php:132
+msgid "Select tags from above dropdown to enable call for price for that tag, You can select multiple tags."
+msgstr ""
+
+#: templates/admin/parts/navigation.php:15
+msgid "General"
+msgstr ""
+
+#: templates/admin/parts/navigation.php:19
+msgid "Button"
+msgstr ""
+
+#: templates/admin/parts/navigation.php:23
+msgid "Rules"
+msgstr ""
+
+#: templates/admin/parts/navigation.php:27
+msgid "Actions"
+msgstr ""
+
+#: templates/admin/review-notice.php:28
+msgid "Review Now"
+msgstr ""
+
+#: templates/admin/review-notice.php:34
+msgid "Remind Me Later"
+msgstr ""
+
+#: templates/admin/review-notice.php:40
+msgid "Already Reviewed"
+msgstr ""
+
+#: templates/admin/review-notice.php:46
+msgid "Dismiss"
+msgstr ""
